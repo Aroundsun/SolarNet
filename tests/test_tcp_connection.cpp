@@ -25,10 +25,9 @@ using namespace std::chrono_literals;
 namespace {
 
 void stop_loop_after(EventLoop& loop, std::chrono::milliseconds delay) {
-    std::thread([&]() {
-        std::this_thread::sleep_for(delay);
+    loop.run_after(std::chrono::duration<double>(delay).count(), [&loop]() {
         loop.stop();
-    }).detach();
+    });
 }
 
 } // namespace
@@ -91,9 +90,6 @@ TEST(TcpConnectionTest, SendsMessageToPeer) {
             &loop, "send", pair.server_fd, pair.server_local, pair.server_peer);
         conn->connection_established();
         conn->send("reply");
-
-        stop_loop_after(loop, 20ms);
-        loop.loop();
 
         char buf[16] = {};
         const ssize_t n = ::read(pair.client_fd, buf, sizeof(buf));
@@ -243,9 +239,6 @@ TEST(TcpConnectionTest, SendBufferConsumesReadableBytes) {
         buf.append("buffered");
         conn->send(&buf);
         EXPECT_EQ(buf.readable_bytes(), 0u);
-
-        stop_loop_after(loop, 20ms);
-        loop.loop();
 
         char data[16] = {};
         const ssize_t n = ::read(pair.client_fd, data, sizeof(data));

@@ -26,6 +26,8 @@ CMakeFiles/test_event_loop_thread.dir/tests/test_event_loop_thread.cpp.o
  /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h
  /home/xhy/workplace/SolarNet/src/event_loop.h
  /home/xhy/workplace/SolarNet/src/event_loop_thread.h
+ /home/xhy/workplace/SolarNet/src/timer.h
+ /home/xhy/workplace/SolarNet/src/timestamp.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h

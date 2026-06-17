@@ -54,7 +54,17 @@ void EventLoop::loop() {
     assert(!looping_);
     assert(is_in_loop_thread());
     looping_ = true;
-    stop_ = false;
+
+    // 清掉 loop 启动前 stop() 写入 eventfd 的计数，避免空唤醒
+    uint64_t one = 0;
+    while (::read(wakeup_fd_, &one, sizeof(one)) == static_cast<ssize_t>(sizeof(one))) {
+    }
+
+    // 若 stop() 已在 loop() 开始前被调用，直接退出
+    if (stop_.exchange(false)) {
+        looping_ = false;
+        return;
+    }
 
     while (!stop_) {
         active_channels_.clear();

@@ -26,6 +26,8 @@ CMakeFiles/test_channel.dir/tests/test_channel.cpp.o
  /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h
  /home/xhy/workplace/SolarNet/src/channel.h
  /home/xhy/workplace/SolarNet/src/event_loop.h
+ /home/xhy/workplace/SolarNet/src/timer.h
+ /home/xhy/workplace/SolarNet/src/timestamp.h
  /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -145,6 +147,7 @@ CMakeFiles/test_channel.dir/tests/test_channel.cpp.o
  /usr/include/c++/15/cassert
  /usr/include/c++/15/cctype
  /usr/include/c++/15/cerrno
+ /usr/include/c++/15/chrono
  /usr/include/c++/15/clocale
  /usr/include/c++/15/compare
  /usr/include/c++/15/concepts

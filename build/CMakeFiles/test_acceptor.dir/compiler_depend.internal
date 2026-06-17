@@ -26,6 +26,8 @@ CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o
  /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h
  /home/xhy/workplace/SolarNet/src/acceptor.h
  /home/xhy/workplace/SolarNet/src/event_loop.h
+ /home/xhy/workplace/SolarNet/src/timer.h
+ /home/xhy/workplace/SolarNet/src/timestamp.h
  /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
