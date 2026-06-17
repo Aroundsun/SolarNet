@@ -237,6 +237,19 @@ test_event_loop/fast:
 .PHONY : test_event_loop/fast
 
 #=============================================================================
+# Target rules for targets named test_timer
+
+# Build rule for target.
+test_timer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_timer
+.PHONY : test_timer
+
+# fast build rule for target.
+test_timer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/build
+.PHONY : test_timer/fast
+
+#=============================================================================
 # Target rules for targets named test_tcp_connection
 
 # Build rule for target.
@@ -582,6 +595,54 @@ src/tcp_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/tcp_server.cpp.s
 .PHONY : src/tcp_server.cpp.s
 
+src/timer.o: src/timer.cpp.o
+.PHONY : src/timer.o
+
+# target to build an object file
+src/timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer.cpp.o
+.PHONY : src/timer.cpp.o
+
+src/timer.i: src/timer.cpp.i
+.PHONY : src/timer.i
+
+# target to preprocess a source file
+src/timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer.cpp.i
+.PHONY : src/timer.cpp.i
+
+src/timer.s: src/timer.cpp.s
+.PHONY : src/timer.s
+
+# target to generate assembly for a file
+src/timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer.cpp.s
+.PHONY : src/timer.cpp.s
+
+src/timer_queue.o: src/timer_queue.cpp.o
+.PHONY : src/timer_queue.o
+
+# target to build an object file
+src/timer_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer_queue.cpp.o
+.PHONY : src/timer_queue.cpp.o
+
+src/timer_queue.i: src/timer_queue.cpp.i
+.PHONY : src/timer_queue.i
+
+# target to preprocess a source file
+src/timer_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer_queue.cpp.i
+.PHONY : src/timer_queue.cpp.i
+
+src/timer_queue.s: src/timer_queue.cpp.s
+.PHONY : src/timer_queue.s
+
+# target to generate assembly for a file
+src/timer_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/src/timer_queue.cpp.s
+.PHONY : src/timer_queue.cpp.s
+
 tests/test_acceptor.o: tests/test_acceptor.cpp.o
 .PHONY : tests/test_acceptor.o
 
@@ -798,6 +859,30 @@ tests/test_tcp_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.s
 .PHONY : tests/test_tcp_server.cpp.s
 
+tests/test_timer.o: tests/test_timer.cpp.o
+.PHONY : tests/test_timer.o
+
+# target to build an object file
+tests/test_timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/tests/test_timer.cpp.o
+.PHONY : tests/test_timer.cpp.o
+
+tests/test_timer.i: tests/test_timer.cpp.i
+.PHONY : tests/test_timer.i
+
+# target to preprocess a source file
+tests/test_timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/tests/test_timer.cpp.i
+.PHONY : tests/test_timer.cpp.i
+
+tests/test_timer.s: tests/test_timer.cpp.s
+.PHONY : tests/test_timer.s
+
+# target to generate assembly for a file
+tests/test_timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/tests/test_timer.cpp.s
+.PHONY : tests/test_timer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -826,6 +911,7 @@ help:
 	@echo "... test_socket"
 	@echo "... test_tcp_connection"
 	@echo "... test_tcp_server"
+	@echo "... test_timer"
 	@echo "... example/echo_server.o"
 	@echo "... example/echo_server.i"
 	@echo "... example/echo_server.s"
@@ -853,6 +939,12 @@ help:
 	@echo "... src/tcp_server.o"
 	@echo "... src/tcp_server.i"
 	@echo "... src/tcp_server.s"
+	@echo "... src/timer.o"
+	@echo "... src/timer.i"
+	@echo "... src/timer.s"
+	@echo "... src/timer_queue.o"
+	@echo "... src/timer_queue.i"
+	@echo "... src/timer_queue.s"
 	@echo "... tests/test_acceptor.o"
 	@echo "... tests/test_acceptor.i"
 	@echo "... tests/test_acceptor.s"
@@ -880,6 +972,9 @@ help:
 	@echo "... tests/test_tcp_server.o"
 	@echo "... tests/test_tcp_server.i"
 	@echo "... tests/test_tcp_server.s"
+	@echo "... tests/test_timer.o"
+	@echo "... tests/test_timer.i"
+	@echo "... tests/test_timer.s"
 .PHONY : help
 
 

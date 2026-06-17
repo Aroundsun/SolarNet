@@ -225,10 +225,12 @@ CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/ioctl-types.h \
  /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
  /usr/include/x86_64-linux-gnu/bits/epoll.h \
- /home/xhy/workplace/SolarNet/src/event_loop.h /usr/include/c++/15/mutex \
+ /home/xhy/workplace/SolarNet/src/event_loop.h \
+ /home/xhy/workplace/SolarNet/src/timer.h \
+ /home/xhy/workplace/SolarNet/src/timestamp.h /usr/include/c++/15/chrono \
  /usr/include/c++/15/bits/chrono.h /usr/include/c++/15/ratio \
  /usr/include/c++/15/limits /usr/include/c++/15/ctime \
- /usr/include/c++/15/bits/parse_numbers.h \
+ /usr/include/c++/15/bits/parse_numbers.h /usr/include/c++/15/mutex \
  /usr/include/c++/15/bits/std_mutex.h \
  /usr/include/c++/15/bits/unique_lock.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \

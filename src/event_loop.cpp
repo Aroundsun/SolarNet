@@ -1,6 +1,9 @@
 #include "event_loop.h"
 #include "epoll_poller.h"
 #include "channel.h"
+#include "timer_queue.h"
+#include "timer.h"
+#include "timestamp.h"
 
 #include <sys/eventfd.h>
 #include <unistd.h>
@@ -19,6 +22,7 @@ EventLoop::EventLoop()
     , stop_(false)
     , thread_id_(std::this_thread::get_id())
     , poller_(std::make_unique<EpollPoller>(this))
+    , timer_queue_(std::make_unique<TimerQueue>(this))
     , wakeup_fd_(::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC))
     , wakeup_channel_(nullptr) {
 
@@ -39,6 +43,7 @@ EventLoop::EventLoop()
 }
 
 EventLoop::~EventLoop() {
+    timer_queue_.reset();
     wakeup_channel_->disable_all();
     wakeup_channel_->remove();
     close_wakeup_fd();
@@ -53,7 +58,8 @@ void EventLoop::loop() {
 
     while (!stop_) {
         active_channels_.clear();
-        poller_->poll(kPollTimeoutMs, &active_channels_);
+        const int timeout = timer_queue_->get_next_timeout_ms();
+        poller_->poll(timeout, &active_channels_);
 
         for (auto* channel : active_channels_) {
             channel->handle_event();
@@ -115,6 +121,20 @@ void EventLoop::remove_channel(Channel* channel) {
 
 EventLoop* EventLoop::get_event_loop_of_current_thread() {
     return t_loop_in_this_thread;
+}
+
+TimerId EventLoop::run_after(double delay, TimerCallback cb) {
+    Timestamp when = add_time(now(), delay);
+    return timer_queue_->add_timer(std::move(cb), when, 0.0);
+}
+
+TimerId EventLoop::run_every(double interval, TimerCallback cb) {
+    Timestamp when = add_time(now(), interval);
+    return timer_queue_->add_timer(std::move(cb), when, interval);
+}
+
+void EventLoop::cancel(TimerId timer_id) {
+    timer_queue_->cancel(timer_id);
 }
 
 void EventLoop::do_pending_tasks() {

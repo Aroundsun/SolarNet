@@ -209,14 +209,17 @@ TEST(TcpConnectionTest, ForceCloseDisconnects) {
             &loop, "force", pair.server_fd, pair.server_local, pair.server_peer);
         conn->set_close_callback([&](const TcpConnectionPtr&) {
             close_called = true;
+            loop.stop();
         });
 
         conn->connection_established();
 
-        std::thread worker([&]() { conn->force_close(); });
+        std::thread worker([&]() {
+            std::this_thread::sleep_for(20ms);
+            conn->force_close();
+        });
         worker.detach();
 
-        stop_loop_after(loop, 500ms);
         loop.loop();
 
         EXPECT_EQ(conn->state(), TcpConnection::State::kDisconnected);

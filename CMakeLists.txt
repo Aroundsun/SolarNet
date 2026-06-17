@@ -23,6 +23,8 @@ add_library(solar_net STATIC
     src/event_loop_thread.cpp
     src/event_loop_thread_pool.cpp
     src/epoll_poller.cpp
+    src/timer.cpp
+    src/timer_queue.cpp
     src/tcp_connection.cpp
     src/tcp_server.cpp
 )
@@ -41,6 +43,7 @@ add_solar_net_test(test_buffer)
 add_solar_net_test(test_socket)
 add_solar_net_test(test_channel)
 add_solar_net_test(test_event_loop)
+add_solar_net_test(test_timer)
 add_solar_net_test(test_tcp_connection)
 add_solar_net_test(test_acceptor)
 add_solar_net_test(test_event_loop_thread)

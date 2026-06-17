@@ -87,14 +87,28 @@ ctest --test-dir build --output-on-failure
 | `Socket` | fd 封装，非阻塞、TCP 选项等静态方法 |
 | `Channel` | 把 fd 和 epoll 事件、回调绑在一起 |
 | `EpollPoller` | epoll 封装，ADD/MOD/DEL |
-| `EventLoop` | 事件循环，任务队列 + wakeup |
+| `EventLoop` | 事件循环，任务队列 + wakeup + 定时器 |
 | `EventLoopThread` | 在独立线程里跑一个 EventLoop |
 | `EventLoopThreadPool` | IO 线程池，轮询分发 loop |
 | `Acceptor` | 监听 socket，accept 新连接 |
 | `TcpConnection` | 已建立连接的读写、状态、output buffer 排队发送 |
 | `TcpServer` | 把上面这些拼起来 |
+| `Timer` / `TimerQueue` | 基于 timerfd 的一次性/重复定时器 |
 
-`Channel`、`EpollPoller`、`TcpConnection` 的操作都要求在所属 loop 线程里调用（内部有 `assert_in_loop_thread`）。`TcpConnection::send` 和 `EventLoop::stop` 是线程安全的。
+`Channel`、`EpollPoller`、`TcpConnection` 的操作都要求在所属 loop 线程里调用（内部有 `assert_in_loop_thread`）。`TcpConnection::send` 和 `EventLoop::stop` 是线程安全的。定时器通过 `EventLoop::run_after` / `run_every` 添加，可跨线程调用；`cancel` 同样线程安全。
+
+### 定时器
+
+```cpp
+// 0.5 秒后执行一次
+TimerId id = loop.run_after(0.5, [] { /* ... */ });
+
+// 每 1 秒重复执行
+TimerId id2 = loop.run_every(1.0, [] { /* ... */ });
+
+// 取消
+loop.cancel(id);
+```
 
 ## 自己写服务端
 
@@ -145,6 +159,7 @@ CMakeLists.txt
 | `test_socket` | socket 选项、地址获取 |
 | `test_channel` | 事件分发、enable/disable、tie |
 | `test_event_loop` | loop 运行、跨线程任务投递 |
+| `test_timer` | run_after、run_every、cancel |
 | `test_tcp_connection` | 连接读写、跨线程 send、关闭 |
 | `test_acceptor` | 监听、accept |
 | `test_event_loop_thread` | IO 线程启动与任务调度 |
@@ -154,7 +169,7 @@ CMakeLists.txt
 ## 还没做的
 
 - 没有 benchmark / 压测工具
-- 没有 TLS、UDP、定时器
+- 没有 TLS、UDP
 - 错误处理偏简单，生产用还需要补日志和更细的 errno 处理
 - 只测过 Linux，没考虑 macOS / Windows
 

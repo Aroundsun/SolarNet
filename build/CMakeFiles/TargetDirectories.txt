@@ -3,6 +3,7 @@
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_socket.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_channel.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_event_loop.dir
+/home/xhy/workplace/SolarNet/build/CMakeFiles/test_timer.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_tcp_connection.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_acceptor.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_event_loop_thread.dir

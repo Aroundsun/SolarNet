@@ -15,6 +15,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o.d"
   "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
   "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o.d"
+  "CMakeFiles/solar_net.dir/src/timer.cpp.o"
+  "CMakeFiles/solar_net.dir/src/timer.cpp.o.d"
+  "CMakeFiles/solar_net.dir/src/timer_queue.cpp.o"
+  "CMakeFiles/solar_net.dir/src/timer_queue.cpp.o.d"
   "lib/libsolar_net.a"
   "lib/libsolar_net.pdb"
 )

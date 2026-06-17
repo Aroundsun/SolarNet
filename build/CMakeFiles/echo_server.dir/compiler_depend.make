@@ -351,10 +351,8 @@ bin/echo_server: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib/x86_64-linux-gnu/libm.so.6 \
   /usr/lib/x86_64-linux-gnu/libmvec.so.1 \
   CMakeFiles/echo_server.dir/example/echo_server.cpp.o \
-  libsolar_net.a
+  lib/libsolar_net.a
 
-
-libsolar_net.a:
 
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
@@ -715,6 +713,8 @@ CMakeFiles/echo_server.dir/example/echo_server.cpp.o:
 /usr/include/c++/15/bits/stringfwd.h:
 
 /usr/include/c++/15/bits/erase_if.h:
+
+lib/libsolar_net.a:
 
 /usr/include/c++/15/bits/alloc_traits.h:
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "timer.h"
+
 #include <functional>
 #include <vector>
 #include <mutex>
@@ -11,12 +13,15 @@ namespace solar_net {
 
 class Channel;
 class EpollPoller;
+class TimerQueue;
 
 // 核心事件循环。每个线程一个。
 // 通过 EpollPoller 驱动 I/O 多路复用，并支持跨线程任务调度
 class EventLoop {
 public:
     using Task = std::function<void()>;
+
+    static constexpr int kPollTimeoutMs = 10000;
 
     EventLoop();
 
@@ -52,6 +57,15 @@ public:
     /// 获取当前线程的事件循环 (线程本地).
     static EventLoop* get_event_loop_of_current_thread();
 
+    /// delay 秒后执行一次 callback.
+    TimerId run_after(double delay, TimerCallback cb);
+
+    /// 每 interval 秒执行一次 callback.
+    TimerId run_every(double interval, TimerCallback cb);
+
+    /// 取消定时器.
+    void cancel(TimerId timer_id);
+
     // 禁用拷贝构造
     EventLoop(const EventLoop&) = delete;
     EventLoop& operator=(const EventLoop&) = delete;
@@ -69,14 +83,13 @@ private:
     /// 关闭 eventfd.
     void close_wakeup_fd();
 
-    static constexpr int kPollTimeoutMs = 10000; // 10 seconds
-
     std::atomic<bool> looping_; // 是否正在循环
     std::atomic<bool> stop_; // 是否停止
 
     const std::thread::id thread_id_; // 线程 ID
 
     std::unique_ptr<EpollPoller> poller_; // poller
+    std::unique_ptr<TimerQueue> timer_queue_;
 
     // 唤醒事件循环的文件描述符
     int wakeup_fd_; // eventfd 文件描述符

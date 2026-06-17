@@ -95,6 +95,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_socket.dir/DependInfo.cmake"
   "CMakeFiles/test_channel.dir/DependInfo.cmake"
   "CMakeFiles/test_event_loop.dir/DependInfo.cmake"
+  "CMakeFiles/test_timer.dir/DependInfo.cmake"
   "CMakeFiles/test_tcp_connection.dir/DependInfo.cmake"
   "CMakeFiles/test_acceptor.dir/DependInfo.cmake"
   "CMakeFiles/test_event_loop_thread.dir/DependInfo.cmake"

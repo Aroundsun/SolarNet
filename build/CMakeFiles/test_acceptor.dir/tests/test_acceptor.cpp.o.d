@@ -315,5 +315,7 @@ CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
  /home/xhy/workplace/SolarNet/src/acceptor.h \
  /home/xhy/workplace/SolarNet/src/event_loop.h \
+ /home/xhy/workplace/SolarNet/src/timer.h \
+ /home/xhy/workplace/SolarNet/src/timestamp.h \
  /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h \
  /usr/include/c++/15/future /usr/include/c++/15/bits/atomic_futex.h

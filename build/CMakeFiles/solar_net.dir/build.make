@@ -156,10 +156,38 @@ CMakeFiles/solar_net.dir/src/epoll_poller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/solar_net.dir/src/epoll_poller.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xhy/workplace/SolarNet/src/epoll_poller.cpp -o CMakeFiles/solar_net.dir/src/epoll_poller.cpp.s
 
+CMakeFiles/solar_net.dir/src/timer.cpp.o: CMakeFiles/solar_net.dir/flags.make
+CMakeFiles/solar_net.dir/src/timer.cpp.o: /home/xhy/workplace/SolarNet/src/timer.cpp
+CMakeFiles/solar_net.dir/src/timer.cpp.o: CMakeFiles/solar_net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/solar_net.dir/src/timer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_net.dir/src/timer.cpp.o -MF CMakeFiles/solar_net.dir/src/timer.cpp.o.d -o CMakeFiles/solar_net.dir/src/timer.cpp.o -c /home/xhy/workplace/SolarNet/src/timer.cpp
+
+CMakeFiles/solar_net.dir/src/timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/solar_net.dir/src/timer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xhy/workplace/SolarNet/src/timer.cpp > CMakeFiles/solar_net.dir/src/timer.cpp.i
+
+CMakeFiles/solar_net.dir/src/timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/solar_net.dir/src/timer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xhy/workplace/SolarNet/src/timer.cpp -o CMakeFiles/solar_net.dir/src/timer.cpp.s
+
+CMakeFiles/solar_net.dir/src/timer_queue.cpp.o: CMakeFiles/solar_net.dir/flags.make
+CMakeFiles/solar_net.dir/src/timer_queue.cpp.o: /home/xhy/workplace/SolarNet/src/timer_queue.cpp
+CMakeFiles/solar_net.dir/src/timer_queue.cpp.o: CMakeFiles/solar_net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/solar_net.dir/src/timer_queue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_net.dir/src/timer_queue.cpp.o -MF CMakeFiles/solar_net.dir/src/timer_queue.cpp.o.d -o CMakeFiles/solar_net.dir/src/timer_queue.cpp.o -c /home/xhy/workplace/SolarNet/src/timer_queue.cpp
+
+CMakeFiles/solar_net.dir/src/timer_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/solar_net.dir/src/timer_queue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xhy/workplace/SolarNet/src/timer_queue.cpp > CMakeFiles/solar_net.dir/src/timer_queue.cpp.i
+
+CMakeFiles/solar_net.dir/src/timer_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/solar_net.dir/src/timer_queue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xhy/workplace/SolarNet/src/timer_queue.cpp -o CMakeFiles/solar_net.dir/src/timer_queue.cpp.s
+
 CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o: CMakeFiles/solar_net.dir/flags.make
 CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o: /home/xhy/workplace/SolarNet/src/tcp_connection.cpp
 CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o: CMakeFiles/solar_net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o -MF CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o.d -o CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o -c /home/xhy/workplace/SolarNet/src/tcp_connection.cpp
 
 CMakeFiles/solar_net.dir/src/tcp_connection.cpp.i: cmake_force
@@ -173,7 +201,7 @@ CMakeFiles/solar_net.dir/src/tcp_connection.cpp.s: cmake_force
 CMakeFiles/solar_net.dir/src/tcp_server.cpp.o: CMakeFiles/solar_net.dir/flags.make
 CMakeFiles/solar_net.dir/src/tcp_server.cpp.o: /home/xhy/workplace/SolarNet/src/tcp_server.cpp
 CMakeFiles/solar_net.dir/src/tcp_server.cpp.o: CMakeFiles/solar_net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/solar_net.dir/src/tcp_server.cpp.o -MF CMakeFiles/solar_net.dir/src/tcp_server.cpp.o.d -o CMakeFiles/solar_net.dir/src/tcp_server.cpp.o -c /home/xhy/workplace/SolarNet/src/tcp_server.cpp
 
 CMakeFiles/solar_net.dir/src/tcp_server.cpp.i: cmake_force
@@ -192,6 +220,8 @@ solar_net_OBJECTS = \
 "CMakeFiles/solar_net.dir/src/event_loop_thread.cpp.o" \
 "CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o" \
 "CMakeFiles/solar_net.dir/src/epoll_poller.cpp.o" \
+"CMakeFiles/solar_net.dir/src/timer.cpp.o" \
+"CMakeFiles/solar_net.dir/src/timer_queue.cpp.o" \
 "CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o" \
 "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
 
@@ -204,11 +234,13 @@ lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/event_loop.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/event_loop_thread.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/epoll_poller.cpp.o
+lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/timer.cpp.o
+lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/timer_queue.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/src/tcp_server.cpp.o
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/build.make
 lib/libsolar_net.a: CMakeFiles/solar_net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library lib/libsolar_net.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library lib/libsolar_net.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/solar_net.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solar_net.dir/link.txt --verbose=$(VERBOSE)
 
