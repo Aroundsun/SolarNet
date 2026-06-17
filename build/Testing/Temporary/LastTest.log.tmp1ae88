@@ -1,0 +1,174 @@
+Start testing: Jun 17 05:38 CST
+----------------------------------------------------------
+1/5 Testing: test_buffer
+1/5 Test: test_buffer
+Command: "/home/xhy/workplace/SolarNet/build/test_buffer"
+Directory: /home/xhy/workplace/SolarNet/build
+"test_buffer" start time: Jun 17 05:38 CST
+Output:
+----------------------------------------------------------
+Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 16 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 16 tests from BufferTest
+[ RUN      ] BufferTest.DefaultConstruction
+[       OK ] BufferTest.DefaultConstruction (0 ms)
+[ RUN      ] BufferTest.AppendAndRetrieve
+[       OK ] BufferTest.AppendAndRetrieve (0 ms)
+[ RUN      ] BufferTest.AppendRawBytes
+[       OK ] BufferTest.AppendRawBytes (0 ms)
+[ RUN      ] BufferTest.AppendBuffer
+[       OK ] BufferTest.AppendBuffer (0 ms)
+[ RUN      ] BufferTest.RetrieveMoreThanAvailableConsumesAll
+[       OK ] BufferTest.RetrieveMoreThanAvailableConsumesAll (0 ms)
+[ RUN      ] BufferTest.Int32ReadWrite
+[       OK ] BufferTest.Int32ReadWrite (0 ms)
+[ RUN      ] BufferTest.PrependInt32
+[       OK ] BufferTest.PrependInt32 (0 ms)
+[ RUN      ] BufferTest.Unwrite
+[       OK ] BufferTest.Unwrite (0 ms)
+[ RUN      ] BufferTest.Swap
+[       OK ] BufferTest.Swap (0 ms)
+[ RUN      ] BufferTest.Shrink
+[       OK ] BufferTest.Shrink (0 ms)
+[ RUN      ] BufferTest.EnsureWritableGrows
+[       OK ] BufferTest.EnsureWritableGrows (0 ms)
+[ RUN      ] BufferTest.ReadFromFdFitsInBuffer
+[       OK ] BufferTest.ReadFromFdFitsInBuffer (0 ms)
+[ RUN      ] BufferTest.ReadFromFdExceedsWritableSpace
+[       OK ] BufferTest.ReadFromFdExceedsWritableSpace (0 ms)
+[ RUN      ] BufferTest.ReadFromFdEof
+[       OK ] BufferTest.ReadFromFdEof (0 ms)
+[ RUN      ] BufferTest.ReadFromFdNonBlockingEmpty
+[       OK ] BufferTest.ReadFromFdNonBlockingEmpty (0 ms)
+[ RUN      ] BufferTest.ShrinkIfNeededAfterRetrieve
+[       OK ] BufferTest.ShrinkIfNeededAfterRetrieve (0 ms)
+[----------] 16 tests from BufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 16 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_buffer" end time: Jun 17 05:38 CST
+"test_buffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: test_socket
+2/5 Test: test_socket
+Command: "/home/xhy/workplace/SolarNet/build/test_socket"
+Directory: /home/xhy/workplace/SolarNet/build
+"test_socket" start time: Jun 17 05:38 CST
+Output:
+----------------------------------------------------------
+Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from SocketTest
+[ RUN      ] SocketTest.FdAccessor
+[       OK ] SocketTest.FdAccessor (0 ms)
+[ RUN      ] SocketTest.MoveConstruction
+[       OK ] SocketTest.MoveConstruction (0 ms)
+[ RUN      ] SocketTest.MoveAssignment
+[       OK ] SocketTest.MoveAssignment (0 ms)
+[ RUN      ] SocketTest.SetNonBlocking
+[       OK ] SocketTest.SetNonBlocking (0 ms)
+[ RUN      ] SocketTest.SetTcpOptions
+[       OK ] SocketTest.SetTcpOptions (0 ms)
+[ RUN      ] SocketTest.GetLocalAndPeerAddr
+[       OK ] SocketTest.GetLocalAndPeerAddr (0 ms)
+[ RUN      ] SocketTest.InvalidFdReturnsError
+[       OK ] SocketTest.InvalidFdReturnsError (0 ms)
+[----------] 7 tests from SocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_socket" end time: Jun 17 05:38 CST
+"test_socket" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: test_channel
+3/5 Test: test_channel
+Command: "/home/xhy/workplace/SolarNet/build/test_channel"
+Directory: /home/xhy/workplace/SolarNet/build
+"test_channel" start time: Jun 17 05:38 CST
+Output:
+----------------------------------------------------------
+Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from ChannelTest
+[ RUN      ] ChannelTest.HandleReadCallback
+[       OK ] ChannelTest.HandleReadCallback (0 ms)
+[ RUN      ] ChannelTest.HandleWriteCallback
+[       OK ] ChannelTest.HandleWriteCallback (0 ms)
+[ RUN      ] ChannelTest.HandleErrorCallback
+[       OK ] ChannelTest.HandleErrorCallback (0 ms)
+[ RUN      ] ChannelTest.HandleCloseCallbackWithoutRead
+[       OK ] ChannelTest.HandleCloseCallbackWithoutRead (0 ms)
+[ RUN      ] ChannelTest.HupWithReadTriggersReadNotClose
+[       OK ] ChannelTest.HupWithReadTriggersReadNotClose (0 ms)
+[ RUN      ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed
+[       OK ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed (0 ms)
+[ RUN      ] ChannelTest.EnableAndDisableEvents
+[       OK ] ChannelTest.EnableAndDisableEvents (0 ms)
+[----------] 7 tests from ChannelTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_channel" end time: Jun 17 05:38 CST
+"test_channel" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: test_event_loop
+4/5 Test: test_event_loop
+Command: "/home/xhy/workplace/SolarNet/build/test_event_loop"
+Directory: /home/xhy/workplace/SolarNet/build
+"test_event_loop" start time: Jun 17 05:38 CST
+Output:
+----------------------------------------------------------
+Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from EventLoopTest
+[ RUN      ] EventLoopTest.IsInLoopThread
+[       OK ] EventLoopTest.IsInLoopThread (0 ms)
+[ RUN      ] EventLoopTest.GetEventLoopOfCurrentThread
+[       OK ] EventLoopTest.GetEventLoopOfCurrentThread (0 ms)
+[ RUN      ] EventLoopTest.RunInLoopExecutesImmediatelyOnLoopThread
+[       OK ] EventLoopTest.RunInLoopExecutesImmediatelyOnLoopThread (0 ms)
+[ RUN      ] EventLoopTest.QueueInLoopFromOtherThread
+[       OK ] EventLoopTest.QueueInLoopFromOtherThread (0 ms)
+[ RUN      ] EventLoopTest.CrossThreadTaskRunsOnLoopThread
+[       OK ] EventLoopTest.CrossThreadTaskRunsOnLoopThread (1 ms)
+[ RUN      ] EventLoopTest.StopFromAnotherThread
+[       OK ] EventLoopTest.StopFromAnotherThread (51 ms)
+[ RUN      ] EventLoopTest.PollTriggersReadOnPipe
+[       OK ] EventLoopTest.PollTriggersReadOnPipe (0 ms)
+[ RUN      ] EventLoopTest.PendingTasksRunAfterPoll
+[       OK ] EventLoopTest.PendingTasksRunAfterPoll (0 ms)
+[----------] 8 tests from EventLoopTest (56 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (57 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"test_event_loop" end time: Jun 17 05:38 CST
+"test_event_loop" time elapsed: 00:00:00
+----------------------------------------------------------
+

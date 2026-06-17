@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/stress_test.dir/link.d CMakeFiles/stress_test.dir/tools/stress_test.cpp.o -o stress_test  libsolar_net.a

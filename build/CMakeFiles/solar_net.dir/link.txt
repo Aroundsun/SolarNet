@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsolar_net.a CMakeFiles/solar_net.dir/src/acceptor.cpp.o CMakeFiles/solar_net.dir/src/channel.cpp.o CMakeFiles/solar_net.dir/src/event_loop.cpp.o CMakeFiles/solar_net.dir/src/event_loop_thread.cpp.o CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o CMakeFiles/solar_net.dir/src/epoll_poller.cpp.o CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o CMakeFiles/solar_net.dir/src/tcp_server.cpp.o
+/usr/bin/ranlib libsolar_net.a

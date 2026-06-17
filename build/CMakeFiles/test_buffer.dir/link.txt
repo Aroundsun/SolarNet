@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_buffer.dir/link.d CMakeFiles/test_buffer.dir/tests/test_buffer.cpp.o -o test_buffer  libsolar_net.a lib/libgtest_main.a lib/libgtest.a
