@@ -23,19 +23,10 @@ TcpConnection::TcpConnection(EventLoop* loop,
     , channel_(std::make_unique<Channel>(loop, fd))
     , local_addr_(local_addr)
     , peer_addr_(peer_addr) {
-    // 设置通道回调
-    channel_->set_read_callback(
-        [this]() { handle_read(0); }
-    );
-    channel_->set_write_callback(
-        [this]() { handle_write(); }
-    );
-    channel_->set_close_callback(
-        [this]() { handle_close(); }
-    );
-    channel_->set_error_callback(
-        [this]() { handle_error(); }
-    );
+    channel_->set_read_callback([this]() { handle_read(0); });
+    channel_->set_write_callback([this]() { handle_write(); });
+    channel_->set_close_callback([this]() { handle_close(); });
+    channel_->set_error_callback([this]() { handle_error(); });
 }
 
 TcpConnection::~TcpConnection() = default;
@@ -44,71 +35,95 @@ int TcpConnection::fd() const {
     return socket_ ? socket_->fd() : -1;
 }
 
+bool TcpConnection::is_connected() const {
+    return state_.load(std::memory_order_acquire) == State::kConnected;
+}
+
+bool TcpConnection::compare_and_set_state(State expected, State desired) {
+    return state_.compare_exchange_strong(expected, desired,
+                                          std::memory_order_acq_rel,
+                                          std::memory_order_acquire);
+}
+
+TcpConnection::State TcpConnection::exchange_state(State desired) {
+    return state_.exchange(desired, std::memory_order_acq_rel);
+}
+
 void TcpConnection::send(const void* data, std::size_t len) {
-    // 如果连接状态为已连接，则发送数据
-    if (state_ == State::kConnected) {
-        // 如果当前线程是事件循环线程，则直接发送数据
-        if (loop_->is_in_loop_thread()) {
-            send_in_loop(data, len);
-        } else {
-            // 如果当前线程不是事件循环线程，则将数据复制到字符串中，并在线程池中发送数据
-            std::string msg(static_cast<const char*>(data), len);
-            auto self = shared_from_this();
-            loop_->run_in_loop([self, msg = std::move(msg)]() {
-                if (self->state() == State::kConnected) {
-                    self->send_in_loop(msg); 
-                }
-            });
-        }
+    if (!is_connected()) {
+        return;
     }
+
+    if (loop_->is_in_loop_thread()) {
+        send_in_loop(data, len);
+        return;
+    }
+
+    std::string msg(static_cast<const char*>(data), len);
+    auto self = shared_from_this();
+    loop_->run_in_loop([self, msg = std::move(msg)]() {
+        if (self->is_connected()) {
+            self->send_in_loop(msg);
+        }
+    });
 }
 
 void TcpConnection::send(const std::string& message) {
-    if (state_ == State::kConnected) {
-        if (loop_->is_in_loop_thread()) {
-            send_in_loop(message);
-        } else {
-            // 
-            auto self = shared_from_this();
-
-            loop_->run_in_loop([self, msg = message]() {
-                if (self->state() == State::kConnected) {
-                    self->send_in_loop(msg);
-                }
-            });
-        }
+    if (!is_connected()) {
+        return;
     }
+
+    if (loop_->is_in_loop_thread()) {
+        send_in_loop(message);
+        return;
+    }
+
+    auto self = shared_from_this();
+    loop_->run_in_loop([self, msg = message]() {
+        if (self->is_connected()) {
+            self->send_in_loop(msg);
+        }
+    });
 }
 
 void TcpConnection::send(Buffer* buffer) {
-    if (state_ == State::kConnected) {
-        if (loop_->is_in_loop_thread()) {
-            send_in_loop(buffer->data(), buffer->readable_bytes());
-            buffer->retrieve_all();
-        } else {
-            std::string msg = buffer->retrieve_all_as_string();
-            auto self = shared_from_this();
-            loop_->run_in_loop([self, msg = std::move(msg)]() {
-                if (self->state() == State::kConnected) {
-                    self->send_in_loop(msg);
-                }
-            });
-        }
+    if (!is_connected()) {
+        return;
     }
+
+    if (loop_->is_in_loop_thread()) {
+        send_in_loop(buffer->data(), buffer->readable_bytes());
+        buffer->retrieve_all();
+        return;
+    }
+
+    std::string msg = buffer->retrieve_all_as_string();
+    auto self = shared_from_this();
+    loop_->run_in_loop([self, msg = std::move(msg)]() {
+        if (self->is_connected()) {
+            self->send_in_loop(msg);
+        }
+    });
 }
 
 void TcpConnection::shutdown() {
-    if (state_ == State::kConnected) {
-        state_ = State::kDisconnecting;
-        loop_->run_in_loop([this]() { shutdown_in_loop(); });
+    if (!compare_and_set_state(State::kConnected, State::kDisconnecting)) {
+        return;
     }
+
+    auto self = shared_from_this();
+    loop_->run_in_loop([self]() { self->shutdown_in_loop(); });
 }
 
 void TcpConnection::force_close() {
-    if (state_ == State::kConnected || state_ == State::kDisconnecting) {
-        state_ = State::kDisconnecting;
-        loop_->queue_in_loop([this]() { force_close_in_loop(); });
+    State s = state_.load(std::memory_order_acquire);
+    if (s != State::kConnected && s != State::kDisconnecting) {
+        return;
     }
+    state_.store(State::kDisconnecting, std::memory_order_release);
+
+    auto self = shared_from_this();
+    loop_->run_in_loop([self]() { self->force_close_in_loop(); });
 }
 
 void TcpConnection::set_tcp_no_delay(bool /*on*/) {
@@ -119,10 +134,12 @@ void TcpConnection::set_tcp_no_delay(bool /*on*/) {
 
 void TcpConnection::connection_established() {
     loop_->assert_in_loop_thread();
-    assert(state_ == State::kConnecting);
-    state_ = State::kConnected;
 
-    // 绑定通道到这个连接的 shared_ptr
+    State expected = State::kConnecting;
+    if (!compare_and_set_state(expected, State::kConnected)) {
+        return;
+    }
+
     channel_->tie(shared_from_this());
     channel_->enable_reading();
 
@@ -133,8 +150,10 @@ void TcpConnection::connection_established() {
 
 void TcpConnection::connection_destroyed() {
     loop_->assert_in_loop_thread();
-    if (state_ == State::kConnected) {
-        state_ = State::kDisconnected;
+
+    State s = state_.load(std::memory_order_acquire);
+    if (s == State::kConnected) {
+        state_.store(State::kDisconnected, std::memory_order_release);
         channel_->disable_all();
     }
     channel_->remove();
@@ -143,16 +162,18 @@ void TcpConnection::connection_destroyed() {
 void TcpConnection::handle_read(int64_t receive_time) {
     loop_->assert_in_loop_thread();
 
+    if (!is_connected()) {
+        return;
+    }
+
     ssize_t n = input_buffer_.read_from_fd(socket_->fd());
     if (n > 0) {
         if (message_cb_) {
             message_cb_(shared_from_this(), &input_buffer_, receive_time);
         }
     } else if (n == 0) {
-        // 对端关闭连接
         handle_close();
     } else {
-
         handle_error();
     }
 }
@@ -161,7 +182,6 @@ void TcpConnection::handle_write() {
     loop_->assert_in_loop_thread();
 
     if (channel_->is_none_event() || !(channel_->events() & EPOLLOUT)) {
-        // 非关注事件 — 什么都不做
         return;
     }
 
@@ -172,14 +192,13 @@ void TcpConnection::handle_write() {
         if (n > 0) {
             output_buffer_.retrieve(static_cast<std::size_t>(n));
             if (output_buffer_.readable_bytes() == 0) {
-                // 所有数据已写入 — 关闭写兴趣
                 channel_->disable_writing();
 
                 if (write_complete_cb_) {
                     write_complete_cb_(shared_from_this());
                 }
 
-                if (state_ == State::kDisconnecting) {
+                if (state_.load(std::memory_order_acquire) == State::kDisconnecting) {
                     shutdown_in_loop();
                 }
             }
@@ -194,8 +213,11 @@ void TcpConnection::handle_write() {
 void TcpConnection::handle_close() {
     loop_->assert_in_loop_thread();
 
-    assert(state_ == State::kConnected || state_ == State::kDisconnecting);
-    state_ = State::kDisconnected;
+    State previous = exchange_state(State::kDisconnected);
+    if (previous != State::kConnected && previous != State::kDisconnecting) {
+        return;
+    }
+
     channel_->disable_all();
 
     if (connection_cb_) {
@@ -209,17 +231,19 @@ void TcpConnection::handle_close() {
 
 void TcpConnection::handle_error() {
     loop_->assert_in_loop_thread();
-    // 在生产环境中，记录套接字错误
     handle_close();
 }
 
 void TcpConnection::send_in_loop(const void* data, std::size_t len) {
     loop_->assert_in_loop_thread();
 
+    if (!is_connected()) {
+        return;
+    }
+
     ssize_t nwrote = 0;
     std::size_t remaining = len;
 
-    // 如果输出缓冲区为空且没有写兴趣，尝试直接写入
     if (!channel_->is_none_event() && !(channel_->events() & EPOLLOUT) &&
         output_buffer_.readable_bytes() == 0) {
         nwrote = ::write(socket_->fd(), data, len);
@@ -238,7 +262,6 @@ void TcpConnection::send_in_loop(const void* data, std::size_t len) {
         }
     }
 
-    // 如果有剩余数据，追加到输出缓冲区
     if (remaining > 0) {
         std::size_t old_len = output_buffer_.readable_bytes();
         if (old_len + remaining >= high_water_mark_ &&
@@ -260,19 +283,19 @@ void TcpConnection::send_in_loop(const std::string& message) {
 
 void TcpConnection::shutdown_in_loop() {
     loop_->assert_in_loop_thread();
+
+    if (state_.load(std::memory_order_acquire) != State::kDisconnecting) {
+        return;
+    }
+
     if (output_buffer_.readable_bytes() == 0) {
-        // 所有数据已发送 — 关闭写端
         ::shutdown(socket_->fd(), SHUT_WR);
     }
-    // 如果输出缓冲区中还有数据，handle_write 将调用 shutdown
-    // 在所有数据刷新后调用
 }
 
 void TcpConnection::force_close_in_loop() {
     loop_->assert_in_loop_thread();
-    if (state_ == State::kConnected || state_ == State::kDisconnecting) {
-        handle_close();
-    }
+    handle_close();
 }
 
 } // namespace solar_net

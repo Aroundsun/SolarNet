@@ -3,6 +3,7 @@
 #include <netinet/in.h>
 
 #include <cstdint>
+#include <atomic>
 #include <functional>
 #include <memory>
 #include <string>
@@ -60,7 +61,7 @@ public:
     const std::string& name() const { return name_; }
 
     // 获取状态.
-    State state() const { return state_; }
+    State state() const { return state_.load(std::memory_order_acquire); }
 
     // 获取底层的文件描述符.
     int fd() const;
@@ -124,6 +125,7 @@ private:
 
     // 在循环线程中发送数据.
     void send_in_loop(const void* data, std::size_t len);
+    
     void send_in_loop(const std::string& message);
 
     // 在循环线程中关闭.
@@ -132,9 +134,13 @@ private:
     // 在循环线程中强制关闭.
     void force_close_in_loop();
 
+    bool is_connected() const;
+    bool compare_and_set_state(State expected, State desired);
+    State exchange_state(State desired);
+
     EventLoop* loop_; // 拥有者 EventLoop
     std::string name_; // 连接名称
-    State state_; // 连接状态
+    std::atomic<State> state_; // 连接状态
 
     std::unique_ptr<Socket> socket_; // 套接字
     std::unique_ptr<Channel> channel_; // 通道
