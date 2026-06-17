@@ -8,6 +8,7 @@
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_event_loop_thread.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_event_loop_thread_pool.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test_tcp_server.dir
+/home/xhy/workplace/SolarNet/build/CMakeFiles/echo_server.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/test.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/edit_cache.dir
 /home/xhy/workplace/SolarNet/build/CMakeFiles/rebuild_cache.dir

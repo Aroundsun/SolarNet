@@ -302,6 +302,19 @@ test_tcp_server/fast:
 .PHONY : test_tcp_server/fast
 
 #=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -352,6 +365,30 @@ gtest_main: cmake_check_build_system
 gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
+
+example/echo_server.o: example/echo_server.cpp.o
+.PHONY : example/echo_server.o
+
+# target to build an object file
+example/echo_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cpp.o
+.PHONY : example/echo_server.cpp.o
+
+example/echo_server.i: example/echo_server.cpp.i
+.PHONY : example/echo_server.i
+
+# target to preprocess a source file
+example/echo_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cpp.i
+.PHONY : example/echo_server.cpp.i
+
+example/echo_server.s: example/echo_server.cpp.s
+.PHONY : example/echo_server.s
+
+# target to generate assembly for a file
+example/echo_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cpp.s
+.PHONY : example/echo_server.cpp.s
 
 src/acceptor.o: src/acceptor.cpp.o
 .PHONY : src/acceptor.o
@@ -774,6 +811,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... echo_server"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
@@ -788,6 +826,9 @@ help:
 	@echo "... test_socket"
 	@echo "... test_tcp_connection"
 	@echo "... test_tcp_server"
+	@echo "... example/echo_server.o"
+	@echo "... example/echo_server.i"
+	@echo "... example/echo_server.s"
 	@echo "... src/acceptor.o"
 	@echo "... src/acceptor.i"
 	@echo "... src/acceptor.s"

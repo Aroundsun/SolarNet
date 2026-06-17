@@ -73,6 +73,7 @@ all: CMakeFiles/test_acceptor.dir/all
 all: CMakeFiles/test_event_loop_thread.dir/all
 all: CMakeFiles/test_event_loop_thread_pool.dir/all
 all: CMakeFiles/test_tcp_server.dir/all
+all: CMakeFiles/echo_server.dir/all
 all: _deps/googletest-build/all
 .PHONY : all
 
@@ -87,6 +88,7 @@ codegen: CMakeFiles/test_acceptor.dir/codegen
 codegen: CMakeFiles/test_event_loop_thread.dir/codegen
 codegen: CMakeFiles/test_event_loop_thread_pool.dir/codegen
 codegen: CMakeFiles/test_tcp_server.dir/codegen
+codegen: CMakeFiles/echo_server.dir/codegen
 codegen: _deps/googletest-build/codegen
 .PHONY : codegen
 
@@ -105,6 +107,7 @@ clean: CMakeFiles/test_acceptor.dir/clean
 clean: CMakeFiles/test_event_loop_thread.dir/clean
 clean: CMakeFiles/test_event_loop_thread_pool.dir/clean
 clean: CMakeFiles/test_tcp_server.dir/clean
+clean: CMakeFiles/echo_server.dir/clean
 clean: _deps/googletest-build/clean
 .PHONY : clean
 
@@ -181,7 +184,7 @@ _deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMake
 CMakeFiles/solar_net.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Built target solar_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19 "Built target solar_net"
 .PHONY : CMakeFiles/solar_net.dir/all
 
 # Build rule for subdir invocation for target.
@@ -198,7 +201,7 @@ solar_net: CMakeFiles/solar_net.dir/rule
 # codegen rule for target.
 CMakeFiles/solar_net.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/solar_net.dir/build.make CMakeFiles/solar_net.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Finished codegen for target solar_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19 "Finished codegen for target solar_net"
 .PHONY : CMakeFiles/solar_net.dir/codegen
 
 # clean rule for target.
@@ -210,12 +213,12 @@ CMakeFiles/solar_net.dir/clean:
 # Target rules for target CMakeFiles/test_buffer.dir
 
 # All Build rule for target.
+CMakeFiles/test_buffer.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_buffer.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_buffer.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_buffer.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=20,21 "Built target test_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=22,23 "Built target test_buffer"
 .PHONY : CMakeFiles/test_buffer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -232,7 +235,7 @@ test_buffer: CMakeFiles/test_buffer.dir/rule
 # codegen rule for target.
 CMakeFiles/test_buffer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_buffer.dir/build.make CMakeFiles/test_buffer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=20,21 "Finished codegen for target test_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=22,23 "Finished codegen for target test_buffer"
 .PHONY : CMakeFiles/test_buffer.dir/codegen
 
 # clean rule for target.
@@ -244,12 +247,12 @@ CMakeFiles/test_buffer.dir/clean:
 # Target rules for target CMakeFiles/test_socket.dir
 
 # All Build rule for target.
+CMakeFiles/test_socket.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_socket.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_socket.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_socket.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=30,31 "Built target test_socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=32,33 "Built target test_socket"
 .PHONY : CMakeFiles/test_socket.dir/all
 
 # Build rule for subdir invocation for target.
@@ -266,7 +269,7 @@ test_socket: CMakeFiles/test_socket.dir/rule
 # codegen rule for target.
 CMakeFiles/test_socket.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=30,31 "Finished codegen for target test_socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=32,33 "Finished codegen for target test_socket"
 .PHONY : CMakeFiles/test_socket.dir/codegen
 
 # clean rule for target.
@@ -278,12 +281,12 @@ CMakeFiles/test_socket.dir/clean:
 # Target rules for target CMakeFiles/test_channel.dir
 
 # All Build rule for target.
+CMakeFiles/test_channel.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_channel.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_channel.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_channel.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_channel.dir/build.make CMakeFiles/test_channel.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_channel.dir/build.make CMakeFiles/test_channel.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=22,23 "Built target test_channel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=24,25 "Built target test_channel"
 .PHONY : CMakeFiles/test_channel.dir/all
 
 # Build rule for subdir invocation for target.
@@ -300,7 +303,7 @@ test_channel: CMakeFiles/test_channel.dir/rule
 # codegen rule for target.
 CMakeFiles/test_channel.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_channel.dir/build.make CMakeFiles/test_channel.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=22,23 "Finished codegen for target test_channel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=24,25 "Finished codegen for target test_channel"
 .PHONY : CMakeFiles/test_channel.dir/codegen
 
 # clean rule for target.
@@ -312,12 +315,12 @@ CMakeFiles/test_channel.dir/clean:
 # Target rules for target CMakeFiles/test_event_loop.dir
 
 # All Build rule for target.
+CMakeFiles/test_event_loop.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_event_loop.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_event_loop.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_event_loop.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop.dir/build.make CMakeFiles/test_event_loop.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop.dir/build.make CMakeFiles/test_event_loop.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=24,25 "Built target test_event_loop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=26,27 "Built target test_event_loop"
 .PHONY : CMakeFiles/test_event_loop.dir/all
 
 # Build rule for subdir invocation for target.
@@ -334,7 +337,7 @@ test_event_loop: CMakeFiles/test_event_loop.dir/rule
 # codegen rule for target.
 CMakeFiles/test_event_loop.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop.dir/build.make CMakeFiles/test_event_loop.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=24,25 "Finished codegen for target test_event_loop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=26,27 "Finished codegen for target test_event_loop"
 .PHONY : CMakeFiles/test_event_loop.dir/codegen
 
 # clean rule for target.
@@ -346,12 +349,12 @@ CMakeFiles/test_event_loop.dir/clean:
 # Target rules for target CMakeFiles/test_tcp_connection.dir
 
 # All Build rule for target.
+CMakeFiles/test_tcp_connection.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_tcp_connection.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_tcp_connection.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_tcp_connection.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=32,33 "Built target test_tcp_connection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=34,35 "Built target test_tcp_connection"
 .PHONY : CMakeFiles/test_tcp_connection.dir/all
 
 # Build rule for subdir invocation for target.
@@ -368,7 +371,7 @@ test_tcp_connection: CMakeFiles/test_tcp_connection.dir/rule
 # codegen rule for target.
 CMakeFiles/test_tcp_connection.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=32,33 "Finished codegen for target test_tcp_connection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=34,35 "Finished codegen for target test_tcp_connection"
 .PHONY : CMakeFiles/test_tcp_connection.dir/codegen
 
 # clean rule for target.
@@ -380,12 +383,12 @@ CMakeFiles/test_tcp_connection.dir/clean:
 # Target rules for target CMakeFiles/test_acceptor.dir
 
 # All Build rule for target.
+CMakeFiles/test_acceptor.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_acceptor.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_acceptor.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_acceptor.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_acceptor.dir/build.make CMakeFiles/test_acceptor.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_acceptor.dir/build.make CMakeFiles/test_acceptor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=18,19 "Built target test_acceptor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=20,21 "Built target test_acceptor"
 .PHONY : CMakeFiles/test_acceptor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -402,7 +405,7 @@ test_acceptor: CMakeFiles/test_acceptor.dir/rule
 # codegen rule for target.
 CMakeFiles/test_acceptor.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_acceptor.dir/build.make CMakeFiles/test_acceptor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=18,19 "Finished codegen for target test_acceptor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=20,21 "Finished codegen for target test_acceptor"
 .PHONY : CMakeFiles/test_acceptor.dir/codegen
 
 # clean rule for target.
@@ -414,12 +417,12 @@ CMakeFiles/test_acceptor.dir/clean:
 # Target rules for target CMakeFiles/test_event_loop_thread.dir
 
 # All Build rule for target.
+CMakeFiles/test_event_loop_thread.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_event_loop_thread.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_event_loop_thread.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_event_loop_thread.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread.dir/build.make CMakeFiles/test_event_loop_thread.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread.dir/build.make CMakeFiles/test_event_loop_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=26,27 "Built target test_event_loop_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=28,29 "Built target test_event_loop_thread"
 .PHONY : CMakeFiles/test_event_loop_thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -436,7 +439,7 @@ test_event_loop_thread: CMakeFiles/test_event_loop_thread.dir/rule
 # codegen rule for target.
 CMakeFiles/test_event_loop_thread.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread.dir/build.make CMakeFiles/test_event_loop_thread.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=26,27 "Finished codegen for target test_event_loop_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=28,29 "Finished codegen for target test_event_loop_thread"
 .PHONY : CMakeFiles/test_event_loop_thread.dir/codegen
 
 # clean rule for target.
@@ -448,12 +451,12 @@ CMakeFiles/test_event_loop_thread.dir/clean:
 # Target rules for target CMakeFiles/test_event_loop_thread_pool.dir
 
 # All Build rule for target.
+CMakeFiles/test_event_loop_thread_pool.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_event_loop_thread_pool.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_event_loop_thread_pool.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_event_loop_thread_pool.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread_pool.dir/build.make CMakeFiles/test_event_loop_thread_pool.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread_pool.dir/build.make CMakeFiles/test_event_loop_thread_pool.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=28,29 "Built target test_event_loop_thread_pool"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=30,31 "Built target test_event_loop_thread_pool"
 .PHONY : CMakeFiles/test_event_loop_thread_pool.dir/all
 
 # Build rule for subdir invocation for target.
@@ -470,7 +473,7 @@ test_event_loop_thread_pool: CMakeFiles/test_event_loop_thread_pool.dir/rule
 # codegen rule for target.
 CMakeFiles/test_event_loop_thread_pool.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_event_loop_thread_pool.dir/build.make CMakeFiles/test_event_loop_thread_pool.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=28,29 "Finished codegen for target test_event_loop_thread_pool"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=30,31 "Finished codegen for target test_event_loop_thread_pool"
 .PHONY : CMakeFiles/test_event_loop_thread_pool.dir/codegen
 
 # clean rule for target.
@@ -482,12 +485,12 @@ CMakeFiles/test_event_loop_thread_pool.dir/clean:
 # Target rules for target CMakeFiles/test_tcp_server.dir
 
 # All Build rule for target.
+CMakeFiles/test_tcp_server.dir/all: CMakeFiles/solar_net.dir/all
 CMakeFiles/test_tcp_server.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_tcp_server.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test_tcp_server.dir/all: CMakeFiles/solar_net.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=34,35 "Built target test_tcp_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=36,37 "Built target test_tcp_server"
 .PHONY : CMakeFiles/test_tcp_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -504,7 +507,7 @@ test_tcp_server: CMakeFiles/test_tcp_server.dir/rule
 # codegen rule for target.
 CMakeFiles/test_tcp_server.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=34,35 "Finished codegen for target test_tcp_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=36,37 "Finished codegen for target test_tcp_server"
 .PHONY : CMakeFiles/test_tcp_server.dir/codegen
 
 # clean rule for target.
@@ -513,13 +516,45 @@ CMakeFiles/test_tcp_server.dir/clean:
 .PHONY : CMakeFiles/test_tcp_server.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/echo_server.dir
+
+# All Build rule for target.
+CMakeFiles/echo_server.dir/all: CMakeFiles/solar_net.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=1,2 "Built target echo_server"
+.PHONY : CMakeFiles/echo_server.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/echo_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xhy/workplace/SolarNet/build/CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/echo_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xhy/workplace/SolarNet/build/CMakeFiles 0
+.PHONY : CMakeFiles/echo_server.dir/rule
+
+# Convenience name for target.
+echo_server: CMakeFiles/echo_server.dir/rule
+.PHONY : echo_server
+
+# codegen rule for target.
+CMakeFiles/echo_server.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=1,2 "Finished codegen for target echo_server"
+.PHONY : CMakeFiles/echo_server.dir/codegen
+
+# clean rule for target.
+CMakeFiles/echo_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/clean
+.PHONY : CMakeFiles/echo_server.dir/clean
+
+#=============================================================================
 # Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
 
 # All Build rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=3,4 "Built target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -536,7 +571,7 @@ gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=1,2 "Finished codegen for target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=3,4 "Finished codegen for target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
 
 # clean rule for target.
@@ -552,7 +587,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=5,6 "Built target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -569,7 +604,7 @@ gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=3,4 "Finished codegen for target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=5,6 "Finished codegen for target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
 
 # clean rule for target.
@@ -584,7 +619,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=7,8 "Built target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -601,7 +636,7 @@ gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=5,6 "Finished codegen for target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=7,8 "Finished codegen for target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
 
 # clean rule for target.
@@ -616,7 +651,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=9,10 "Built target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -633,7 +668,7 @@ gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=7,8 "Finished codegen for target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=9,10 "Finished codegen for target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
 
 # clean rule for target.

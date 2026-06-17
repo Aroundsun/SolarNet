@@ -43,3 +43,6 @@ add_solar_net_test(test_acceptor)
 add_solar_net_test(test_event_loop_thread)
 add_solar_net_test(test_event_loop_thread_pool)
 add_solar_net_test(test_tcp_server)
+
+add_executable(echo_server example/echo_server.cpp)
+target_link_libraries(echo_server PRIVATE solar_net)

@@ -71,6 +71,8 @@ CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2-decl.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/15/bits/shared_ptr_base.h /usr/include/c++/15/typeinfo \
  /usr/include/c++/15/bits/allocated_ptr.h \
  /usr/include/c++/15/ext/aligned_buffer.h \
