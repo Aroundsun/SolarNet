@@ -45,14 +45,19 @@ int TcpConnection::fd() const {
 }
 
 void TcpConnection::send(const void* data, std::size_t len) {
+    // 如果连接状态为已连接，则发送数据
     if (state_ == State::kConnected) {
+        // 如果当前线程是事件循环线程，则直接发送数据
         if (loop_->is_in_loop_thread()) {
             send_in_loop(data, len);
         } else {
-            // 复制数据并排队发送
+            // 如果当前线程不是事件循环线程，则将数据复制到字符串中，并在线程池中发送数据
             std::string msg(static_cast<const char*>(data), len);
-            loop_->run_in_loop([this, msg]() {
-                send_in_loop(msg);
+            auto self = shared_from_this();
+            loop_->run_in_loop([self, msg = std::move(msg)]() {
+                if (self->state() == State::kConnected) {
+                    self->send_in_loop(msg); 
+                }
             });
         }
     }
@@ -63,8 +68,13 @@ void TcpConnection::send(const std::string& message) {
         if (loop_->is_in_loop_thread()) {
             send_in_loop(message);
         } else {
-            loop_->run_in_loop([this, message]() {
-                send_in_loop(message);
+            // 
+            auto self = shared_from_this();
+
+            loop_->run_in_loop([self, msg = message]() {
+                if (self->state() == State::kConnected) {
+                    self->send_in_loop(msg);
+                }
             });
         }
     }
@@ -77,8 +87,11 @@ void TcpConnection::send(Buffer* buffer) {
             buffer->retrieve_all();
         } else {
             std::string msg = buffer->retrieve_all_as_string();
-            loop_->run_in_loop([this, msg]() {
-                send_in_loop(msg);
+            auto self = shared_from_this();
+            loop_->run_in_loop([self, msg = std::move(msg)]() {
+                if (self->state() == State::kConnected) {
+                    self->send_in_loop(msg);
+                }
             });
         }
     }

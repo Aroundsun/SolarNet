@@ -57,7 +57,6 @@ Acceptor::~Acceptor() {
 
 void Acceptor::listen() {
     loop_->assert_in_loop_thread();
-    listening_ = true;
 
     int ret = ::listen(socket_->fd(), SOMAXCONN);
     if (ret < 0) {
@@ -66,6 +65,7 @@ void Acceptor::listen() {
     }
 
     channel_->enable_reading();
+    listening_ = true;
 }
 
 uint16_t Acceptor::port() const {
@@ -129,4 +129,4 @@ int Acceptor::accept_one(::sockaddr_in* peer_addr) {
     return -1;
 }
 
-} // namespace im
+} // namespace solar_net
