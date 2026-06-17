@@ -57,6 +57,23 @@ TEST(TimerTest, CancelPreventsFire) {
     EXPECT_EQ(count.load(), 0);
 }
 
+TEST(TimerTest, CancelBeforeAddInLoop) {
+    std::atomic<int> count{0};
+
+    run_in_event_loop_thread([&](EventLoop& loop) {
+        std::thread worker([&]() {
+            TimerId id = loop.run_after(0.05, [&]() { ++count; });
+            loop.cancel(id);
+        });
+        worker.join();
+
+        loop.run_after(0.1, [&]() { loop.stop(); });
+        loop.loop();
+    });
+
+    EXPECT_EQ(count.load(), 0);
+}
+
 TEST(TimerTest, AddTimerFromOtherThread) {
     std::promise<void> fired;
     auto fired_future = fired.get_future();

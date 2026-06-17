@@ -63,6 +63,16 @@ TimerQueue::~TimerQueue() {
     }
     timers_.clear();
 
+    for (Timer* timer : pending_cancel_timers_) {
+        delete timer;
+    }
+    pending_cancel_timers_.clear();
+
+    for (Timer* timer : canceling_timers_) {
+        delete timer;
+    }
+    canceling_timers_.clear();
+
     ::close(timerfd_);
 }
 
@@ -136,6 +146,12 @@ void TimerQueue::handle_read() {
 
 void TimerQueue::add_timer_in_loop(Timer* timer) {
     loop_->assert_in_loop_thread();
+
+    if (pending_cancel_timers_.erase(timer)) {
+        delete timer;
+        return;
+    }
+
     insert(timer);
 }
 
@@ -152,6 +168,8 @@ void TimerQueue::cancel_in_loop(TimerId timer_id) {
     if (it == timers_.end()) {
         if (calling_expired_timers_) {
             canceling_timers_.insert(timer);
+        } else {
+            pending_cancel_timers_.insert(timer);
         }
         return;
     }

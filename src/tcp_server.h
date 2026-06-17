@@ -38,14 +38,22 @@ public:
               const ::sockaddr_in& listen_addr,
               const std::string& name);
 
+    /// 析构时调用 stop()，遵守与 stop() 相同的线程约束。
     ~TcpServer();
 
     /// 启动服务器 (监听 + 启动 IO 线程池)。
     void start();
 
     /// 停止服务器：停止 accept、关闭所有连接、停止 IO 线程池。
-    /// 线程安全；若不在 loop 线程调用，会通过 run_in_loop 投递到 loop 线程。
-    /// loop.loop() 返回后可在 loop 所属线程直接调用。
+    ///
+    /// 调用约束：
+    /// - loop.loop() 仍在运行时，可从任意线程调用（通过 run_in_loop 投递到 loop 线程）。
+    /// - loop.loop() 已返回后，必须在 loop 所属线程调用；否则仍会走 run_in_loop，
+    ///   但主 loop 已不再跑，关停任务可能永远不执行。
+    ///
+    /// 一次性关停：内部会 thread_pool_.reset()，无重建线程池路径，stop() 后不可再 start()。
+    ///
+    /// 推荐写法见 example/echo_server.cpp：loop.loop() 返回后在同一线程显式 stop()。
     void stop();
 
     /// 设置 IO 线程的数量 (必须在 start() 之前调用)。
@@ -54,6 +62,8 @@ public:
     // ---- 设置回调 ----
 
     /// 设置连接回调。
+    /// 建立（state==kConnected）与断开（state==kDisconnected）时都会调用；
+    /// 业务侧须用 conn->state() 区分，不可假定仅在新连接时触发。
     void set_connection_callback(ConnectionCallback cb) { connection_cb_ = std::move(cb); }
     /// 设置消息回调。
     void set_message_callback(MessageCallback cb) { message_cb_ = std::move(cb); }

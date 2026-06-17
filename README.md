@@ -4,6 +4,8 @@ Linux 下的 C++ TCP 网络库，Reactor 模型，底层用 epoll。
 
 整体思路参考 muduo：一个线程一个 `EventLoop`，fd 的读写事件挂在 `Channel` 上，业务侧通过回调处理连接和数据。目前能跑通 accept → 建连 → 收发包这条链路，带单测，附带一个 echo 示例程序。
 
+**开发请阅读 [API 文档](docs/API.md)**：线程模型、回调语义、`stop()` 约束与推荐写法均有详细说明。
+
 ## 环境
 
 - Linux（依赖 epoll、eventfd）
@@ -95,7 +97,7 @@ ctest --test-dir build --output-on-failure
 | `TcpServer` | 把上面这些拼起来 |
 | `Timer` / `TimerQueue` | 基于 timerfd 的一次性/重复定时器 |
 
-`Channel`、`EpollPoller`、`TcpConnection` 的操作都要求在所属 loop 线程里调用（内部有 `assert_in_loop_thread`）。`TcpConnection::send` 和 `EventLoop::stop` 是线程安全的。定时器通过 `EventLoop::run_after` / `run_every` 添加，可跨线程调用；`cancel` 同样线程安全。
+`Channel`、`EpollPoller`、`TcpConnection` 的操作都要求在所属 loop 线程里调用（内部有 `assert_in_loop_thread`）。`TcpConnection::send` 和 `EventLoop::stop` 是线程安全的。`TcpServer::stop` 仅在 `loop.loop()` 仍在运行时可跨线程调用（见下文）。定时器通过 `EventLoop::run_after` / `run_every` 添加，可跨线程调用；`cancel` 同样线程安全。
 
 ### 定时器
 
@@ -138,8 +140,31 @@ server.set_message_callback([](const solar_net::TcpConnectionPtr& conn,
 
 server.start();
 loop.loop();
-server.stop();  // 关闭连接并停止 IO 线程，再析构 server
+server.stop();  // loop 退出后在同一线程显式关停，再析构 server
 ```
+
+### TcpServer::stop() 调用约束
+
+`stop()` 与 `~TcpServer()`（析构时内部会调 `stop()`）的线程要求如下：
+
+| 时机 | 调用线程 |
+|------|----------|
+| `loop.loop()` **仍在运行** | 任意线程（通过 `run_in_loop` 投递到 loop 线程） |
+| `loop.loop()` **已返回** | **必须在 loop 所属线程** |
+
+`loop.loop()` 返回后主 loop 已停。若此时从其他线程调 `stop()`，仍会走 `run_in_loop`，但关停任务无法被派发执行，连接与 IO 线程可能无法正确清理。
+
+`example/echo_server.cpp` 的写法是正确的：信号处理里只调 `loop.stop()` 让 `loop.loop()` 返回，随后在 main 线程（即 loop 所属线程）显式 `server.stop()`，再让 `server` 析构。
+
+```cpp
+loop.loop();      // 阻塞，直到 loop.stop() 被调用
+server.stop();    // 必须在 loop 所属线程；关闭连接并停止 IO 线程池
+// server 离开作用域析构；若已 stop()，析构中的 stop() 直接返回
+```
+
+`stop()` 会释放 IO 线程池，**不可**在 `stop()` 后再次 `start()`；需要重启服务请重新构造 `TcpServer`。
+
+`connection_callback` 在连接建立（`state()==kConnected`）与断开（`state()==kDisconnected`）时都会触发，业务侧须用 `state()` 区分，见 [API 文档 §6.1](docs/API.md#61-connectioncallback)。
 
 回调在对应连接的 IO 线程里执行，别在里面做阻塞操作。
 
