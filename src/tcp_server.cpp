@@ -88,14 +88,13 @@ void TcpServer::stop_in_loop() {
     cleanups.reserve(conns.size());
 
     for (const auto& conn : conns) {
-        conn->set_close_callback([](const std::shared_ptr<TcpConnection>&) {});
-
         std::promise<void> done;
         cleanups.push_back(done.get_future());
         auto done_promise = std::make_shared<std::promise<void>>(std::move(done));
 
         EventLoop* io_loop = conn->get_loop();
         io_loop->run_in_loop([conn, done_promise]() {
+            conn->set_close_callback([](const std::shared_ptr<TcpConnection>&) {});
             conn->force_close();
             conn->connection_destroyed();
             done_promise->set_value();

@@ -138,6 +138,8 @@ int main() {
 | `TcpConnection::send()` | ✅ | 内部 `run_in_loop` |
 | `TcpConnection::shutdown()` / `force_close()` | ✅ | 内部 `run_in_loop` |
 | `TcpServer::stop()` | ⚠️ 有条件 | 见 [3.3](#33-tcpserverstop-调用约束) |
+| `TcpServer::set_*_callback()` | ❌ | 无同步，须在 `start()` 前于固定线程设置 |
+| `TcpConnection::set_*_callback()` | ❌ | 须在所属 IO 线程、连接活跃前设置 |
 | `Buffer` 全部方法 | ❌ | 在所属连接的 IO 线程使用 |
 | `Channel` 全部方法 | ❌ | 在所属 loop 线程使用 |
 | 回调函数体 | — | 在对应 loop 线程执行，**禁止阻塞** |
@@ -207,6 +209,36 @@ server.set_thread_num(N);  // 必须在 start() 之前
 | `> 0` | 主 loop 只 accept；新连接 round-robin 分配到 N 个 IO 线程的 loop |
 
 每个连接的回调（`connection` / `message` / `write_complete`）在**该连接所属 IO 线程**执行，不在主线程。
+
+### 3.6 回调与对象成员的线程安全
+
+库内**仅部分 API 做了跨线程投递**（如 `TcpConnection::send`、`EventLoop::stop`、定时器）。回调成员本身是普通 `std::function` 字段，**读写无锁、无原子保护**。
+
+#### 线程安全的操作
+
+| 操作 | 机制 |
+|------|------|
+| `TcpConnection::send` / `shutdown` / `force_close` | 内部 `run_in_loop` 到所属 IO 线程 |
+| `EventLoop::stop` / `run_in_loop` / `queue_in_loop` | 任务队列 + `eventfd` 唤醒 |
+| `EventLoop::run_after` / `run_every` / `cancel` | 投递到 loop 线程 |
+
+#### 无保护的回调设置
+
+`TcpServer` 与 `TcpConnection` 的 `set_connection_callback`、`set_message_callback`、`set_write_complete_callback`、`set_high_water_mark_callback`、`set_close_callback`（及 `TcpServer::set_thread_init_callback`）均为**直接赋值**，跨线程调用或与 IO 线程并发读写同一字段构成**未定义行为（数据竞争）**。
+
+`new_connection` 时会把 `TcpServer` 上的回调**拷贝**到各 `TcpConnection`。因此：
+
+- **推荐**：在 `server.start()` **之前**、于主线程一次性设置 `TcpServer` 全部回调，运行期不再修改。
+- 运行中跨线程 `set_message_callback` 等：不仅与 IO 线程读回调竞态，且**已建立连接仍持有旧回调**，新连接才拿到新回调。
+- 若需按连接定制逻辑，在 `connection_callback` 内分支，或将可变状态放在外部并用 `shared_ptr` / 原子指针指向，而非替换回调本身。
+
+`TcpConnection::set_*_callback` 须在**该连接所属 IO 线程**、且最好在 `connection_established` 之前调用（`TcpServer` 路径下由库在 `new_connection` 中设置，业务一般无需直接调）。
+
+#### TcpServer::stop 与 close_callback
+
+`stop_in_loop` 在强制关闭前将各连接的 `close_callback` 置空，避免 `handle_close` 再次触发 `remove_connection`（此时 `connections_` 已清空）。清空操作在**各连接的 IO 线程**内、于 `force_close` 之前执行，与 `handle_close` 读 `close_cb_` 串行。
+
+仍存在的理论窗口（概率低）：`stop()` 与对端自然断开并发时，IO 线程可能**已在执行** `handle_close` 并调用旧的 `close_callback`。通常无害（`remove_connection_in_loop` 对不在 map 中的连接是空操作），但严格意义上 shutdown 路径并非形式化无竞态。
 
 ---
 
@@ -434,6 +466,37 @@ loop.cancel(id);
 - `TimerId` 默认构造表示无效 ID；`cancel` 对无效 ID 安全。
 - `poll` 超时与最近定时器联动，`kPollTimeoutMs = 10000` 为兜底上限。
 
+#### cancel 语义与实现
+
+`add_timer` / `cancel` 均通过 `run_in_loop` 投递到 loop 线程执行，对外**线程安全**。`add_timer` 在调用线程先 `new Timer`，再投递 `add_timer_in_loop` 入队；`TimerId` 立即返回。
+
+**竞态窗口（已修复）**：若 `cancel_in_loop` 先于 `add_timer_in_loop` 执行，且不在过期回调期间，定时器尚未进入 `timers_`，旧实现会直接返回，导致 cancel 无效、回调仍会触发。muduo 存在同类窗口。
+
+`TimerQueue` 用两个集合分别处理不同阶段的 cancel：
+
+| 集合 | 用途 |
+|------|------|
+| `pending_cancel_timers_` | 定时器**尚未入队**即被 cancel（add/cancel 投递顺序竞态） |
+| `canceling_timers_` | 定时器**正在执行过期回调**期间被 cancel |
+
+处理逻辑：
+
+1. **`cancel_in_loop`**：在 `timers_` 中找到则 erase；未找到时，若 `calling_expired_timers_` 为真则加入 `canceling_timers_`，否则加入 `pending_cancel_timers_`。
+2. **`add_timer_in_loop`**：入队前检查 `pending_cancel_timers_`；若已标记取消则 delete 并返回，不再 insert。
+3. **`handle_read`**：执行过期回调时跳过 `canceling_timers_` 中的定时器；回调结束后统一清理。
+
+`pending_cancel_timers_` 不可与 `canceling_timers_` 合并：`handle_read` 结束时会 delete `canceling_timers_` 中的指针；若把「待入队即取消」的定时器也放进去，可能在 `add_timer_in_loop` 运行前被提前释放，造成 use-after-free。
+
+典型跨线程用法（add 后立即 cancel）：
+
+```cpp
+// 工作线程
+TimerId id = loop.run_after(1.0, callback);
+loop.cancel(id);  // 安全，即使 cancel 先于 add 入队
+```
+
+对应测试：`test_timer` 中的 `CancelBeforeAddInLoop`。
+
 ---
 
 ### 5.5 EventLoopThread
@@ -542,6 +605,8 @@ void set_write_complete_callback(WriteCompleteCallback cb);
 void set_close_callback(ConnectionCallback cb);  // 库内部使用，业务通过 TcpServer 间接设置
 ```
 
+回调 setter **非线程安全**，见 [3.6](#36-回调与对象成员的线程安全)。须在所属 IO 线程、连接建立前设置。
+
 ---
 
 ### 5.8 TcpServer
@@ -574,7 +639,9 @@ void start();
 void stop();   // 见 [3.3] 与 [4.1]
 ```
 
-`stop()` 会：停止 listen → 强制关闭所有连接 → `join` 清理 IO 线程 → `thread_pool_.reset()` 释放线程池。
+`stop()` 会：停止 listen → 在各 IO 线程内清空 `close_callback` 并强制关闭所有连接 → `join` 清理 IO 线程 → `thread_pool_.reset()` 释放线程池。
+
+关停时清空 `close_callback` 的原因与残余竞态见 [3.6](#36-回调与对象成员的线程安全)。
 
 **不可重启**：`stop()` 后无法再次 `start()`，须析构并重新构造 `TcpServer`（见 [3.4](#34-stop-后不可重启)）。
 
@@ -588,6 +655,8 @@ void set_message_callback(MessageCallback cb);
 void set_write_complete_callback(WriteCompleteCallback cb);
 void set_thread_init_callback(ThreadInitCallback cb);
 ```
+
+回调 setter **非线程安全**；须在 `start()` 前于主线程一次性设置，运行期勿跨线程修改，见 [3.6](#36-回调与对象成员的线程安全)。
 
 `thread_init_callback` 在每个 IO 线程的 `EventLoop` 启动后、进入 `loop()` 前调用，可用于线程级初始化：
 
@@ -675,6 +744,7 @@ void(const std::shared_ptr<TcpConnection>& conn)
 5. **用 `conn->send()` 回写数据**，不要直接对 `fd` 操作。
 6. **信号处理只调 `loop.stop()`**，清理放在 `loop.loop()` 返回之后。
 7. **持有关连接状态的 `shared_ptr`** 时，注意循环引用；回调捕获 `this` 时用 `weak_ptr` 或确保生命周期。
+8. **`TcpServer` 回调在 `start()` 前设置**，运行期勿跨线程 `set_*_callback`（见 [3.6]）。
 
 ### 7.2 推荐做法
 
@@ -703,6 +773,7 @@ uint16_t port = server.port();
 | 不 `retrieve` 导致 buffer 无限增长 | 内存上涨 |
 | 同线程创建两个 `EventLoop` | `abort()` |
 | `start()` 之后才 `set_thread_num` | 线程数不生效 |
+| `start()` 后或运行中跨线程 `set_message_callback` 等 | 与 IO 线程读回调数据竞争；已连接仍用旧回调 |
 
 ---
 
@@ -740,7 +811,7 @@ auto id = conn->get_loop()->run_every(60.0, [weak = std::weak_ptr<TcpConnection>
 
 ### Q6：与 muduo 的差异？
 
-整体思路相近。本库体量更小，错误处理与日志较简，无内置日志宏；`receive_time` 尚未实现；仅 Linux。
+整体思路相近。本库体量更小，错误处理与日志较简，无内置日志宏；`receive_time` 尚未实现；仅 Linux。定时器 cancel 在 add 尚未入队时的竞态已通过 `pending_cancel_timers_` 修复（muduo 同类窗口未处理）。
 
 ---
 

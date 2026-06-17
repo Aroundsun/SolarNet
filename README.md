@@ -99,6 +99,8 @@ ctest --test-dir build --output-on-failure
 
 `Channel`、`EpollPoller`、`TcpConnection` 的操作都要求在所属 loop 线程里调用（内部有 `assert_in_loop_thread`）。`TcpConnection::send` 和 `EventLoop::stop` 是线程安全的。`TcpServer::stop` 仅在 `loop.loop()` 仍在运行时可跨线程调用（见下文）。定时器通过 `EventLoop::run_after` / `run_every` 添加，可跨线程调用；`cancel` 同样线程安全。
 
+`set_message_callback` 等回调 setter **无同步保护**，须在 `start()` 前设置，运行期跨线程修改有数据竞争风险。详见 [API 文档 §3.6](docs/API.md#36-回调与对象成员的线程安全)。
+
 ### 定时器
 
 ```cpp
@@ -111,6 +113,8 @@ TimerId id2 = loop.run_every(1.0, [] { /* ... */ });
 // 取消
 loop.cancel(id);
 ```
+
+`add_timer` / `cancel` 可跨线程调用，内部均投递到 loop 线程。若 cancel 先于 add 入队（典型场景：其他线程 `run_after` 后立即 `cancel`），`TimerQueue` 用 `pending_cancel_timers_` 记录「尚未入队即取消」的定时器，入队时丢弃，避免回调仍被触发。详见 [docs/API.md](docs/API.md#cancel-语义与实现)。
 
 ## 自己写服务端
 
@@ -185,7 +189,7 @@ CMakeLists.txt
 | `test_socket` | socket 选项、地址获取 |
 | `test_channel` | 事件分发、enable/disable、tie |
 | `test_event_loop` | loop 运行、跨线程任务投递 |
-| `test_timer` | run_after、run_every、cancel |
+| `test_timer` | run_after、run_every、cancel、add/cancel 竞态 |
 | `test_tcp_connection` | 连接读写、跨线程 send、关闭 |
 | `test_acceptor` | 监听、accept |
 | `test_event_loop_thread` | IO 线程启动与任务调度 |
