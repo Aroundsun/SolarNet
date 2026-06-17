@@ -170,10 +170,10 @@ void TcpConnection::handle_write() {
                     shutdown_in_loop();
                 }
             }
-        } else if (n < 0) {
-            if (errno != EAGAIN && errno != EWOULDBLOCK) {
-                handle_error();
-            }
+        } else if (n == 0) {
+            // 本轮未写出数据，保持 EPOLLOUT，等下次可写重试
+        } else if (errno != EAGAIN && errno != EWOULDBLOCK) {
+            handle_error();
         }
     }
 }
