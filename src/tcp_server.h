@@ -43,6 +43,11 @@ public:
     /// 启动服务器 (监听 + 启动 IO 线程池)。
     void start();
 
+    /// 停止服务器：停止 accept、关闭所有连接、停止 IO 线程池。
+    /// 线程安全；若不在 loop 线程调用，会通过 run_in_loop 投递到 loop 线程。
+    /// loop.loop() 返回后可在 loop 所属线程直接调用。
+    void stop();
+
     /// 设置 IO 线程的数量 (必须在 start() 之前调用)。
     void set_thread_num(int num_threads);
 
@@ -73,23 +78,26 @@ private:
     /// 从映射中删除一个连接。
     void remove_connection(const std::shared_ptr<TcpConnection>& conn);
 
-    /// 在连接的 IO 循环中删除一个连接。
+    /// 在 loop 线程内停止服务器。
+    void stop_in_loop();
+
+    /// 在 loop 线程内从映射中删除连接并销毁 Channel。
     void remove_connection_in_loop(const std::shared_ptr<TcpConnection>& conn);
 
     EventLoop* loop_; // 主 EventLoop
     std::string name_; // 服务器名称
     std::unique_ptr<Acceptor> acceptor_; // 接受器
-    std::shared_ptr<EventLoopThreadPool> thread_pool_; // IO 线程池
 
     ConnectionCallback connection_cb_; // 连接回调
     MessageCallback message_cb_; // 消息回调
     WriteCompleteCallback write_complete_cb_; // 写完成回调
     ThreadInitCallback thread_init_cb_; // 线程初始化回调
 
-    /// 从连接名称到 TcpConnection 的映射。
     std::map<std::string, std::shared_ptr<TcpConnection>> connections_;
+    int next_conn_id_ = 1;
 
-    int next_conn_id_ = 1; // 下一个连接 ID
+    std::shared_ptr<EventLoopThreadPool> thread_pool_; // IO 线程池
+
     bool started_ = false; // 是否已启动
 };
 

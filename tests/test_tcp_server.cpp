@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #include "event_loop.h"
+#include "event_loop_test_util.h"
 #include "event_loop_thread_pool.h"
 #include "tcp_connection.h"
 #include "tcp_server.h"
@@ -21,17 +22,11 @@ using solar_net::TcpConnectionPtr;
 using solar_net::TcpServer;
 using solar_net::test::connect_to;
 using solar_net::test::make_loopback_addr;
+using solar_net::test::stop_loop_after;
 
 using namespace std::chrono_literals;
 
 namespace {
-
-void stop_loop_after(EventLoop& loop, std::chrono::milliseconds delay) {
-    std::thread([&]() {
-        std::this_thread::sleep_for(delay);
-        loop.stop();
-    }).detach();
-}
 
 void run_tcp_server(const std::function<void(EventLoop&, TcpServer&)>& setup) {
     std::promise<void> done;
@@ -65,10 +60,11 @@ TEST(TcpServerTest, AcceptsConnectionSingleThread) {
     run_tcp_server([&](EventLoop& loop, TcpServer& server) {
         server.set_thread_num(0);
         server.set_connection_callback([&](const TcpConnectionPtr& conn) {
-            connected = true;
-            EXPECT_EQ(conn->state(), TcpConnection::State::kConnected);
-            EXPECT_NE(conn->name().find("test-server-"), std::string::npos);
-            loop.stop();
+            if (conn->state() == TcpConnection::State::kConnected) {
+                connected = true;
+                EXPECT_NE(conn->name().find("test-server-"), std::string::npos);
+                loop.stop();
+            }
         });
 
         server.start();
@@ -80,9 +76,10 @@ TEST(TcpServerTest, AcceptsConnectionSingleThread) {
                 ::close(fd);
             }
         });
-        client.detach();
 
+        stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
     });
 
     EXPECT_TRUE(connected);
@@ -109,10 +106,10 @@ TEST(TcpServerTest, ReceivesMessageFromClient) {
                 ::close(fd);
             }
         });
-        client.detach();
 
         stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
     });
 
     EXPECT_TRUE(received);
@@ -124,9 +121,9 @@ TEST(TcpServerTest, DispatchesConnectionToWorkerLoop) {
     run_tcp_server([&](EventLoop& loop, TcpServer& server) {
         server.set_thread_num(1);
         server.set_connection_callback([&](const TcpConnectionPtr& conn) {
-            EXPECT_NE(conn->get_loop(), &loop);
-            checked = true;
-            loop.stop();
+            if (conn->get_loop() != &loop) {
+                checked = true;
+            }
         });
 
         server.start();
@@ -138,10 +135,10 @@ TEST(TcpServerTest, DispatchesConnectionToWorkerLoop) {
                 ::close(fd);
             }
         });
-        client.detach();
 
         stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
     });
 
     EXPECT_TRUE(checked);
@@ -179,14 +176,14 @@ TEST(TcpServerTest, ServerCanSendReply) {
 
             ::close(fd);
         });
-        client.detach();
 
         stop_loop_after(loop, 500ms);
         loop.loop();
-    });
+        client.join();
 
-    ASSERT_EQ(reply_future.wait_for(2s), std::future_status::ready);
-    EXPECT_EQ(reply_future.get(), "world");
+        ASSERT_EQ(reply_future.wait_for(2s), std::future_status::ready);
+        EXPECT_EQ(reply_future.get(), "world");
+    });
 }
 
 TEST(TcpServerTest, ClientCloseDoesNotHang) {
@@ -195,9 +192,8 @@ TEST(TcpServerTest, ClientCloseDoesNotHang) {
     run_tcp_server([&](EventLoop& loop, TcpServer& server) {
         server.set_thread_num(0);
         server.set_connection_callback([&](const TcpConnectionPtr&) {
-            if (connection_events.fetch_add(1) + 1 >= 2) {
-                loop.stop();
-            }
+            connection_events.fetch_add(1);
+            loop.stop();
         });
 
         server.start();
@@ -209,13 +205,71 @@ TEST(TcpServerTest, ClientCloseDoesNotHang) {
                 ::close(fd);
             }
         });
-        client.detach();
 
         stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
     });
 
     EXPECT_GE(connection_events.load(), 1);
+}
+
+TEST(TcpServerTest, StopClosesConnections) {
+    std::atomic<int> connect_count{0};
+
+    run_tcp_server([&](EventLoop& loop, TcpServer& server) {
+        server.set_thread_num(1);
+        server.set_connection_callback([&](const TcpConnectionPtr& conn) {
+            if (conn->state() == TcpConnection::State::kConnected) {
+                connect_count.fetch_add(1);
+                loop.stop();
+            }
+        });
+
+        server.start();
+        const uint16_t port = server.port();
+        ASSERT_TRUE(server.thread_pool()->started());
+
+        std::promise<int> client_fd_promise;
+        auto client_fd_future = client_fd_promise.get_future();
+
+        std::thread client([&]() {
+            const int fd = connect_to(port);
+            if (fd >= 0) {
+                client_fd_promise.set_value(fd);
+                std::this_thread::sleep_for(500ms);
+                ::close(fd);
+            } else {
+                client_fd_promise.set_value(-1);
+            }
+        });
+
+        stop_loop_after(loop, 500ms);
+        loop.loop();
+
+        ASSERT_EQ(connect_count.load(), 1);
+        ASSERT_EQ(client_fd_future.wait_for(1s), std::future_status::ready);
+        const int client_fd = client_fd_future.get();
+        ASSERT_GE(client_fd, 0);
+
+        server.stop();
+
+        char buf[8] = {};
+        const ssize_t n = ::read(client_fd, buf, sizeof(buf));
+        EXPECT_EQ(n, 0);
+
+        server.stop();
+
+        EXPECT_EQ(server.thread_pool(), nullptr);
+
+        const int late_fd = connect_to(port);
+        if (late_fd >= 0) {
+            ::close(late_fd);
+        }
+        EXPECT_EQ(connect_count.load(), 1);
+
+        client.join();
+    });
 }
 
 TEST(TcpServerTest, ThreadInitCallbackInvoked) {

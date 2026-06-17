@@ -138,6 +138,7 @@ server.set_message_callback([](const solar_net::TcpConnectionPtr& conn,
 
 server.start();
 loop.loop();
+server.stop();  // 关闭连接并停止 IO 线程，再析构 server
 ```
 
 回调在对应连接的 IO 线程里执行，别在里面做阻塞操作。

@@ -82,6 +82,7 @@ int main(int argc, char* argv[]) {
     std::cout << "test: echo hello | nc 127.0.0.1 " << server.port() << '\n';
 
     loop.loop();
+    server.stop();
 
     g_loop = nullptr;
     std::cout << "stopped\n";

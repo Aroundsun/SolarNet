@@ -26,6 +26,9 @@ public:
 
     void listen();
 
+    /// 停止接受新连接 (必须在 loop 线程调用)。
+    void stop_listening();
+
     uint16_t port() const;
 
     bool listening() const { return listening_; }

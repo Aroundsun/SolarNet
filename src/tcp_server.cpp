@@ -5,6 +5,10 @@
 #include "tcp_connection.h"
 #include "socket.h"
 
+#include <future>
+#include <utility>
+#include <vector>
+
 #include <cstdio>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -26,7 +30,9 @@ TcpServer::TcpServer(EventLoop* loop,
     );
 }
 
-TcpServer::~TcpServer() = default;
+TcpServer::~TcpServer() {
+    stop();
+}
 
 void TcpServer::start() {
     if (!started_) {
@@ -39,6 +45,18 @@ void TcpServer::start() {
     }
 }
 
+void TcpServer::stop() {
+    if (!started_) {
+        return;
+    }
+
+    if (loop_->is_in_loop_thread()) {
+        stop_in_loop();
+    } else {
+        loop_->run_in_loop([this]() { stop_in_loop(); });
+    }
+}
+
 void TcpServer::set_thread_num(int num_threads) {
     thread_pool_->set_thread_num(num_threads);
 }
@@ -47,8 +65,57 @@ uint16_t TcpServer::port() const {
     return acceptor_->port();
 }
 
+void TcpServer::stop_in_loop() {
+    loop_->assert_in_loop_thread();
+
+    if (!started_) {
+        return;
+    }
+    started_ = false;
+
+    if (acceptor_->listening()) {
+        acceptor_->stop_listening();
+    }
+
+    std::vector<std::shared_ptr<TcpConnection>> conns;
+    conns.reserve(connections_.size());
+    for (auto& item : connections_) {
+        conns.push_back(item.second);
+    }
+    connections_.clear();
+
+    std::vector<std::future<void>> cleanups;
+    cleanups.reserve(conns.size());
+
+    for (const auto& conn : conns) {
+        conn->set_close_callback([](const std::shared_ptr<TcpConnection>&) {});
+
+        std::promise<void> done;
+        cleanups.push_back(done.get_future());
+        auto done_promise = std::make_shared<std::promise<void>>(std::move(done));
+
+        EventLoop* io_loop = conn->get_loop();
+        io_loop->run_in_loop([conn, done_promise]() {
+            conn->force_close();
+            conn->connection_destroyed();
+            done_promise->set_value();
+        });
+    }
+
+    for (auto& fut : cleanups) {
+        fut.wait();
+    }
+
+    thread_pool_.reset();
+}
+
 void TcpServer::new_connection(int fd, const ::sockaddr_in& peer_addr) {
     loop_->assert_in_loop_thread();
+
+    if (!started_) {
+        ::close(fd);
+        return;
+    }
 
     EventLoop* io_loop = thread_pool_->get_next_loop();
 
@@ -90,7 +157,7 @@ void TcpServer::remove_connection(const std::shared_ptr<TcpConnection>& conn) {
 void TcpServer::remove_connection_in_loop(const std::shared_ptr<TcpConnection>& conn) {
     loop_->assert_in_loop_thread();
 
-    std::string name = conn->name();
+    const std::string name = conn->name();
     auto it = connections_.find(name);
     if (it != connections_.end()) {
         connections_.erase(it);

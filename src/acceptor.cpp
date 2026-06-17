@@ -65,7 +65,19 @@ void Acceptor::listen() {
     }
 
     channel_->enable_reading();
+    // 只在 listen 成功后设置 listening_ 为 true，避免竞争条件
     listening_ = true;
+}
+
+void Acceptor::stop_listening() {
+    loop_->assert_in_loop_thread();
+
+    if (!listening_) {
+        return;
+    }
+
+    channel_->disable_all();
+    listening_ = false;
 }
 
 uint16_t Acceptor::port() const {

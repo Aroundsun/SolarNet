@@ -240,4 +240,8 @@ CMakeFiles/solar_net.dir/src/tcp_server.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/fcntl2.h /usr/include/netinet/tcp.h \
  /usr/include/arpa/inet.h \
  /usr/include/x86_64-linux-gnu/bits/inet-fortified.h \
- /usr/include/x86_64-linux-gnu/bits/inet-fortified-decl.h
+ /usr/include/x86_64-linux-gnu/bits/inet-fortified-decl.h \
+ /usr/include/c++/15/future /usr/include/c++/15/condition_variable \
+ /usr/include/c++/15/system_error /usr/include/c++/15/stdexcept \
+ /usr/include/c++/15/bits/atomic_futex.h /usr/include/c++/15/utility \
+ /usr/include/c++/15/bits/stl_relops.h

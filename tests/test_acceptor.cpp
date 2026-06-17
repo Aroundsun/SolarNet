@@ -18,17 +18,11 @@
 using solar_net::Acceptor;
 using solar_net::EventLoop;
 using solar_net::test::run_in_event_loop_thread;
+using solar_net::test::stop_loop_after;
 
 using namespace std::chrono_literals;
 
 namespace {
-
-void stop_loop_after(EventLoop& loop, std::chrono::milliseconds delay) {
-    std::thread([&]() {
-        std::this_thread::sleep_for(delay);
-        loop.stop();
-    }).detach();
-}
 
 int connect_to(uint16_t port) {
     const int fd = ::socket(AF_INET, SOCK_STREAM, 0);
@@ -96,9 +90,10 @@ TEST(AcceptorTest, AcceptsIncomingConnection) {
                 ::close(fd);
             }
         });
-        client.detach();
 
+        stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
 
         if (accepted_fd >= 0) {
             ::close(accepted_fd);
@@ -130,12 +125,13 @@ TEST(AcceptorTest, AcceptsMultipleConnections) {
                 if (fd >= 0) {
                     ::close(fd);
                 }
+                std::this_thread::sleep_for(10ms);
             }
         });
-        clients.detach();
 
         stop_loop_after(loop, 500ms);
         loop.loop();
+        clients.join();
 
         for (int fd : accepted_fds) {
             ::close(fd);
@@ -164,9 +160,10 @@ TEST(AcceptorTest, AcceptedSocketIsNonBlocking) {
                 ::close(fd);
             }
         });
-        client.detach();
 
+        stop_loop_after(loop, 500ms);
         loop.loop();
+        client.join();
 
         if (accepted_fd >= 0) {
             const int flags = fcntl(accepted_fd, F_GETFL, 0);

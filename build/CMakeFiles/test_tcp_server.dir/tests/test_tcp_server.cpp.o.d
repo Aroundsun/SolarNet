@@ -297,6 +297,7 @@ CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o: \
  /home/xhy/workplace/SolarNet/src/event_loop.h \
  /home/xhy/workplace/SolarNet/src/timer.h \
  /home/xhy/workplace/SolarNet/src/timestamp.h \
+ /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h \
  /home/xhy/workplace/SolarNet/src/event_loop_thread_pool.h \
  /home/xhy/workplace/SolarNet/src/tcp_connection.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \

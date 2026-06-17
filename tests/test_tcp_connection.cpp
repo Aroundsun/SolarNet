@@ -19,18 +19,9 @@ using solar_net::TcpConnectionPtr;
 using solar_net::test::close_tcp_socket_pair;
 using solar_net::test::make_tcp_socket_pair;
 using solar_net::test::run_in_event_loop_thread;
+using solar_net::test::stop_loop_after;
 
 using namespace std::chrono_literals;
-
-namespace {
-
-void stop_loop_after(EventLoop& loop, std::chrono::milliseconds delay) {
-    loop.run_after(std::chrono::duration<double>(delay).count(), [&loop]() {
-        loop.stop();
-    });
-}
-
-} // namespace
 
 TEST(TcpConnectionTest, ConnectionEstablishedSetsStateAndFiresCallback) {
     run_in_event_loop_thread([](EventLoop& loop) {
