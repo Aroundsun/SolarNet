@@ -1,6 +1,7 @@
 #include "event_loop_thread_pool.h"
 #include "event_loop.h"
 #include "event_loop_thread.h"
+#include "log.h"
 
 #include <cassert>
 
@@ -31,6 +32,8 @@ void EventLoopThreadPool::start(const ThreadInitCallback& cb) {
     if (num_threads_ == 0 && cb) {
         cb(base_loop_);
     }
+
+    SNLOG_INFO("EventLoopThreadPool: started with {} IO thread(s)", num_threads_);
 }
 
 EventLoop* EventLoopThreadPool::get_next_loop() {

@@ -1,10 +1,12 @@
 #include <arpa/inet.h>
 #include <csignal>
+#include <cerrno>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
 #include "event_loop.h"
+#include "log.h"
 #include "tcp_connection.h"
 #include "tcp_server.h"
 
@@ -19,9 +21,10 @@ void on_signal(int) {
 }
 
 void print_usage(const char* prog) {
-    std::cerr << "Usage: " << prog << " [-p port] [-t threads]\n"
+    std::cerr << "Usage: " << prog << " [-p port] [-t threads] [-v]\n"
               << "  -p port     listen port, default 8080\n"
-              << "  -t threads  IO thread count, default 0\n";
+              << "  -t threads  IO thread count, default 0\n"
+              << "  -v          enable library debug logs (spdlog)\n";
 }
 
 } // namespace
@@ -29,6 +32,7 @@ void print_usage(const char* prog) {
 int main(int argc, char* argv[]) {
     uint16_t port = 8080;
     int threads = 0;
+    bool verbose = false;
 
     for (int i = 1; i < argc; ++i) {
         const std::string arg = argv[i];
@@ -40,11 +44,20 @@ int main(int argc, char* argv[]) {
             port = static_cast<uint16_t>(std::atoi(argv[++i]));
         } else if ((arg == "-t" || arg == "--threads") && i + 1 < argc) {
             threads = std::atoi(argv[++i]);
+        } else if (arg == "-v" || arg == "--verbose") {
+            verbose = true;
         } else {
             std::cerr << "unknown argument: " << arg << '\n';
             print_usage(argv[0]);
             return 1;
         }
+    }
+
+    solar_net::log::Options log_opts;
+    log_opts.level = verbose ? solar_net::log::Level::Debug : solar_net::log::Level::Info;
+    if (!solar_net::log::init(log_opts)) {
+        std::cerr << "failed to initialize logging\n";
+        return 1;
     }
 
     std::signal(SIGINT, on_signal);
@@ -63,9 +76,9 @@ int main(int argc, char* argv[]) {
 
     server.set_connection_callback([](const solar_net::TcpConnectionPtr& conn) {
         if (conn->state() == solar_net::TcpConnection::State::kConnected) {
-            std::cout << "connected: " << conn->name() << '\n';
+            SNLOG_INFO("connected: {}", conn->name());
         } else {
-            std::cout << "disconnected: " << conn->name() << '\n';
+            SNLOG_INFO("disconnected: {}", conn->name());
         }
     });
 
@@ -77,14 +90,14 @@ int main(int argc, char* argv[]) {
 
     server.start();
 
-    std::cout << "listening on port " << server.port()
-              << ", IO threads=" << threads << '\n';
-    std::cout << "test: echo hello | nc 127.0.0.1 " << server.port() << '\n';
+    SNLOG_INFO("listening on port {}, IO threads={}", server.port(), threads);
+    SNLOG_INFO("test: echo hello | nc 127.0.0.1 {}", server.port());
 
     loop.loop();
     server.stop();
 
     g_loop = nullptr;
-    std::cout << "stopped\n";
+    SNLOG_INFO("stopped");
+    solar_net::log::shutdown();
     return 0;
 }

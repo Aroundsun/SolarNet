@@ -1,6 +1,7 @@
 #include "acceptor.h"
 #include "channel.h"
 #include "event_loop.h"
+#include "log.h"
 #include "socket.h"
 
 #include <sys/types.h>
@@ -11,8 +12,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <cstring>
+#include <cstdlib>
 #include <errno.h>
-#include <iostream>
 
 namespace solar_net {
 
@@ -23,7 +24,7 @@ Acceptor::Acceptor(EventLoop* loop, const ::sockaddr_in& listen_addr)
     // 创建监听套接字
     int sock_fd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
     if (sock_fd < 0) {
-        std::cerr << "Acceptor: failed to create socket, errno=" << errno << std::endl;
+        SNLOG_CRITICAL("Acceptor: failed to create socket, errno={}", errno);
         ::abort();
     }
 
@@ -35,7 +36,7 @@ Acceptor::Acceptor(EventLoop* loop, const ::sockaddr_in& listen_addr)
                       reinterpret_cast<const struct sockaddr*>(&listen_addr),
                       sizeof(listen_addr));
     if (ret < 0) {
-        std::cerr << "Acceptor: failed to bind, errno=" << errno << std::endl;
+        SNLOG_CRITICAL("Acceptor: failed to bind, errno={}", errno);
         ::close(sock_fd);
         ::abort();
     }
@@ -60,7 +61,7 @@ void Acceptor::listen() {
 
     int ret = ::listen(socket_->fd(), SOMAXCONN);
     if (ret < 0) {
-        std::cerr << "Acceptor: listen failed, errno=" << errno << std::endl;
+        SNLOG_ERROR("Acceptor: listen failed, errno={}", errno);
         return;
     }
 
@@ -134,7 +135,7 @@ int Acceptor::accept_one(::sockaddr_in* peer_addr) {
             idle_fd_ = ::open("/dev/null", O_RDONLY | O_CLOEXEC);
             break;
         default:
-            std::cerr << "Acceptor: accept error, errno=" << saved_errno << std::endl;
+            SNLOG_ERROR("Acceptor: accept error, errno={}", saved_errno);
             break;
     }
 

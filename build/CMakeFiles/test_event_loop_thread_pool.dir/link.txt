@@ -1,1 +1,1 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_event_loop_thread_pool.dir/link.d CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o -o bin/test_event_loop_thread_pool  lib/libsolar_net.a lib/libgtest_main.a lib/libgtest.a
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_event_loop_thread_pool.dir/link.d CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o -o bin/test_event_loop_thread_pool  lib/libsolar_net.a lib/libgtest_main.a lib/libsolar_net_log.a lib/libspdlogd.a lib/libgtest.a

@@ -98,6 +98,8 @@ bin/test_event_loop_thread: CMakeFiles/test_event_loop_thread.dir/build.make
 bin/test_event_loop_thread: CMakeFiles/test_event_loop_thread.dir/compiler_depend.ts
 bin/test_event_loop_thread: lib/libsolar_net.a
 bin/test_event_loop_thread: lib/libgtest_main.a
+bin/test_event_loop_thread: lib/libsolar_net_log.a
+bin/test_event_loop_thread: lib/libspdlogd.a
 bin/test_event_loop_thread: lib/libgtest.a
 bin/test_event_loop_thread: CMakeFiles/test_event_loop_thread.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_event_loop_thread"

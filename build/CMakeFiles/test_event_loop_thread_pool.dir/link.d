@@ -5,6 +5,8 @@ bin/test_event_loop_thread_pool: \
   CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o \
   lib/libsolar_net.a \
   lib/libgtest_main.a \
+  lib/libsolar_net_log.a \
+  lib/libspdlogd.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -45,6 +47,10 @@ CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp
 lib/libsolar_net.a:
 
 lib/libgtest_main.a:
+
+lib/libsolar_net_log.a:
+
+lib/libspdlogd.a:
 
 lib/libgtest.a:
 

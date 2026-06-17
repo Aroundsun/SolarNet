@@ -16,6 +16,10 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+enable_testing()
+
+add_subdirectory(logging)
+
 add_library(solar_net STATIC
     src/acceptor.cpp
     src/channel.cpp
@@ -29,8 +33,7 @@ add_library(solar_net STATIC
     src/tcp_server.cpp
 )
 target_include_directories(solar_net PUBLIC ${CMAKE_SOURCE_DIR}/src)
-
-enable_testing()
+target_link_libraries(solar_net PUBLIC solar_net_log)
 
 function(add_solar_net_test name)
     add_executable(${name} tests/${name}.cpp)

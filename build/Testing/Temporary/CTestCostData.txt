@@ -1,11 +1,13 @@
-test_buffer 16 0.000672065
-test_socket 16 0.000563562
-test_channel 15 0.000808572
-test_event_loop 14 0.00478871
-test_tcp_connection 12 0.0634463
-test_acceptor 10 0.0136561
-test_event_loop_thread 9 0.00779758
-test_event_loop_thread_pool 10 0.0018493
-test_tcp_server 7 0.218867
-test_timer 8 0.048552
+test_buffer 18 0.000436103
+test_socket 18 0.000417678
+test_channel 17 0.000662458
+test_event_loop 15 0.00454549
+test_tcp_connection 14 0.0539037
+test_acceptor 12 0.0117487
+test_event_loop_thread 11 0.00607259
+test_event_loop_thread_pool 11 0
+test_tcp_server 9 0.170897
+test_timer 10 0.0405835
+test_log 2 0.00534909
 ---
+test_event_loop_thread_pool

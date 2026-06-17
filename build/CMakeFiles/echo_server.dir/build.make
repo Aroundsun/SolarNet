@@ -97,6 +97,8 @@ bin/echo_server: CMakeFiles/echo_server.dir/example/echo_server.cpp.o
 bin/echo_server: CMakeFiles/echo_server.dir/build.make
 bin/echo_server: CMakeFiles/echo_server.dir/compiler_depend.ts
 bin/echo_server: lib/libsolar_net.a
+bin/echo_server: lib/libsolar_net_log.a
+bin/echo_server: lib/libspdlogd.a
 bin/echo_server: CMakeFiles/echo_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/echo_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echo_server.dir/link.txt --verbose=$(VERBOSE)

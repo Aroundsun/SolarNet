@@ -20,6 +20,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/googletest-src/googletest/cmake/gtest.pc.in"
   "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
   "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
+  "_deps/spdlog-src/CMakeLists.txt"
+  "_deps/spdlog-src/cmake/ide.cmake"
+  "_deps/spdlog-src/cmake/utils.cmake"
+  "/home/xhy/workplace/SolarNet/logging/CMakeLists.txt"
   "/usr/share/cmake-4.2/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/usr/share/cmake-4.2/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeCXXInformation.cmake"
@@ -32,7 +36,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake"
+  "/usr/share/cmake-4.2/Modules/CheckCXXSourceCompiles.cmake"
   "/usr/share/cmake-4.2/Modules/CheckIncludeFile.cmake"
+  "/usr/share/cmake-4.2/Modules/CheckIncludeFileCXX.cmake"
   "/usr/share/cmake-4.2/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-4.2/Modules/Compiler/GNU-C.cmake"
@@ -86,6 +92,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-build/googletest/generated/gtest.pc"
   "_deps/googletest-build/googletest/generated/gtest_main.pc"
   "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/spdlog-subbuild/CMakeLists.txt"
+  "logging/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/spdlog-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -106,4 +115,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "logging/CMakeFiles/solar_net_log.dir/DependInfo.cmake"
+  "logging/CMakeFiles/test_log.dir/DependInfo.cmake"
+  "_deps/spdlog-build/CMakeFiles/spdlog.dir/DependInfo.cmake"
   )

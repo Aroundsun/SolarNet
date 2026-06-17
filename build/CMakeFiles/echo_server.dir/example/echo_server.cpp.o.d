@@ -84,6 +84,11 @@ CMakeFiles/echo_server.dir/example/echo_server.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /usr/include/c++/15/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/15/cstdlib /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
@@ -178,11 +183,6 @@ CMakeFiles/echo_server.dir/example/echo_server.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/c++/15/cerrno /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/15/bits/charconv.h \
  /usr/include/c++/15/bits/basic_string.tcc \
  /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
@@ -242,15 +242,59 @@ CMakeFiles/echo_server.dir/example/echo_server.cpp.o: \
  /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/thread \
  /usr/include/c++/15/bits/std_thread.h \
  /usr/include/c++/15/bits/this_thread_sleep.h \
+ /home/xhy/workplace/SolarNet/logging/log.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/spdlog.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/common.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/null_mutex.h \
+ /usr/include/c++/15/utility /usr/include/c++/15/bits/stl_relops.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/tweakme.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/fmt.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
+ /usr/include/c++/15/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/15/iterator /usr/include/c++/15/bits/stream_iterator.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/format.h \
+ /usr/include/c++/15/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/15/bits/specfun.h /usr/include/c++/15/tr1/gamma.tcc \
+ /usr/include/c++/15/tr1/special_function_util.h \
+ /usr/include/c++/15/tr1/bessel_function.tcc \
+ /usr/include/c++/15/tr1/beta_function.tcc \
+ /usr/include/c++/15/tr1/ell_integral.tcc \
+ /usr/include/c++/15/tr1/exp_integral.tcc \
+ /usr/include/c++/15/tr1/hypergeometric.tcc \
+ /usr/include/c++/15/tr1/legendre_function.tcc \
+ /usr/include/c++/15/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15/tr1/poly_hermite.tcc \
+ /usr/include/c++/15/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/registry.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/periodic_worker.h \
+ /usr/include/c++/15/condition_variable \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/synchronous_factory.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/logger.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/backtracer.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/circular_q.h \
+ /usr/include/c++/15/cassert /usr/include/assert.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/log_msg.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/version.h \
  /home/xhy/workplace/SolarNet/src/tcp_connection.h \
- /home/xhy/workplace/SolarNet/src/buffer.h /usr/include/c++/15/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/15/algorithm /usr/include/c++/15/bits/stl_algo.h \
+ /home/xhy/workplace/SolarNet/src/buffer.h /usr/include/c++/15/algorithm \
+ /usr/include/c++/15/bits/stl_algo.h \
  /usr/include/c++/15/bits/algorithmfwd.h \
  /usr/include/c++/15/bits/stl_heap.h \
  /usr/include/c++/15/bits/uniform_int_dist.h \
  /usr/include/c++/15/pstl/glue_algorithm_defs.h \
- /usr/include/c++/15/cassert /usr/include/assert.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio-ext.h \

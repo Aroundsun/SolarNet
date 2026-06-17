@@ -4,7 +4,9 @@
 		"/home/xhy/workplace/SolarNet/build/cmake_install.cmake",
 		"/home/xhy/workplace/SolarNet/build/_deps/googletest-build/cmake_install.cmake",
 		"/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googlemock/cmake_install.cmake",
-		"/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googletest/cmake_install.cmake"
+		"/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googletest/cmake_install.cmake",
+		"/home/xhy/workplace/SolarNet/build/logging/cmake_install.cmake",
+		"/home/xhy/workplace/SolarNet/build/_deps/spdlog-build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

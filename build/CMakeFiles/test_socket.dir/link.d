@@ -5,6 +5,8 @@ bin/test_socket: \
   CMakeFiles/test_socket.dir/tests/test_socket.cpp.o \
   lib/libsolar_net.a \
   lib/libgtest_main.a \
+  lib/libsolar_net_log.a \
+  lib/libspdlogd.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -45,6 +47,10 @@ CMakeFiles/test_socket.dir/tests/test_socket.cpp.o:
 lib/libsolar_net.a:
 
 lib/libgtest_main.a:
+
+lib/libsolar_net_log.a:
+
+lib/libspdlogd.a:
 
 lib/libgtest.a:
 

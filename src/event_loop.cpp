@@ -4,9 +4,11 @@
 #include "timer_queue.h"
 #include "timer.h"
 #include "timestamp.h"
+#include "log.h"
 
 #include <sys/eventfd.h>
 #include <unistd.h>
+#include <cerrno>
 #include <cstring>
 #include <cassert>
 #include <thread>
@@ -27,12 +29,13 @@ EventLoop::EventLoop()
     , wakeup_channel_(nullptr) {
 
     if (t_loop_in_this_thread != nullptr) {
-        // 当前线程已经有事件循环
+        SNLOG_CRITICAL("EventLoop: another EventLoop exists in this thread");
         ::abort();
     }
     t_loop_in_this_thread = this;
 
     if (wakeup_fd_ < 0) {
+        SNLOG_CRITICAL("EventLoop: eventfd create failed, errno={}", errno);
         ::abort();
     }
 
@@ -109,6 +112,7 @@ void EventLoop::queue_in_loop(Task task) {
 
 void EventLoop::assert_in_loop_thread() {
     if (!is_in_loop_thread()) {
+        SNLOG_CRITICAL("EventLoop: assert_in_loop_thread failed");
         ::abort();
     }
 }

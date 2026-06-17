@@ -2,13 +2,13 @@
 
 #include "channel.h"
 #include "event_loop.h"
+#include "log.h"
 
 #include <sys/timerfd.h>
 #include <unistd.h>
 #include <cerrno>
 #include <cstdint>
 #include <cstring>
-#include <iostream>
 
 namespace solar_net {
 
@@ -45,7 +45,7 @@ TimerQueue::TimerQueue(EventLoop* loop)
     : loop_(loop)
     , timerfd_(::timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK | TFD_CLOEXEC)) {
     if (timerfd_ < 0) {
-        std::cerr << "TimerQueue: timerfd_create failed, errno=" << errno << std::endl;
+        SNLOG_CRITICAL("TimerQueue: timerfd_create failed, errno={}", errno);
         ::abort();
     }
 
@@ -110,7 +110,7 @@ void TimerQueue::handle_read() {
     uint64_t howmany = 0;
     ssize_t n = ::read(timerfd_, &howmany, sizeof(howmany));
     if (n != sizeof(howmany)) {
-        std::cerr << "TimerQueue: read timerfd failed, errno=" << errno << std::endl;
+        SNLOG_ERROR("TimerQueue: read timerfd failed, errno={}", errno);
     }
 
     std::vector<Timer*> expired = get_expired(current);
@@ -215,7 +215,7 @@ void TimerQueue::reset_timerfd(Timestamp expiration) {
     spec.it_interval = duration_to_spec(0);
 
     if (::timerfd_settime(timerfd_, 0, &spec, nullptr) < 0) {
-        std::cerr << "TimerQueue: timerfd_settime failed, errno=" << errno << std::endl;
+        SNLOG_ERROR("TimerQueue: timerfd_settime failed, errno={}", errno);
     }
 }
 

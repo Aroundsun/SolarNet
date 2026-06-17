@@ -159,5 +159,81 @@ CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o: \
  /usr/include/c++/15/bits/this_thread_sleep.h \
  /home/xhy/workplace/SolarNet/src/event_loop_thread.h \
  /usr/include/c++/15/condition_variable \
- /usr/include/c++/15/bits/cxxabi_forced.h /usr/include/c++/15/cassert \
- /usr/include/assert.h
+ /usr/include/c++/15/bits/cxxabi_forced.h \
+ /home/xhy/workplace/SolarNet/logging/log.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/spdlog.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/common.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/null_mutex.h \
+ /usr/include/c++/15/utility /usr/include/c++/15/bits/stl_relops.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/tweakme.h \
+ /usr/include/c++/15/cstdio /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/c++/15/string /usr/include/c++/15/bits/char_traits.h \
+ /usr/include/c++/15/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h \
+ /usr/include/c++/15/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/15/cctype \
+ /usr/include/ctype.h /usr/include/c++/15/bits/ostream_insert.h \
+ /usr/include/c++/15/bits/basic_string.h /usr/include/c++/15/string_view \
+ /usr/include/c++/15/bits/string_view.tcc \
+ /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/15/bits/std_abs.h /usr/include/c++/15/bits/charconv.h \
+ /usr/include/c++/15/bits/basic_string.tcc \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/fmt.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
+ /usr/include/c++/15/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/15/iterator /usr/include/c++/15/bits/stream_iterator.h \
+ /usr/include/c++/15/bits/streambuf_iterator.h \
+ /usr/include/c++/15/streambuf /usr/include/c++/15/bits/ios_base.h \
+ /usr/include/c++/15/bits/locale_classes.h \
+ /usr/include/c++/15/bits/locale_classes.tcc \
+ /usr/include/c++/15/system_error /usr/include/c++/15/stdexcept \
+ /usr/include/c++/15/bits/streambuf.tcc \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/format.h \
+ /usr/include/c++/15/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/15/bits/specfun.h /usr/include/c++/15/tr1/gamma.tcc \
+ /usr/include/c++/15/tr1/special_function_util.h \
+ /usr/include/c++/15/tr1/bessel_function.tcc \
+ /usr/include/c++/15/tr1/beta_function.tcc \
+ /usr/include/c++/15/tr1/ell_integral.tcc \
+ /usr/include/c++/15/tr1/exp_integral.tcc \
+ /usr/include/c++/15/tr1/hypergeometric.tcc \
+ /usr/include/c++/15/tr1/legendre_function.tcc \
+ /usr/include/c++/15/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15/tr1/poly_hermite.tcc \
+ /usr/include/c++/15/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/registry.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/periodic_worker.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/synchronous_factory.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/logger.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/backtracer.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/circular_q.h \
+ /usr/include/c++/15/cassert /usr/include/assert.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/details/log_msg.h \
+ /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include/spdlog/version.h

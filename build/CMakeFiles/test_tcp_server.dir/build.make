@@ -98,6 +98,8 @@ bin/test_tcp_server: CMakeFiles/test_tcp_server.dir/build.make
 bin/test_tcp_server: CMakeFiles/test_tcp_server.dir/compiler_depend.ts
 bin/test_tcp_server: lib/libsolar_net.a
 bin/test_tcp_server: lib/libgtest_main.a
+bin/test_tcp_server: lib/libsolar_net_log.a
+bin/test_tcp_server: lib/libspdlogd.a
 bin/test_tcp_server: lib/libgtest.a
 bin/test_tcp_server: CMakeFiles/test_tcp_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_tcp_server"

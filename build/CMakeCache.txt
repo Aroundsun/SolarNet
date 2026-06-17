@@ -301,11 +301,18 @@ FETCHCONTENT_QUIET:BOOL=ON
 // for googletest
 FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for spdlog
+FETCHCONTENT_SOURCE_DIR_SPDLOG:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of spdlog
+FETCHCONTENT_UPDATES_DISCONNECTED_SPDLOG:BOOL=OFF
 
 //Use Abseil and RE2. Requires Abseil and RE2 to be separately
 // added to the build.
@@ -314,6 +321,88 @@ GTEST_HAS_ABSL:BOOL=OFF
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//Build all artifacts
+SPDLOG_BUILD_ALL:BOOL=OFF
+
+//Build benchmarks (Requires https://github.com/google/benchmark.git
+// to be installed)
+SPDLOG_BUILD_BENCH:BOOL=OFF
+
+//Build example
+SPDLOG_BUILD_EXAMPLE:BOOL=OFF
+
+//Build header only example
+SPDLOG_BUILD_EXAMPLE_HO:BOOL=OFF
+
+//Build position independent code (-fPIC)
+SPDLOG_BUILD_PIC:BOOL=OFF
+
+//Build shared library
+SPDLOG_BUILD_SHARED:BOOL=OFF
+
+//Build tests
+SPDLOG_BUILD_TESTS:BOOL=OFF
+
+//Build tests using the header only version
+SPDLOG_BUILD_TESTS_HO:BOOL=OFF
+
+//Enable compiler warnings
+SPDLOG_BUILD_WARNINGS:BOOL=OFF
+
+//Use CLOCK_REALTIME_COARSE instead of the regular clock,
+SPDLOG_CLOCK_COARSE:BOOL=OFF
+
+//Disable default logger creation
+SPDLOG_DISABLE_DEFAULT_LOGGER:BOOL=OFF
+
+//Build static or shared library using precompiled header to speed
+// up compilation time
+SPDLOG_ENABLE_PCH:BOOL=OFF
+
+//Use external fmt library instead of bundled
+SPDLOG_FMT_EXTERNAL:BOOL=OFF
+
+//Use external fmt header-only library instead of bundled
+SPDLOG_FMT_EXTERNAL_HO:BOOL=OFF
+
+//Generate the install target
+SPDLOG_INSTALL:BOOL=OFF
+
+//prevent spdlog from using of std::atomic log levels (use only
+// if your code never modifies log levels concurrently
+SPDLOG_NO_ATOMIC_LEVELS:BOOL=OFF
+
+//Compile with -fno-exceptions. Call abort() on any spdlog exceptions
+SPDLOG_NO_EXCEPTIONS:BOOL=OFF
+
+//prevent spdlog from querying the thread id on each log call if
+// thread id is not needed
+SPDLOG_NO_THREAD_ID:BOOL=OFF
+
+//prevent spdlog from using thread local storage
+SPDLOG_NO_TLS:BOOL=OFF
+
+//Prevent from child processes to inherit log file descriptors
+SPDLOG_PREVENT_CHILD_FD:BOOL=OFF
+
+//Enable address sanitizer in tests
+SPDLOG_SANITIZE_ADDRESS:BOOL=OFF
+
+//Include as system headers (skip for clang-tidy).
+SPDLOG_SYSTEM_INCLUDES:BOOL=OFF
+
+//run clang-tidy
+SPDLOG_TIDY:BOOL=OFF
+
+//Use std::format instead of fmt library.
+SPDLOG_USE_STD_FORMAT:BOOL=OFF
+
+//non supported option
+SPDLOG_WCHAR_FILENAMES:BOOL=OFF
+
+//non supported option
+SPDLOG_WCHAR_SUPPORT:BOOL=OFF
 
 //Value Computed by CMake
 SolarNet_BINARY_DIR:STATIC=/home/xhy/workplace/SolarNet/build
@@ -369,6 +458,15 @@ gtest_force_shared_crt:BOOL=ON
 
 //Build gtest with internal symbols hidden in shared libraries.
 gtest_hide_internal_symbols:BOOL=OFF
+
+//Value Computed by CMake
+spdlog_BINARY_DIR:STATIC=/home/xhy/workplace/SolarNet/build/_deps/spdlog-build
+
+//Value Computed by CMake
+spdlog_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+spdlog_SOURCE_DIR:STATIC=/home/xhy/workplace/SolarNet/build/_deps/spdlog-src
 
 
 ########################
@@ -511,7 +609,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

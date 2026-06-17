@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=thread -fno-omit-frame-pointer -g -g -fsanitize=thread -Wl,--dependency-file=CMakeFiles/test_logging.dir/link.d CMakeFiles/test_logging.dir/tests/test_logging.cpp.o -o bin/test_logging  lib/libsolar_net.a lib/libgtest_main.a lib/libgtest.a

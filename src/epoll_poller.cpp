@@ -1,6 +1,7 @@
 #include "epoll_poller.h"
 #include "channel.h"
 #include "event_loop.h"
+#include "log.h"
 
 #include <unistd.h>
 #include <sys/epoll.h>
@@ -16,7 +17,7 @@ EpollPoller::EpollPoller(EventLoop* loop)
     , epoll_fd_(::epoll_create1(EPOLL_CLOEXEC))
     , events_(kInitEventListSize) {
     if (epoll_fd_ < 0) {
-        // 致命错误 — 在生产环境中，记录并终止
+        SNLOG_CRITICAL("EpollPoller: epoll_create1 failed, errno={}", errno);
         ::abort();
     }
 }
@@ -42,7 +43,7 @@ int64_t EpollPoller::poll(int timeout_ms, std::vector<Channel*>* active_channels
         // 没有发生事件 — 正常超时
     } else {
         if (errno != EINTR) {
-            // 在生产环境中记录错误
+            SNLOG_ERROR("EpollPoller: epoll_wait failed, errno={}", errno);
         }
     }
 
@@ -105,12 +106,10 @@ void EpollPoller::epoll_update(int operation, Channel* channel) {
 
     int fd = channel->fd();
     if (::epoll_ctl(epoll_fd_, operation, fd, &ev) < 0) {
-        // 记录错误
-        if (operation == EPOLL_CTL_DEL) {
-            // 删除错误
-        } else {
-            // 添加/修改错误
-        }
+        SNLOG_ERROR("EpollPoller: epoll_ctl op={} fd={} errno={}",
+                    operation,
+                    fd,
+                    errno);
     }
 }
 

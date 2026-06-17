@@ -98,6 +98,8 @@ bin/test_acceptor: CMakeFiles/test_acceptor.dir/build.make
 bin/test_acceptor: CMakeFiles/test_acceptor.dir/compiler_depend.ts
 bin/test_acceptor: lib/libsolar_net.a
 bin/test_acceptor: lib/libgtest_main.a
+bin/test_acceptor: lib/libsolar_net_log.a
+bin/test_acceptor: lib/libspdlogd.a
 bin/test_acceptor: lib/libgtest.a
 bin/test_acceptor: CMakeFiles/test_acceptor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xhy/workplace/SolarNet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_acceptor"

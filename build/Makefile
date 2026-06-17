@@ -379,6 +379,45 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+#=============================================================================
+# Target rules for targets named solar_net_log
+
+# Build rule for target.
+solar_net_log: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solar_net_log
+.PHONY : solar_net_log
+
+# fast build rule for target.
+solar_net_log/fast:
+	$(MAKE) $(MAKESILENT) -f logging/CMakeFiles/solar_net_log.dir/build.make logging/CMakeFiles/solar_net_log.dir/build
+.PHONY : solar_net_log/fast
+
+#=============================================================================
+# Target rules for targets named test_log
+
+# Build rule for target.
+test_log: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
+.PHONY : test_log
+
+# fast build rule for target.
+test_log/fast:
+	$(MAKE) $(MAKESILENT) -f logging/CMakeFiles/test_log.dir/build.make logging/CMakeFiles/test_log.dir/build
+.PHONY : test_log/fast
+
+#=============================================================================
+# Target rules for targets named spdlog
+
+# Build rule for target.
+spdlog: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spdlog
+.PHONY : spdlog
+
+# fast build rule for target.
+spdlog/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/spdlog-build/CMakeFiles/spdlog.dir/build.make _deps/spdlog-build/CMakeFiles/spdlog.dir/build
+.PHONY : spdlog/fast
+
 example/echo_server.o: example/echo_server.cpp.o
 .PHONY : example/echo_server.o
 
@@ -902,12 +941,15 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... solar_net"
+	@echo "... solar_net_log"
+	@echo "... spdlog"
 	@echo "... test_acceptor"
 	@echo "... test_buffer"
 	@echo "... test_channel"
 	@echo "... test_event_loop"
 	@echo "... test_event_loop_thread"
 	@echo "... test_event_loop_thread_pool"
+	@echo "... test_log"
 	@echo "... test_socket"
 	@echo "... test_tcp_connection"
 	@echo "... test_tcp_server"

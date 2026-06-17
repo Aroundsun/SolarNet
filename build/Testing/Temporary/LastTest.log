@@ -1,10 +1,10 @@
-Start testing: Jun 18 01:55 CST
+Start testing: Jun 18 03:59 CST
 ----------------------------------------------------------
-1/10 Testing: test_buffer
-1/10 Test: test_buffer
+1/11 Testing: test_buffer
+1/11 Test: test_buffer
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_buffer"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_buffer" start time: Jun 18 01:55 CST
+"test_buffer" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -46,21 +46,21 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] 16 tests from BufferTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 1 test suite ran. (1 ms total)
+[==========] 16 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 16 tests.
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_buffer" end time: Jun 18 01:55 CST
+"test_buffer" end time: Jun 18 03:59 CST
 "test_buffer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/10 Testing: test_socket
-2/10 Test: test_socket
+2/11 Testing: test_socket
+2/11 Test: test_socket
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_socket"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_socket" start time: Jun 18 01:55 CST
+"test_socket" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -78,27 +78,27 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] SocketTest.SetTcpOptions
 [       OK ] SocketTest.SetTcpOptions (0 ms)
 [ RUN      ] SocketTest.GetLocalAndPeerAddr
-[       OK ] SocketTest.GetLocalAndPeerAddr (1 ms)
+[       OK ] SocketTest.GetLocalAndPeerAddr (0 ms)
 [ RUN      ] SocketTest.InvalidFdReturnsError
 [       OK ] SocketTest.InvalidFdReturnsError (0 ms)
-[----------] 7 tests from SocketTest (1 ms total)
+[----------] 7 tests from SocketTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (1 ms total)
+[==========] 7 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 7 tests.
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_socket" end time: Jun 18 01:55 CST
+"test_socket" end time: Jun 18 03:59 CST
 "test_socket" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/10 Testing: test_channel
-3/10 Test: test_channel
+3/11 Testing: test_channel
+3/11 Test: test_channel
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_channel"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_channel" start time: Jun 18 01:55 CST
+"test_channel" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -119,24 +119,24 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [       OK ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed (0 ms)
 [ RUN      ] ChannelTest.EnableAndDisableEvents
 [       OK ] ChannelTest.EnableAndDisableEvents (0 ms)
-[----------] 7 tests from ChannelTest (4 ms total)
+[----------] 7 tests from ChannelTest (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (4 ms total)
+[==========] 7 tests from 1 test suite ran. (3 ms total)
 [  PASSED  ] 7 tests.
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_channel" end time: Jun 18 01:55 CST
+"test_channel" end time: Jun 18 03:59 CST
 "test_channel" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/10 Testing: test_event_loop
-4/10 Test: test_event_loop
+4/11 Testing: test_event_loop
+4/11 Test: test_event_loop
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop" start time: Jun 18 01:55 CST
+"test_event_loop" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -154,29 +154,29 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] EventLoopTest.CrossThreadTaskRunsOnLoopThread
 [       OK ] EventLoopTest.CrossThreadTaskRunsOnLoopThread (0 ms)
 [ RUN      ] EventLoopTest.StopFromAnotherThread
-[       OK ] EventLoopTest.StopFromAnotherThread (52 ms)
+[       OK ] EventLoopTest.StopFromAnotherThread (53 ms)
 [ RUN      ] EventLoopTest.PollTriggersReadOnPipe
 [       OK ] EventLoopTest.PollTriggersReadOnPipe (0 ms)
 [ RUN      ] EventLoopTest.PendingTasksRunAfterPoll
 [       OK ] EventLoopTest.PendingTasksRunAfterPoll (0 ms)
-[----------] 8 tests from EventLoopTest (57 ms total)
+[----------] 8 tests from EventLoopTest (59 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (57 ms total)
+[==========] 8 tests from 1 test suite ran. (59 ms total)
 [  PASSED  ] 8 tests.
 <end of output>
 Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
-"test_event_loop" end time: Jun 18 01:55 CST
+"test_event_loop" end time: Jun 18 03:59 CST
 "test_event_loop" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/10 Testing: test_timer
-5/10 Test: test_timer
+5/11 Testing: test_timer
+5/11 Test: test_timer
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_timer"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_timer" start time: Jun 18 01:55 CST
+"test_timer" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -184,33 +184,33 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 5 tests from TimerTest
 [ RUN      ] TimerTest.RunAfterFiresOnce
-[       OK ] TimerTest.RunAfterFiresOnce (51 ms)
+[       OK ] TimerTest.RunAfterFiresOnce (53 ms)
 [ RUN      ] TimerTest.RunEveryFiresMultipleTimes
-[       OK ] TimerTest.RunEveryFiresMultipleTimes (92 ms)
+[       OK ] TimerTest.RunEveryFiresMultipleTimes (93 ms)
 [ RUN      ] TimerTest.CancelPreventsFire
-[       OK ] TimerTest.CancelPreventsFire (81 ms)
+[       OK ] TimerTest.CancelPreventsFire (86 ms)
 [ RUN      ] TimerTest.CancelBeforeAddInLoop
-[       OK ] TimerTest.CancelBeforeAddInLoop (102 ms)
+[       OK ] TimerTest.CancelBeforeAddInLoop (108 ms)
 [ RUN      ] TimerTest.AddTimerFromOtherThread
-[       OK ] TimerTest.AddTimerFromOtherThread (52 ms)
-[----------] 5 tests from TimerTest (380 ms total)
+[       OK ] TimerTest.AddTimerFromOtherThread (54 ms)
+[----------] 5 tests from TimerTest (397 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (380 ms total)
+[==========] 5 tests from 1 test suite ran. (397 ms total)
 [  PASSED  ] 5 tests.
 <end of output>
-Test time =   0.39 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
 Test Passed.
-"test_timer" end time: Jun 18 01:55 CST
+"test_timer" end time: Jun 18 03:59 CST
 "test_timer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/10 Testing: test_tcp_connection
-6/10 Test: test_tcp_connection
+6/11 Testing: test_tcp_connection
+6/11 Test: test_tcp_connection
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_tcp_connection"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_tcp_connection" start time: Jun 18 01:55 CST
+"test_tcp_connection" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -220,37 +220,37 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] TcpConnectionTest.ConnectionEstablishedSetsStateAndFiresCallback
 [       OK ] TcpConnectionTest.ConnectionEstablishedSetsStateAndFiresCallback (0 ms)
 [ RUN      ] TcpConnectionTest.ReceivesMessageFromPeer
-[       OK ] TcpConnectionTest.ReceivesMessageFromPeer (1 ms)
+[       OK ] TcpConnectionTest.ReceivesMessageFromPeer (0 ms)
 [ RUN      ] TcpConnectionTest.SendsMessageToPeer
 [       OK ] TcpConnectionTest.SendsMessageToPeer (0 ms)
 [ RUN      ] TcpConnectionTest.CrossThreadSendDeliveredToPeer
-[       OK ] TcpConnectionTest.CrossThreadSendDeliveredToPeer (201 ms)
+[       OK ] TcpConnectionTest.CrossThreadSendDeliveredToPeer (207 ms)
 [ RUN      ] TcpConnectionTest.WriteCompleteCallbackFires
-[       OK ] TcpConnectionTest.WriteCompleteCallbackFires (524 ms)
+[       OK ] TcpConnectionTest.WriteCompleteCallbackFires (509 ms)
 [ RUN      ] TcpConnectionTest.PeerCloseTriggersCloseCallback
-[       OK ] TcpConnectionTest.PeerCloseTriggersCloseCallback (1 ms)
+[       OK ] TcpConnectionTest.PeerCloseTriggersCloseCallback (0 ms)
 [ RUN      ] TcpConnectionTest.ForceCloseDisconnects
-[       OK ] TcpConnectionTest.ForceCloseDisconnects (21 ms)
+[       OK ] TcpConnectionTest.ForceCloseDisconnects (23 ms)
 [ RUN      ] TcpConnectionTest.SendBufferConsumesReadableBytes
-[       OK ] TcpConnectionTest.SendBufferConsumesReadableBytes (0 ms)
-[----------] 8 tests from TcpConnectionTest (752 ms total)
+[       OK ] TcpConnectionTest.SendBufferConsumesReadableBytes (1 ms)
+[----------] 8 tests from TcpConnectionTest (745 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (752 ms total)
+[==========] 8 tests from 1 test suite ran. (745 ms total)
 [  PASSED  ] 8 tests.
 <end of output>
-Test time =   0.76 sec
+Test time =   0.75 sec
 ----------------------------------------------------------
 Test Passed.
-"test_tcp_connection" end time: Jun 18 01:55 CST
+"test_tcp_connection" end time: Jun 18 03:59 CST
 "test_tcp_connection" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/10 Testing: test_acceptor
-7/10 Test: test_acceptor
+7/11 Testing: test_acceptor
+7/11 Test: test_acceptor
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_acceptor"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_acceptor" start time: Jun 18 01:55 CST
+"test_acceptor" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -264,29 +264,29 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] AcceptorTest.AcceptsIncomingConnection
 [       OK ] AcceptorTest.AcceptsIncomingConnection (1 ms)
 [ RUN      ] AcceptorTest.AcceptsMultipleConnections
-[       OK ] AcceptorTest.AcceptsMultipleConnections (22 ms)
+[       OK ] AcceptorTest.AcceptsMultipleConnections (21 ms)
 [ RUN      ] AcceptorTest.AcceptedSocketIsNonBlocking
-[       OK ] AcceptorTest.AcceptedSocketIsNonBlocking (0 ms)
+[       OK ] AcceptorTest.AcceptedSocketIsNonBlocking (1 ms)
 [ RUN      ] AcceptorTest.ClosesConnectionWhenNoCallback
-[       OK ] AcceptorTest.ClosesConnectionWhenNoCallback (101 ms)
-[----------] 6 tests from AcceptorTest (127 ms total)
+[       OK ] AcceptorTest.ClosesConnectionWhenNoCallback (106 ms)
+[----------] 6 tests from AcceptorTest (132 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (127 ms total)
+[==========] 6 tests from 1 test suite ran. (132 ms total)
 [  PASSED  ] 6 tests.
 <end of output>
 Test time =   0.14 sec
 ----------------------------------------------------------
 Test Passed.
-"test_acceptor" end time: Jun 18 01:55 CST
+"test_acceptor" end time: Jun 18 03:59 CST
 "test_acceptor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/10 Testing: test_event_loop_thread
-8/10 Test: test_event_loop_thread
+8/11 Testing: test_event_loop_thread
+8/11 Test: test_event_loop_thread
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop_thread"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop_thread" start time: Jun 18 01:55 CST
+"test_event_loop_thread" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -296,29 +296,29 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] EventLoopThreadTest.StartLoopReturnsRunningLoop
 [       OK ] EventLoopThreadTest.StartLoopReturnsRunningLoop (1 ms)
 [ RUN      ] EventLoopThreadTest.InitCallbackRunsOnLoopThread
-[       OK ] EventLoopThreadTest.InitCallbackRunsOnLoopThread (1 ms)
+[       OK ] EventLoopThreadTest.InitCallbackRunsOnLoopThread (0 ms)
 [ RUN      ] EventLoopThreadTest.CrossThreadRunInLoop
 [       OK ] EventLoopThreadTest.CrossThreadRunInLoop (1 ms)
 [ RUN      ] EventLoopThreadTest.DestructorStopsLoop
-[       OK ] EventLoopThreadTest.DestructorStopsLoop (55 ms)
-[----------] 4 tests from EventLoopThreadTest (59 ms total)
+[       OK ] EventLoopThreadTest.DestructorStopsLoop (51 ms)
+[----------] 4 tests from EventLoopThreadTest (54 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (59 ms total)
+[==========] 4 tests from 1 test suite ran. (54 ms total)
 [  PASSED  ] 4 tests.
 <end of output>
 Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
-"test_event_loop_thread" end time: Jun 18 01:55 CST
+"test_event_loop_thread" end time: Jun 18 03:59 CST
 "test_event_loop_thread" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-9/10 Testing: test_event_loop_thread_pool
-9/10 Test: test_event_loop_thread_pool
+9/11 Testing: test_event_loop_thread_pool
+9/11 Test: test_event_loop_thread_pool
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop_thread_pool"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop_thread_pool" start time: Jun 18 01:55 CST
+"test_event_loop_thread_pool" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -328,7 +328,7 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] EventLoopThreadPoolTest.ZeroThreadsReturnsBaseLoop
 [       OK ] EventLoopThreadPoolTest.ZeroThreadsReturnsBaseLoop (0 ms)
 [ RUN      ] EventLoopThreadPoolTest.RoundRobinDispatch
-[       OK ] EventLoopThreadPoolTest.RoundRobinDispatch (1 ms)
+[       OK ] EventLoopThreadPoolTest.RoundRobinDispatch (2 ms)
 [ RUN      ] EventLoopThreadPoolTest.GetLoopByIndex
 [       OK ] EventLoopThreadPoolTest.GetLoopByIndex (1 ms)
 [ RUN      ] EventLoopThreadPoolTest.InitCallbackPerThread
@@ -336,25 +336,36 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] EventLoopThreadPoolTest.GetAllLoopsContainsWorkerLoops
 [       OK ] EventLoopThreadPoolTest.GetAllLoopsContainsWorkerLoops (1 ms)
 [ RUN      ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop
-[       OK ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop (1 ms)
-[----------] 6 tests from EventLoopThreadPoolTest (9 ms total)
+/home/xhy/workplace/SolarNet/tests/test_event_loop_thread_pool.cpp:120: Failure
+Expected equality of these values:
+  task_future.wait_for(std::chrono::seconds(2))
+    Which is: 4-byte object <01-00 00-00>
+  std::future_status::ready
+    Which is: 4-byte object <00-00 00-00>
+
+[  FAILED  ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop (2001 ms)
+[----------] 6 tests from EventLoopThreadPoolTest (2008 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (9 ms total)
-[  PASSED  ] 6 tests.
+[==========] 6 tests from 1 test suite ran. (2008 ms total)
+[  PASSED  ] 5 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop
+
+ 1 FAILED TEST
 <end of output>
-Test time =   0.02 sec
+Test time =   2.02 sec
 ----------------------------------------------------------
-Test Passed.
-"test_event_loop_thread_pool" end time: Jun 18 01:55 CST
-"test_event_loop_thread_pool" time elapsed: 00:00:00
+Test Failed.
+"test_event_loop_thread_pool" end time: Jun 18 03:59 CST
+"test_event_loop_thread_pool" time elapsed: 00:00:02
 ----------------------------------------------------------
 
-10/10 Testing: test_tcp_server
-10/10 Test: test_tcp_server
+10/11 Testing: test_tcp_server
+10/11 Test: test_tcp_server
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_tcp_server"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_tcp_server" start time: Jun 18 01:55 CST
+"test_tcp_server" start time: Jun 18 03:59 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -368,26 +379,60 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [ RUN      ] TcpServerTest.ReceivesMessageFromClient
 [       OK ] TcpServerTest.ReceivesMessageFromClient (1 ms)
 [ RUN      ] TcpServerTest.DispatchesConnectionToWorkerLoop
-[       OK ] TcpServerTest.DispatchesConnectionToWorkerLoop (504 ms)
+[       OK ] TcpServerTest.DispatchesConnectionToWorkerLoop (503 ms)
 [ RUN      ] TcpServerTest.ServerCanSendReply
-[       OK ] TcpServerTest.ServerCanSendReply (507 ms)
+[       OK ] TcpServerTest.ServerCanSendReply (501 ms)
 [ RUN      ] TcpServerTest.ClientCloseDoesNotHang
 [       OK ] TcpServerTest.ClientCloseDoesNotHang (1 ms)
 [ RUN      ] TcpServerTest.StopClosesConnections
-[       OK ] TcpServerTest.StopClosesConnections (502 ms)
+[       OK ] TcpServerTest.StopClosesConnections (517 ms)
 [ RUN      ] TcpServerTest.ThreadInitCallbackInvoked
 [       OK ] TcpServerTest.ThreadInitCallbackInvoked (1 ms)
-[----------] 8 tests from TcpServerTest (1522 ms total)
+[----------] 8 tests from TcpServerTest (1528 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (1523 ms total)
+[==========] 8 tests from 1 test suite ran. (1529 ms total)
 [  PASSED  ] 8 tests.
 <end of output>
-Test time =   1.53 sec
+Test time =   1.54 sec
 ----------------------------------------------------------
 Test Passed.
-"test_tcp_server" end time: Jun 18 01:55 CST
+"test_tcp_server" end time: Jun 18 03:59 CST
 "test_tcp_server" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-End testing: Jun 18 01:55 CST
+11/11 Testing: test_log
+11/11 Test: test_log
+Command: "/home/xhy/workplace/SolarNet/build/bin/test_log"
+Directory: /home/xhy/workplace/SolarNet/build/logging
+"test_log" start time: Jun 18 03:59 CST
+Output:
+----------------------------------------------------------
+Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from LogTest
+[ RUN      ] LogTest.InitAndShutdown
+[       OK ] LogTest.InitAndShutdown (0 ms)
+[ RUN      ] LogTest.LevelFilter
+[       OK ] LogTest.LevelFilter (0 ms)
+[ RUN      ] LogTest.SetLevelAtRuntime
+[       OK ] LogTest.SetLevelAtRuntime (0 ms)
+[ RUN      ] LogTest.MacrosNoOpWhenNotInitialized
+[       OK ] LogTest.MacrosNoOpWhenNotInitialized (0 ms)
+[ RUN      ] LogTest.InitFailsWithoutSinks
+[       OK ] LogTest.InitFailsWithoutSinks (0 ms)
+[----------] 5 tests from LogTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_log" end time: Jun 18 03:59 CST
+"test_log" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 18 03:59 CST

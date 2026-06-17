@@ -1,1 +1,1 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_timer.dir/link.d CMakeFiles/test_timer.dir/tests/test_timer.cpp.o -o bin/test_timer  lib/libsolar_net.a lib/libgtest_main.a lib/libgtest.a
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_timer.dir/link.d CMakeFiles/test_timer.dir/tests/test_timer.cpp.o -o bin/test_timer  lib/libsolar_net.a lib/libgtest_main.a lib/libsolar_net_log.a lib/libspdlogd.a lib/libgtest.a
