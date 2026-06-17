@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xhy/workplace/SolarNet/example/echo_server.cpp" "CMakeFiles/echo_server.dir/example/echo_server.cpp.o" "gcc" "CMakeFiles/echo_server.dir/example/echo_server.cpp.o.d"
-  "" "echo_server" "gcc" "CMakeFiles/echo_server.dir/link.d"
+  "" "bin/echo_server" "gcc" "CMakeFiles/echo_server.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

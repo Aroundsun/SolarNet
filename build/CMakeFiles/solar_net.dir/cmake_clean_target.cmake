@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libsolar_net.a"
+  "lib/libsolar_net.a"
 )

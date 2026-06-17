@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xhy/workplace/SolarNet/tests/test_event_loop_thread_pool.cpp" "CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o" "gcc" "CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o.d"
-  "" "test_event_loop_thread_pool" "gcc" "CMakeFiles/test_event_loop_thread_pool.dir/link.d"
+  "" "bin/test_event_loop_thread_pool" "gcc" "CMakeFiles/test_event_loop_thread_pool.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

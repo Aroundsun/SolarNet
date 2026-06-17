@@ -1,9 +1,9 @@
-test_socket: \
+bin/test_socket: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/test_socket.dir/tests/test_socket.cpp.o \
-  libsolar_net.a \
+  lib/libsolar_net.a \
   lib/libgtest_main.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -42,7 +42,7 @@ test_socket: \
 
 CMakeFiles/test_socket.dir/tests/test_socket.cpp.o:
 
-libsolar_net.a:
+lib/libsolar_net.a:
 
 lib/libgtest_main.a:
 

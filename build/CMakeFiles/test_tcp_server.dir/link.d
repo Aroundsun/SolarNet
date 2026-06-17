@@ -1,9 +1,9 @@
-test_tcp_server: \
+bin/test_tcp_server: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o \
-  libsolar_net.a \
+  lib/libsolar_net.a \
   lib/libgtest_main.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -42,7 +42,7 @@ test_tcp_server: \
 
 CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o:
 
-libsolar_net.a:
+lib/libsolar_net.a:
 
 lib/libgtest_main.a:
 

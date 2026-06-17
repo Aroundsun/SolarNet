@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/echo_server.dir/link.d CMakeFiles/echo_server.dir/example/echo_server.cpp.o -o echo_server  libsolar_net.a
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/echo_server.dir/link.d CMakeFiles/echo_server.dir/example/echo_server.cpp.o -o bin/echo_server  lib/libsolar_net.a

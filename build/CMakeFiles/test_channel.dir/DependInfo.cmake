@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xhy/workplace/SolarNet/tests/test_channel.cpp" "CMakeFiles/test_channel.dir/tests/test_channel.cpp.o" "gcc" "CMakeFiles/test_channel.dir/tests/test_channel.cpp.o.d"
-  "" "test_channel" "gcc" "CMakeFiles/test_channel.dir/link.d"
+  "" "bin/test_channel" "gcc" "CMakeFiles/test_channel.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

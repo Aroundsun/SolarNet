@@ -4,6 +4,9 @@ project(SolarNet LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 include(FetchContent)
 FetchContent_Declare(
     googletest
@@ -31,7 +34,7 @@ function(add_solar_net_test name)
     add_executable(${name} tests/${name}.cpp)
     target_include_directories(${name} PRIVATE ${CMAKE_SOURCE_DIR}/tests)
     target_link_libraries(${name} PRIVATE solar_net GTest::gtest_main)
-    add_test(NAME ${name} COMMAND ${name})
+    add_test(NAME ${name} COMMAND ${CMAKE_BINARY_DIR}/bin/${name})
 endfunction()
 
 add_solar_net_test(test_buffer)

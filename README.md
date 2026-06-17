@@ -20,8 +20,8 @@ cmake --build build
 
 产物：
 
-- `build/libsolar_net.a` — 静态库
-- `build/echo_server` — echo 示例
+- `build/lib/libsolar_net.a` — 静态库
+- `build/bin/echo_server` — echo 示例
 
 头文件在 `src/` 下，include 路径指向这个目录即可。
 
@@ -30,8 +30,8 @@ cmake --build build
 先启动 echo 服务：
 
 ```bash
-./build/echo_server              # 默认 8080 端口，单线程
-./build/echo_server -p 9000 -t 2 # 9000 端口，2 个 IO 线程
+./build/bin/echo_server              # 默认 8080 端口，单线程
+./build/bin/echo_server -p 9000 -t 2 # 9000 端口，2 个 IO 线程
 ```
 
 另开终端测试：

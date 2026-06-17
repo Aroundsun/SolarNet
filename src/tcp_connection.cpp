@@ -125,10 +125,6 @@ void TcpConnection::connection_destroyed() {
         channel_->disable_all();
     }
     channel_->remove();
-
-    if (close_cb_) {
-        close_cb_(shared_from_this());
-    }
 }
 
 void TcpConnection::handle_read(int64_t receive_time) {
@@ -174,9 +170,10 @@ void TcpConnection::handle_write() {
                     shutdown_in_loop();
                 }
             }
-        } else {
-            // 写入错误
-            handle_error();
+        } else if (n < 0) {
+            if (errno != EAGAIN && errno != EWOULDBLOCK) {
+                handle_error();
+            }
         }
     }
 }

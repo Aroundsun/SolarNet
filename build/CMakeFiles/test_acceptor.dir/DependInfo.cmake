@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xhy/workplace/SolarNet/tests/test_acceptor.cpp" "CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o" "gcc" "CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o.d"
-  "" "test_acceptor" "gcc" "CMakeFiles/test_acceptor.dir/link.d"
+  "" "bin/test_acceptor" "gcc" "CMakeFiles/test_acceptor.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

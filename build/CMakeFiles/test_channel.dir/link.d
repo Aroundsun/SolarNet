@@ -1,9 +1,9 @@
-test_channel: \
+bin/test_channel: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/test_channel.dir/tests/test_channel.cpp.o \
-  libsolar_net.a \
+  lib/libsolar_net.a \
   lib/libgtest_main.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -42,7 +42,7 @@ test_channel: \
 
 CMakeFiles/test_channel.dir/tests/test_channel.cpp.o:
 
-libsolar_net.a:
+lib/libsolar_net.a:
 
 lib/libgtest_main.a:
 

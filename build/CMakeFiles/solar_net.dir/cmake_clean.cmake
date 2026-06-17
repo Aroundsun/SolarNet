@@ -15,8 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o.d"
   "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
   "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o.d"
-  "libsolar_net.a"
-  "libsolar_net.pdb"
+  "lib/libsolar_net.a"
+  "lib/libsolar_net.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

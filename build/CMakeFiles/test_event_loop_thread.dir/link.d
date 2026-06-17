@@ -1,9 +1,9 @@
-test_event_loop_thread: \
+bin/test_event_loop_thread: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/test_event_loop_thread.dir/tests/test_event_loop_thread.cpp.o \
-  libsolar_net.a \
+  lib/libsolar_net.a \
   lib/libgtest_main.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -42,7 +42,7 @@ test_event_loop_thread: \
 
 CMakeFiles/test_event_loop_thread.dir/tests/test_event_loop_thread.cpp.o:
 
-libsolar_net.a:
+lib/libsolar_net.a:
 
 lib/libgtest_main.a:
 
