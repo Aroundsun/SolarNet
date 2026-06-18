@@ -2,6 +2,8 @@
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so \
   CMakeFiles/test_log.dir/test_log.cpp.o \
   ../lib/libsolar_net_log.a \
   ../lib/libgtest_main.a \
@@ -40,6 +42,10 @@
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so:
 
 CMakeFiles/test_log.dir/test_log.cpp.o:
 

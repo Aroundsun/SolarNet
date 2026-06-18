@@ -186,6 +186,8 @@ CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o: \
  /usr/include/c++/15/bits/shared_ptr_atomic.h \
  /usr/include/c++/15/bits/atomic_base.h \
  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/tsan_interface.h \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/common_interface_defs.h \
  /usr/include/c++/15/backward/auto_ptr.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/set \

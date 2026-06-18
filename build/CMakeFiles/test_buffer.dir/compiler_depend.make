@@ -370,6 +370,8 @@ CMakeFiles/test_buffer.dir/tests/test_buffer.cpp.o: /home/xhy/workplace/SolarNet
   /usr/include/x86_64-linux-gnu/sys/uio.h \
   /usr/include/x86_64-linux-gnu/sys/wait.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/float.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/common_interface_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/tsan_interface.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h
@@ -386,6 +388,8 @@ bin/test_buffer: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc_s.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o \
   /usr/lib/x86_64-linux-gnu/libc.so.6 \
   /usr/lib/x86_64-linux-gnu/libc_nonshared.a \
   /usr/lib/x86_64-linux-gnu/libm.so.6 \
@@ -393,8 +397,12 @@ bin/test_buffer: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/test_buffer.dir/tests/test_buffer.cpp.o \
   lib/libgtest.a \
   lib/libgtest_main.a \
-  lib/libsolar_net.a
+  lib/libsolar_net.a \
+  lib/libsolar_net_log.a \
+  lib/libspdlogd.a
 
+
+lib/libspdlogd.a:
 
 lib/libgtest_main.a:
 
@@ -403,6 +411,8 @@ lib/libgtest.a:
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
 /usr/lib/x86_64-linux-gnu/libc.so.6:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o:
 
 /usr/lib/x86_64-linux-gnu/libc.so:
 
@@ -716,6 +726,8 @@ _deps/googletest-src/googletest/include/gtest/internal/gtest-internal.h:
 
 _deps/googletest-src/googletest/include/gtest/internal/gtest-string.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so:
+
 /usr/include/c++/15/bits/shared_ptr_atomic.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h:
@@ -723,6 +735,8 @@ _deps/googletest-src/googletest/include/gtest/internal/gtest-string.h:
 /usr/include/c++/15/bits/locale_facets_nonio.h:
 
 _deps/googletest-src/googletest/include/gtest/internal/gtest-port-arch.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/common_interface_defs.h:
 
 /usr/include/c++/15/bits/hashtable_policy.h:
 
@@ -869,6 +883,8 @@ _deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h:
 /usr/include/asm-generic/posix_types.h:
 
 /usr/include/c++/15/bit:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/include/sanitizer/tsan_interface.h:
 
 /usr/include/pthread.h:
 
@@ -1075,6 +1091,8 @@ _deps/googletest-src/googletest/include/gtest/gtest-test-part.h:
 /usr/include/c++/15/string:
 
 /usr/include/c++/15/system_error:
+
+lib/libsolar_net_log.a:
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 

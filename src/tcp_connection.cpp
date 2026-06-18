@@ -173,7 +173,7 @@ void TcpConnection::handle_read(int64_t receive_time) {
         }
     } else if (n == 0) {
         handle_close();
-    } else {
+    } else if (errno != EAGAIN && errno != EWOULDBLOCK) {
         handle_error();
     }
 }

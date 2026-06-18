@@ -343,7 +343,7 @@ explicit Buffer(std::size_t initial_size = 1024);
 
 | 方法 | 说明 |
 |------|------|
-| `read_from_fd(fd)` | `readv` 读 socket；返回 `>0` 字节数，`0` EOF，`-1` 错误（`EAGAIN` 视为 0） |
+| `read_from_fd(fd)` | `readv` 读 socket；返回 `>0` 字节数，`0` EOF，`-1` 错误（含 `EAGAIN`/`EWOULDBLOCK`，errno 保留） |
 | `shrink()` | 收缩内部 vector |
 | `swap(other)` | 交换 |
 

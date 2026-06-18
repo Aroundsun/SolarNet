@@ -6,6 +6,7 @@
 
 #include <fcntl.h>
 #include <unistd.h>
+#include <errno.h>
 
 #include "buffer.h"
 
@@ -177,7 +178,8 @@ TEST(BufferTest, ReadFromFdNonBlockingEmpty) {
     ASSERT_EQ(fcntl(pipefd[0], F_SETFL, flags | O_NONBLOCK), 0);
 
     Buffer buf;
-    EXPECT_EQ(buf.read_from_fd(pipefd[0]), 0);
+    EXPECT_EQ(buf.read_from_fd(pipefd[0]), -1);
+    EXPECT_TRUE(errno == EAGAIN || errno == EWOULDBLOCK);
     EXPECT_EQ(buf.readable_bytes(), 0u);
 
     close(pipefd[0]);

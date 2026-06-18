@@ -1,10 +1,10 @@
-Start testing: Jun 18 03:59 CST
+Start testing: Jun 18 16:57 CST
 ----------------------------------------------------------
 1/11 Testing: test_buffer
 1/11 Test: test_buffer
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_buffer"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_buffer" start time: Jun 18 03:59 CST
+"test_buffer" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -43,16 +43,16 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [       OK ] BufferTest.ReadFromFdNonBlockingEmpty (0 ms)
 [ RUN      ] BufferTest.ShrinkIfNeededAfterRetrieve
 [       OK ] BufferTest.ShrinkIfNeededAfterRetrieve (0 ms)
-[----------] 16 tests from BufferTest (0 ms total)
+[----------] 16 tests from BufferTest (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 1 test suite ran. (0 ms total)
+[==========] 16 tests from 1 test suite ran. (3 ms total)
 [  PASSED  ] 16 tests.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"test_buffer" end time: Jun 18 03:59 CST
+"test_buffer" end time: Jun 18 16:57 CST
 "test_buffer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -60,7 +60,7 @@ Test Passed.
 2/11 Test: test_socket
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_socket"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_socket" start time: Jun 18 03:59 CST
+"test_socket" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -81,16 +81,16 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [       OK ] SocketTest.GetLocalAndPeerAddr (0 ms)
 [ RUN      ] SocketTest.InvalidFdReturnsError
 [       OK ] SocketTest.InvalidFdReturnsError (0 ms)
-[----------] 7 tests from SocketTest (0 ms total)
+[----------] 7 tests from SocketTest (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
+[==========] 7 tests from 1 test suite ran. (2 ms total)
 [  PASSED  ] 7 tests.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"test_socket" end time: Jun 18 03:59 CST
+"test_socket" end time: Jun 18 16:57 CST
 "test_socket" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -98,7 +98,7 @@ Test Passed.
 3/11 Test: test_channel
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_channel"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_channel" start time: Jun 18 03:59 CST
+"test_channel" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -106,29 +106,29 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 7 tests from ChannelTest
 [ RUN      ] ChannelTest.HandleReadCallback
-[       OK ] ChannelTest.HandleReadCallback (0 ms)
+[       OK ] ChannelTest.HandleReadCallback (3 ms)
 [ RUN      ] ChannelTest.HandleWriteCallback
-[       OK ] ChannelTest.HandleWriteCallback (0 ms)
+[       OK ] ChannelTest.HandleWriteCallback (1 ms)
 [ RUN      ] ChannelTest.HandleErrorCallback
-[       OK ] ChannelTest.HandleErrorCallback (0 ms)
+[       OK ] ChannelTest.HandleErrorCallback (1 ms)
 [ RUN      ] ChannelTest.HandleCloseCallbackWithoutRead
-[       OK ] ChannelTest.HandleCloseCallbackWithoutRead (0 ms)
+[       OK ] ChannelTest.HandleCloseCallbackWithoutRead (1 ms)
 [ RUN      ] ChannelTest.HupWithReadTriggersReadNotClose
-[       OK ] ChannelTest.HupWithReadTriggersReadNotClose (0 ms)
+[       OK ] ChannelTest.HupWithReadTriggersReadNotClose (1 ms)
 [ RUN      ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed
-[       OK ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed (0 ms)
+[       OK ] ChannelTest.TieSkipsCallbackWhenOwnerDestroyed (1 ms)
 [ RUN      ] ChannelTest.EnableAndDisableEvents
-[       OK ] ChannelTest.EnableAndDisableEvents (0 ms)
-[----------] 7 tests from ChannelTest (3 ms total)
+[       OK ] ChannelTest.EnableAndDisableEvents (1 ms)
+[----------] 7 tests from ChannelTest (12 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (3 ms total)
+[==========] 7 tests from 1 test suite ran. (13 ms total)
 [  PASSED  ] 7 tests.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"test_channel" end time: Jun 18 03:59 CST
+"test_channel" end time: Jun 18 16:57 CST
 "test_channel" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -136,7 +136,7 @@ Test Passed.
 4/11 Test: test_event_loop
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop" start time: Jun 18 03:59 CST
+"test_event_loop" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -144,39 +144,116 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 8 tests from EventLoopTest
 [ RUN      ] EventLoopTest.IsInLoopThread
-[       OK ] EventLoopTest.IsInLoopThread (0 ms)
+[       OK ] EventLoopTest.IsInLoopThread (3 ms)
 [ RUN      ] EventLoopTest.GetEventLoopOfCurrentThread
-[       OK ] EventLoopTest.GetEventLoopOfCurrentThread (0 ms)
+[       OK ] EventLoopTest.GetEventLoopOfCurrentThread (1 ms)
 [ RUN      ] EventLoopTest.RunInLoopExecutesImmediatelyOnLoopThread
-[       OK ] EventLoopTest.RunInLoopExecutesImmediatelyOnLoopThread (0 ms)
+[       OK ] EventLoopTest.RunInLoopExecutesImmediatelyOnLoopThread (1 ms)
 [ RUN      ] EventLoopTest.QueueInLoopFromOtherThread
-[       OK ] EventLoopTest.QueueInLoopFromOtherThread (0 ms)
+[       OK ] EventLoopTest.QueueInLoopFromOtherThread (10069 ms)
 [ RUN      ] EventLoopTest.CrossThreadTaskRunsOnLoopThread
-[       OK ] EventLoopTest.CrossThreadTaskRunsOnLoopThread (0 ms)
+[       OK ] EventLoopTest.CrossThreadTaskRunsOnLoopThread (10079 ms)
 [ RUN      ] EventLoopTest.StopFromAnotherThread
 [       OK ] EventLoopTest.StopFromAnotherThread (53 ms)
 [ RUN      ] EventLoopTest.PollTriggersReadOnPipe
-[       OK ] EventLoopTest.PollTriggersReadOnPipe (0 ms)
+==================
+WARNING: ThreadSanitizer: data race (pid=127723)
+  Write of size 8 at 0x7ffff2bfd208 by thread T10:
+    #0 std::_Rb_tree_iterator<std::pair<int const, solar_net::Channel*> >::_Rb_tree_iterator(std::_Rb_tree_node_base*) /usr/include/c++/15/bits/stl_tree.h:389 (test_event_loop+0x3d2db) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #1 std::_Rb_tree<int, std::pair<int const, solar_net::Channel*>, std::_Select1st<std::pair<int const, solar_net::Channel*> >, std::less<int>, std::allocator<std::pair<int const, solar_net::Channel*> > >::equal_range(int const&) /usr/include/c++/15/bits/stl_tree.h:2653 (test_event_loop+0x3c6e5) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #2 std::_Rb_tree<int, std::pair<int const, solar_net::Channel*>, std::_Select1st<std::pair<int const, solar_net::Channel*> >, std::less<int>, std::allocator<std::pair<int const, solar_net::Channel*> > >::erase(int const&) /usr/include/c++/15/bits/stl_tree.h:3139 (test_event_loop+0x3b048) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #3 std::map<int, solar_net::Channel*, std::less<int>, std::allocator<std::pair<int const, solar_net::Channel*> > >::erase(int const&) /usr/include/c++/15/bits/stl_map.h:1159 (test_event_loop+0x39f17) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #4 solar_net::EpollPoller::update_channel(solar_net::Channel*) /home/xhy/workplace/SolarNet/src/epoll_poller.cpp:73 (test_event_loop+0x3913f) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #5 solar_net::EventLoop::update_channel(solar_net::Channel*) /home/xhy/workplace/SolarNet/src/event_loop.cpp:127 (test_event_loop+0x31ff5) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #6 solar_net::Channel::update() /home/xhy/workplace/SolarNet/src/channel.cpp:83 (test_event_loop+0x30ca4) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #7 solar_net::Channel::disable_all() /home/xhy/workplace/SolarNet/src/channel.cpp:75 (test_event_loop+0x30bfb) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #8 solar_net::EventLoop::~EventLoop() /home/xhy/workplace/SolarNet/src/event_loop.cpp:50 (test_event_loop+0x31880) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #9 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:30 (test_event_loop+0x229f4) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #10 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_event_loop+0x305af) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #11 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_event_loop+0x3051e) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #12 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_event_loop+0x30488) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #13 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_event_loop+0x303c8) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #14 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_event_loop+0x2fafe) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #15 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Previous read of size 4 at 0x7ffff2bfd20c by thread T11:
+    #0 operator() /home/xhy/workplace/SolarNet/tests/test_event_loop.cpp:117 (test_event_loop+0x1790b) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #1 __invoke_impl<void, EventLoopTest_PollTriggersReadOnPipe_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_event_loop+0x2017c) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #2 __invoke<EventLoopTest_PollTriggersReadOnPipe_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_event_loop+0x1fe32) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #3 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_event_loop+0x1fbae) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #4 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_event_loop+0x1f9d2) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #5 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_event_loop+0x1f7f6) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #6 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Location is stack of thread T10.
+
+  Thread T10 (tid=127762, running) created by main thread at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&) /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:30 (test_event_loop+0x22ae3) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #3 EventLoopTest_PollTriggersReadOnPipe_Test::TestBody() /home/xhy/workplace/SolarNet/tests/test_event_loop.cpp:101 (test_event_loop+0x17d6a) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #4 void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_event_loop+0x164e53) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #5 void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_event_loop+0x1588c4) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #6 testing::Test::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2687 (test_event_loop+0x122671) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #7 testing::TestInfo::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2836 (test_event_loop+0x12356e) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #8 testing::TestSuite::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:3015 (test_event_loop+0x124400) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #9 testing::internal::UnitTestImpl::RunAllTests() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5920 (test_event_loop+0x1378f8) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #10 bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_event_loop+0x166ba0) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #11 bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_event_loop+0x15a886) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #12 testing::UnitTest::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5484 (test_event_loop+0x13550a) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #13 RUN_ALL_TESTS() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/gtest.h:2317 (test_event_loop+0x48fe5) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #14 main /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc:64 (test_event_loop+0x48f87) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+
+  Thread T11 (tid=127763, finished) created by thread T10 at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_event_loop.cpp:118 (test_event_loop+0x17bd8) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #3 __invoke_impl<void, EventLoopTest_PollTriggersReadOnPipe_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_event_loop+0x1d6b8) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #4 __invoke_r<void, EventLoopTest_PollTriggersReadOnPipe_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_event_loop+0x1c3ca) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_event_loop+0x1a78a) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #6 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_event_loop+0x249eb) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #7 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_event_loop+0x229bf) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #8 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_event_loop+0x305af) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #9 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_event_loop+0x3051e) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #10 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_event_loop+0x30488) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #11 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_event_loop+0x303c8) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #12 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_event_loop+0x2fafe) (BuildId: ed5aab48405deb9cced2df5bb1cbca7aab46b2f6)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+SUMMARY: ThreadSanitizer: data race /home/xhy/workplace/SolarNet/src/epoll_poller.cpp:73 in solar_net::EpollPoller::update_channel(solar_net::Channel*)
+==================
+[       OK ] EventLoopTest.PollTriggersReadOnPipe (370 ms)
 [ RUN      ] EventLoopTest.PendingTasksRunAfterPoll
-[       OK ] EventLoopTest.PendingTasksRunAfterPoll (0 ms)
-[----------] 8 tests from EventLoopTest (59 ms total)
+/home/xhy/workplace/SolarNet/tests/test_event_loop.cpp:145: Failure
+Expected equality of these values:
+  counter.load()
+    Which is: 0
+  2
+
+[  FAILED  ] EventLoopTest.PendingTasksRunAfterPoll (3 ms)
+[----------] 8 tests from EventLoopTest (20583 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (59 ms total)
-[  PASSED  ] 8 tests.
+[==========] 8 tests from 1 test suite ran. (20583 ms total)
+[  PASSED  ] 7 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] EventLoopTest.PendingTasksRunAfterPoll
+
+ 1 FAILED TEST
+ThreadSanitizer: reported 1 warnings
 <end of output>
-Test time =   0.07 sec
+Test time =  20.67 sec
 ----------------------------------------------------------
-Test Passed.
-"test_event_loop" end time: Jun 18 03:59 CST
-"test_event_loop" time elapsed: 00:00:00
+Test Failed.
+"test_event_loop" end time: Jun 18 16:57 CST
+"test_event_loop" time elapsed: 00:00:20
 ----------------------------------------------------------
 
 5/11 Testing: test_timer
 5/11 Test: test_timer
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_timer"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_timer" start time: Jun 18 03:59 CST
+"test_timer" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -184,33 +261,107 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 5 tests from TimerTest
 [ RUN      ] TimerTest.RunAfterFiresOnce
-[       OK ] TimerTest.RunAfterFiresOnce (53 ms)
+[       OK ] TimerTest.RunAfterFiresOnce (56 ms)
 [ RUN      ] TimerTest.RunEveryFiresMultipleTimes
-[       OK ] TimerTest.RunEveryFiresMultipleTimes (93 ms)
+[       OK ] TimerTest.RunEveryFiresMultipleTimes (92 ms)
 [ RUN      ] TimerTest.CancelPreventsFire
-[       OK ] TimerTest.CancelPreventsFire (86 ms)
+[       OK ] TimerTest.CancelPreventsFire (81 ms)
 [ RUN      ] TimerTest.CancelBeforeAddInLoop
-[       OK ] TimerTest.CancelBeforeAddInLoop (108 ms)
+[       OK ] TimerTest.CancelBeforeAddInLoop (103 ms)
 [ RUN      ] TimerTest.AddTimerFromOtherThread
-[       OK ] TimerTest.AddTimerFromOtherThread (54 ms)
-[----------] 5 tests from TimerTest (397 ms total)
+==================
+WARNING: ThreadSanitizer: data race (pid=127766)
+  Write of size 8 at 0x721000002070 by thread T6:
+    #0 operator delete(void*, unsigned long) ../../../../src/libsanitizer/tsan/tsan_new_delete.cpp:150 (libtsan.so.2+0xab037) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 solar_net::TimerQueue::handle_read() /home/xhy/workplace/SolarNet/src/timer_queue.cpp:128 (test_timer+0x3a413) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #2 operator() /home/xhy/workplace/SolarNet/src/timer_queue.cpp:53 (test_timer+0x39591) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #3 __invoke_impl<void, solar_net::TimerQueue::TimerQueue(solar_net::EventLoop*)::<lambda()>&> /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x3bd79) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #4 __invoke_r<void, solar_net::TimerQueue::TimerQueue(solar_net::EventLoop*)::<lambda()>&> /usr/include/c++/15/bits/invoke.h:113 (test_timer+0x3b70e) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_timer+0x3b239) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #6 std::function<void ()>::operator()() const /usr/include/c++/15/bits/std_function.h:593 (test_timer+0x2ca66) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #7 solar_net::Channel::handle_event_with_guard() /home/xhy/workplace/SolarNet/src/channel.cpp:49 (test_timer+0x42926) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #8 solar_net::Channel::handle_event() /home/xhy/workplace/SolarNet/src/channel.cpp:20 (test_timer+0x42766) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #9 solar_net::EventLoop::loop() /home/xhy/workplace/SolarNet/src/event_loop.cpp:78 (test_timer+0x2aa27) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #10 operator() /home/xhy/workplace/SolarNet/tests/test_timer.cpp:89 (test_timer+0x1748b) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #11 __invoke_impl<void, TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x1bd4a) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #12 __invoke_r<void, TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_timer+0x1b086) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #13 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_timer+0x1959e) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #14 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_timer+0x21989) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #15 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_timer+0x1f909) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #16 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x2a27b) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #17 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_timer+0x2a1ea) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #18 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_timer+0x2a154) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #19 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_timer+0x2a094) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #20 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_timer+0x29ae2) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #21 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Previous read of size 8 at 0x721000002070 by thread T7:
+    #0 solar_net::Timer::sequence() const /home/xhy/workplace/SolarNet/src/timer.h:22 (test_timer+0x3c3a0) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #1 solar_net::TimerQueue::add_timer(std::function<void ()>, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > >, double) /home/xhy/workplace/SolarNet/src/timer_queue.cpp:82 (test_timer+0x39cf3) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #2 solar_net::EventLoop::run_after(double, std::function<void ()>) /home/xhy/workplace/SolarNet/src/event_loop.cpp:142 (test_timer+0x2b0da) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #3 operator() /home/xhy/workplace/SolarNet/tests/test_timer.cpp:83 (test_timer+0x17391) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #4 __invoke_impl<void, TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x1d4d9) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #5 __invoke<TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_timer+0x1d3c2) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #6 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_timer+0x1d2da) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #7 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_timer+0x1d236) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #8 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_timer+0x1d19a) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #9 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Thread T6 (tid=127773, running) created by main thread at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&) /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:30 (test_timer+0x1fa2d) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #3 TimerTest_AddTimerFromOtherThread_Test::TestBody() /home/xhy/workplace/SolarNet/tests/test_timer.cpp:81 (test_timer+0x1757d) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #4 void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_timer+0x15f0a9) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #5 void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_timer+0x152c14) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #6 testing::Test::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2687 (test_timer+0x11d411) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #7 testing::TestInfo::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2836 (test_timer+0x11e30e) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #8 testing::TestSuite::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:3015 (test_timer+0x11f1a0) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #9 testing::internal::UnitTestImpl::RunAllTests() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5920 (test_timer+0x132698) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #10 bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_timer+0x160df6) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #11 bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_timer+0x154bd6) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #12 testing::UnitTest::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5484 (test_timer+0x1302aa) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #13 RUN_ALL_TESTS() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/gtest.h:2317 (test_timer+0x4351b) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #14 main /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc:64 (test_timer+0x434bd) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+
+  Thread T7 (tid=127774, finished) created by thread T6 at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_timer.cpp:87 (test_timer+0x17473) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #3 __invoke_impl<void, TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x1bd4a) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #4 __invoke_r<void, TimerTest_AddTimerFromOtherThread_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_timer+0x1b086) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_timer+0x1959e) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #6 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_timer+0x21989) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #7 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_timer+0x1f909) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #8 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_timer+0x2a27b) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #9 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_timer+0x2a1ea) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #10 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_timer+0x2a154) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #11 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_timer+0x2a094) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #12 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_timer+0x29ae2) (BuildId: e9df6ed9f62e0048c503bfa68faae9728aa07666)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+SUMMARY: ThreadSanitizer: data race /home/xhy/workplace/SolarNet/src/timer_queue.cpp:128 in solar_net::TimerQueue::handle_read()
+==================
+[       OK ] TimerTest.AddTimerFromOtherThread (10395 ms)
+[----------] 5 tests from TimerTest (10730 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (397 ms total)
+[==========] 5 tests from 1 test suite ran. (10731 ms total)
 [  PASSED  ] 5 tests.
+ThreadSanitizer: reported 1 warnings
 <end of output>
-Test time =   0.41 sec
+Test time =  10.81 sec
 ----------------------------------------------------------
-Test Passed.
-"test_timer" end time: Jun 18 03:59 CST
-"test_timer" time elapsed: 00:00:00
+Test Failed.
+"test_timer" end time: Jun 18 16:57 CST
+"test_timer" time elapsed: 00:00:10
 ----------------------------------------------------------
 
 6/11 Testing: test_tcp_connection
 6/11 Test: test_tcp_connection
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_tcp_connection"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_tcp_connection" start time: Jun 18 03:59 CST
+"test_tcp_connection" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -218,39 +369,119 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 8 tests from TcpConnectionTest
 [ RUN      ] TcpConnectionTest.ConnectionEstablishedSetsStateAndFiresCallback
-[       OK ] TcpConnectionTest.ConnectionEstablishedSetsStateAndFiresCallback (0 ms)
+[       OK ] TcpConnectionTest.ConnectionEstablishedSetsStateAndFiresCallback (3 ms)
 [ RUN      ] TcpConnectionTest.ReceivesMessageFromPeer
-[       OK ] TcpConnectionTest.ReceivesMessageFromPeer (0 ms)
+[       OK ] TcpConnectionTest.ReceivesMessageFromPeer (1 ms)
 [ RUN      ] TcpConnectionTest.SendsMessageToPeer
-[       OK ] TcpConnectionTest.SendsMessageToPeer (0 ms)
+[       OK ] TcpConnectionTest.SendsMessageToPeer (1 ms)
 [ RUN      ] TcpConnectionTest.CrossThreadSendDeliveredToPeer
-[       OK ] TcpConnectionTest.CrossThreadSendDeliveredToPeer (207 ms)
+[       OK ] TcpConnectionTest.CrossThreadSendDeliveredToPeer (204 ms)
 [ RUN      ] TcpConnectionTest.WriteCompleteCallbackFires
-[       OK ] TcpConnectionTest.WriteCompleteCallbackFires (509 ms)
+==================
+WARNING: ThreadSanitizer: data race (pid=127785)
+  Write of size 8 at 0x72b000000140 by thread T6:
+    #0 close ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1928 (libtsan.so.2+0x5725f) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 solar_net::test::close_tcp_socket_pair(solar_net::test::TcpSocketPair&) /home/xhy/workplace/SolarNet/tests/tcp_test_util.h:111 (test_tcp_connection+0x253bf) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp:154 (test_tcp_connection+0x1876a) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #3 __invoke_impl<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x1ec76) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #4 __invoke_r<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_tcp_connection+0x1d752) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_tcp_connection+0x1bd14) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #6 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_tcp_connection+0x28505) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #7 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_tcp_connection+0x24963) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #8 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x3ac19) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #9 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_tcp_connection+0x3ab88) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #10 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_connection+0x3aaf2) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #11 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_connection+0x3aa02) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #12 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_connection+0x3a0fc) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Previous read of size 8 at 0x72b000000140 by thread T7:
+    #0 read ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1011 (libtsan.so.2+0x60074) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp:146 (test_tcp_connection+0x18430) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #2 __invoke_impl<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x21180) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #3 __invoke<TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_connection+0x20fe0) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #4 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_connection+0x20e6a) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #5 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_connection+0x20d6c) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #6 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_connection+0x20c86) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #7 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Location is file descriptor 10 created by thread T6 at:
+    #0 connect ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1903 (libtsan.so.2+0x5a9d4) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 solar_net::test::make_tcp_socket_pair() /home/xhy/workplace/SolarNet/tests/tcp_test_util.h:61 (test_tcp_connection+0x25100) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp:132 (test_tcp_connection+0x184c0) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #3 __invoke_impl<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x1ec76) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #4 __invoke_r<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_tcp_connection+0x1d752) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_tcp_connection+0x1bd14) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #6 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_tcp_connection+0x28505) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #7 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_tcp_connection+0x24963) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #8 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x3ac19) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #9 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_tcp_connection+0x3ab88) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #10 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_connection+0x3aaf2) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #11 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_connection+0x3aa02) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #12 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_connection+0x3a0fc) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Thread T6 (tid=127793, running) created by main thread at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&) /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:30 (test_tcp_connection+0x24a87) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #3 TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody() /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp:131 (test_tcp_connection+0x188ee) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #4 void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_tcp_connection+0x175e73) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #5 void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_tcp_connection+0x169a86) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #6 testing::Test::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2687 (test_tcp_connection+0x134611) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #7 testing::TestInfo::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2836 (test_tcp_connection+0x13550e) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #8 testing::TestSuite::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:3015 (test_tcp_connection+0x1363a0) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #9 testing::internal::UnitTestImpl::RunAllTests() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5920 (test_tcp_connection+0x149898) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #10 bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_tcp_connection+0x177bc0) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #11 bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_tcp_connection+0x16ba48) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #12 testing::UnitTest::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5484 (test_tcp_connection+0x1474aa) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #13 RUN_ALL_TESTS() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/gtest.h:2317 (test_tcp_connection+0x5b4e7) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #14 main /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc:64 (test_tcp_connection+0x5b489) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+
+  Thread T7 (tid=127794, finished) created by thread T6 at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp:147 (test_tcp_connection+0x18712) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #3 __invoke_impl<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x1ec76) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #4 __invoke_r<void, TcpConnectionTest_WriteCompleteCallbackFires_Test::TestBody()::<lambda(solar_net::EventLoop&)>&, solar_net::EventLoop&> /usr/include/c++/15/bits/invoke.h:113 (test_tcp_connection+0x1d752) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_tcp_connection+0x1bd14) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #6 std::function<void (solar_net::EventLoop&)>::operator()(solar_net::EventLoop&) const /usr/include/c++/15/bits/std_function.h:593 (test_tcp_connection+0x28505) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #7 solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}::operator()() const /home/xhy/workplace/SolarNet/tests/event_loop_test_util.h:28 (test_tcp_connection+0x24963) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #8 void std::__invoke_impl<void, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(std::__invoke_other, solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:63 (test_tcp_connection+0x3ac19) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #9 std::__invoke_result<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>::type std::__invoke<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}>(solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}&&) /usr/include/c++/15/bits/invoke.h:98 (test_tcp_connection+0x3ab88) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #10 void std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_connection+0x3aaf2) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #11 std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> >::operator()() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_connection+0x3aa02) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #12 std::thread::_State_impl<std::thread::_Invoker<std::tuple<solar_net::test::run_in_event_loop_thread(std::function<void (solar_net::EventLoop&)> const&)::{lambda()#1}> > >::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_connection+0x3a0fc) (BuildId: faf1fc231b7dd810b5bbd4bf173f7a383c31de36)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+SUMMARY: ThreadSanitizer: data race /home/xhy/workplace/SolarNet/tests/tcp_test_util.h:111 in solar_net::test::close_tcp_socket_pair(solar_net::test::TcpSocketPair&)
+==================
+[       OK ] TcpConnectionTest.WriteCompleteCallbackFires (861 ms)
 [ RUN      ] TcpConnectionTest.PeerCloseTriggersCloseCallback
-[       OK ] TcpConnectionTest.PeerCloseTriggersCloseCallback (0 ms)
+[       OK ] TcpConnectionTest.PeerCloseTriggersCloseCallback (1 ms)
 [ RUN      ] TcpConnectionTest.ForceCloseDisconnects
 [       OK ] TcpConnectionTest.ForceCloseDisconnects (23 ms)
 [ RUN      ] TcpConnectionTest.SendBufferConsumesReadableBytes
 [       OK ] TcpConnectionTest.SendBufferConsumesReadableBytes (1 ms)
-[----------] 8 tests from TcpConnectionTest (745 ms total)
+[----------] 8 tests from TcpConnectionTest (1100 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (745 ms total)
+[==========] 8 tests from 1 test suite ran. (1101 ms total)
 [  PASSED  ] 8 tests.
+ThreadSanitizer: reported 1 warnings
 <end of output>
-Test time =   0.75 sec
+Test time =   1.18 sec
 ----------------------------------------------------------
-Test Passed.
-"test_tcp_connection" end time: Jun 18 03:59 CST
-"test_tcp_connection" time elapsed: 00:00:00
+Test Failed.
+"test_tcp_connection" end time: Jun 18 16:57 CST
+"test_tcp_connection" time elapsed: 00:00:01
 ----------------------------------------------------------
 
 7/11 Testing: test_acceptor
 7/11 Test: test_acceptor
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_acceptor"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_acceptor" start time: Jun 18 03:59 CST
+"test_acceptor" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -258,27 +489,27 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 6 tests from AcceptorTest
 [ RUN      ] AcceptorTest.PortReturnsBoundPort
-[       OK ] AcceptorTest.PortReturnsBoundPort (0 ms)
+[       OK ] AcceptorTest.PortReturnsBoundPort (2 ms)
 [ RUN      ] AcceptorTest.ListenSetsListeningFlag
-[       OK ] AcceptorTest.ListenSetsListeningFlag (0 ms)
+[       OK ] AcceptorTest.ListenSetsListeningFlag (1 ms)
 [ RUN      ] AcceptorTest.AcceptsIncomingConnection
-[       OK ] AcceptorTest.AcceptsIncomingConnection (1 ms)
+[       OK ] AcceptorTest.AcceptsIncomingConnection (3 ms)
 [ RUN      ] AcceptorTest.AcceptsMultipleConnections
-[       OK ] AcceptorTest.AcceptsMultipleConnections (21 ms)
+[       OK ] AcceptorTest.AcceptsMultipleConnections (23 ms)
 [ RUN      ] AcceptorTest.AcceptedSocketIsNonBlocking
-[       OK ] AcceptorTest.AcceptedSocketIsNonBlocking (1 ms)
+[       OK ] AcceptorTest.AcceptedSocketIsNonBlocking (3 ms)
 [ RUN      ] AcceptorTest.ClosesConnectionWhenNoCallback
-[       OK ] AcceptorTest.ClosesConnectionWhenNoCallback (106 ms)
-[----------] 6 tests from AcceptorTest (132 ms total)
+[       OK ] AcceptorTest.ClosesConnectionWhenNoCallback (102 ms)
+[----------] 6 tests from AcceptorTest (138 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (132 ms total)
+[==========] 6 tests from 1 test suite ran. (139 ms total)
 [  PASSED  ] 6 tests.
 <end of output>
-Test time =   0.14 sec
+Test time =   0.20 sec
 ----------------------------------------------------------
 Test Passed.
-"test_acceptor" end time: Jun 18 03:59 CST
+"test_acceptor" end time: Jun 18 16:57 CST
 "test_acceptor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -286,7 +517,7 @@ Test Passed.
 8/11 Test: test_event_loop_thread
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop_thread"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop_thread" start time: Jun 18 03:59 CST
+"test_event_loop_thread" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -294,23 +525,23 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 4 tests from EventLoopThreadTest
 [ RUN      ] EventLoopThreadTest.StartLoopReturnsRunningLoop
-[       OK ] EventLoopThreadTest.StartLoopReturnsRunningLoop (1 ms)
+[       OK ] EventLoopThreadTest.StartLoopReturnsRunningLoop (5 ms)
 [ RUN      ] EventLoopThreadTest.InitCallbackRunsOnLoopThread
-[       OK ] EventLoopThreadTest.InitCallbackRunsOnLoopThread (0 ms)
+[       OK ] EventLoopThreadTest.InitCallbackRunsOnLoopThread (3 ms)
 [ RUN      ] EventLoopThreadTest.CrossThreadRunInLoop
-[       OK ] EventLoopThreadTest.CrossThreadRunInLoop (1 ms)
+[       OK ] EventLoopThreadTest.CrossThreadRunInLoop (3 ms)
 [ RUN      ] EventLoopThreadTest.DestructorStopsLoop
-[       OK ] EventLoopThreadTest.DestructorStopsLoop (51 ms)
-[----------] 4 tests from EventLoopThreadTest (54 ms total)
+[       OK ] EventLoopThreadTest.DestructorStopsLoop (52 ms)
+[----------] 4 tests from EventLoopThreadTest (65 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (54 ms total)
+[==========] 4 tests from 1 test suite ran. (66 ms total)
 [  PASSED  ] 4 tests.
 <end of output>
-Test time =   0.07 sec
+Test time =   0.15 sec
 ----------------------------------------------------------
 Test Passed.
-"test_event_loop_thread" end time: Jun 18 03:59 CST
+"test_event_loop_thread" end time: Jun 18 16:57 CST
 "test_event_loop_thread" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -318,7 +549,7 @@ Test Passed.
 9/11 Test: test_event_loop_thread_pool
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_event_loop_thread_pool"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_event_loop_thread_pool" start time: Jun 18 03:59 CST
+"test_event_loop_thread_pool" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -326,46 +557,35 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 6 tests from EventLoopThreadPoolTest
 [ RUN      ] EventLoopThreadPoolTest.ZeroThreadsReturnsBaseLoop
-[       OK ] EventLoopThreadPoolTest.ZeroThreadsReturnsBaseLoop (0 ms)
+[       OK ] EventLoopThreadPoolTest.ZeroThreadsReturnsBaseLoop (3 ms)
 [ RUN      ] EventLoopThreadPoolTest.RoundRobinDispatch
-[       OK ] EventLoopThreadPoolTest.RoundRobinDispatch (2 ms)
+[       OK ] EventLoopThreadPoolTest.RoundRobinDispatch (6 ms)
 [ RUN      ] EventLoopThreadPoolTest.GetLoopByIndex
-[       OK ] EventLoopThreadPoolTest.GetLoopByIndex (1 ms)
+[       OK ] EventLoopThreadPoolTest.GetLoopByIndex (4 ms)
 [ RUN      ] EventLoopThreadPoolTest.InitCallbackPerThread
-[       OK ] EventLoopThreadPoolTest.InitCallbackPerThread (1 ms)
+[       OK ] EventLoopThreadPoolTest.InitCallbackPerThread (3 ms)
 [ RUN      ] EventLoopThreadPoolTest.GetAllLoopsContainsWorkerLoops
-[       OK ] EventLoopThreadPoolTest.GetAllLoopsContainsWorkerLoops (1 ms)
+[       OK ] EventLoopThreadPoolTest.GetAllLoopsContainsWorkerLoops (3 ms)
 [ RUN      ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop
-/home/xhy/workplace/SolarNet/tests/test_event_loop_thread_pool.cpp:120: Failure
-Expected equality of these values:
-  task_future.wait_for(std::chrono::seconds(2))
-    Which is: 4-byte object <01-00 00-00>
-  std::future_status::ready
-    Which is: 4-byte object <00-00 00-00>
-
-[  FAILED  ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop (2001 ms)
-[----------] 6 tests from EventLoopThreadPoolTest (2008 ms total)
+[       OK ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop (3 ms)
+[----------] 6 tests from EventLoopThreadPoolTest (27 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (2008 ms total)
-[  PASSED  ] 5 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] EventLoopThreadPoolTest.CrossThreadTaskOnWorkerLoop
-
- 1 FAILED TEST
+[==========] 6 tests from 1 test suite ran. (27 ms total)
+[  PASSED  ] 6 tests.
 <end of output>
-Test time =   2.02 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
-Test Failed.
-"test_event_loop_thread_pool" end time: Jun 18 03:59 CST
-"test_event_loop_thread_pool" time elapsed: 00:00:02
+Test Passed.
+"test_event_loop_thread_pool" end time: Jun 18 16:57 CST
+"test_event_loop_thread_pool" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 10/11 Testing: test_tcp_server
 10/11 Test: test_tcp_server
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_tcp_server"
 Directory: /home/xhy/workplace/SolarNet/build
-"test_tcp_server" start time: Jun 18 03:59 CST
+"test_tcp_server" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -373,39 +593,124 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 8 tests from TcpServerTest
 [ RUN      ] TcpServerTest.StartExposesListeningPort
-[       OK ] TcpServerTest.StartExposesListeningPort (0 ms)
+[       OK ] TcpServerTest.StartExposesListeningPort (4 ms)
 [ RUN      ] TcpServerTest.AcceptsConnectionSingleThread
-[       OK ] TcpServerTest.AcceptsConnectionSingleThread (1 ms)
+[       OK ] TcpServerTest.AcceptsConnectionSingleThread (13 ms)
 [ RUN      ] TcpServerTest.ReceivesMessageFromClient
-[       OK ] TcpServerTest.ReceivesMessageFromClient (1 ms)
+[       OK ] TcpServerTest.ReceivesMessageFromClient (2 ms)
 [ RUN      ] TcpServerTest.DispatchesConnectionToWorkerLoop
-[       OK ] TcpServerTest.DispatchesConnectionToWorkerLoop (503 ms)
+[       OK ] TcpServerTest.DispatchesConnectionToWorkerLoop (508 ms)
 [ RUN      ] TcpServerTest.ServerCanSendReply
-[       OK ] TcpServerTest.ServerCanSendReply (501 ms)
+[       OK ] TcpServerTest.ServerCanSendReply (505 ms)
 [ RUN      ] TcpServerTest.ClientCloseDoesNotHang
-[       OK ] TcpServerTest.ClientCloseDoesNotHang (1 ms)
+[       OK ] TcpServerTest.ClientCloseDoesNotHang (10 ms)
 [ RUN      ] TcpServerTest.StopClosesConnections
-[       OK ] TcpServerTest.StopClosesConnections (517 ms)
+==================
+WARNING: ThreadSanitizer: data race (pid=127892)
+  Write of size 8 at 0x72b0000001c0 by thread T15:
+    #0 close ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1928 (libtsan.so.2+0x5725f) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:241 (test_tcp_server+0x1988f) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #2 __invoke_impl<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x23ee7) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 __invoke<TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_server+0x23b0a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_server+0x23860) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_server+0x2364a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_server+0x23414) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Previous read of size 8 at 0x72b0000001c0 by thread T13:
+    #0 read ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1011 (libtsan.so.2+0x60074) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:258 (test_tcp_server+0x19fd9) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #2 __invoke_impl<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>&, solar_net::EventLoop&, solar_net::TcpServer&> /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x21132) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 __invoke_r<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>&, solar_net::EventLoop&, solar_net::TcpServer&> /usr/include/c++/15/bits/invoke.h:113 (test_tcp_server+0x1fbe8) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_tcp_server+0x1d947) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 std::function<void (solar_net::EventLoop&, solar_net::TcpServer&)>::operator()(solar_net::EventLoop&, solar_net::TcpServer&) const /usr/include/c++/15/bits/std_function.h:593 (test_tcp_server+0x2a9fe) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:38 (test_tcp_server+0x17303) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 __invoke_impl<void, (anonymous namespace)::run_tcp_server(const std::function<void(solar_net::EventLoop&, solar_net::TcpServer&)>&)::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x2421d) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #8 __invoke<(anonymous namespace)::run_tcp_server(const std::function<void(solar_net::EventLoop&, solar_net::TcpServer&)>&)::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_server+0x23e5e) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #9 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_server+0x23a7c) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #10 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_server+0x23806) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #11 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_server+0x23600) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #12 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  As if synchronized via sleep:
+    #0 nanosleep ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:396 (libtsan.so.2+0x59dcf) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 void std::this_thread::sleep_for<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&) /usr/include/c++/15/bits/this_thread_sleep.h:82 (test_tcp_server+0x2bd53) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:240 (test_tcp_server+0x19885) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 __invoke_impl<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x23ee7) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 __invoke<TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_server+0x23b0a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_server+0x23860) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_server+0x2364a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_server+0x23414) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #8 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Location is file descriptor 14 created by thread T15 at:
+    #0 connect ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1903 (libtsan.so.2+0x5a9d4) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 solar_net::test::connect_to(unsigned short) /home/xhy/workplace/SolarNet/tests/tcp_test_util.h:101 (test_tcp_server+0x279a7) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:237 (test_tcp_server+0x1983f) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 __invoke_impl<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x23ee7) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 __invoke<TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_server+0x23b0a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_server+0x23860) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_server+0x2364a) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_server+0x23414) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #8 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Thread T15 (tid=127938, running) created by thread T13 at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:245 (test_tcp_server+0x19b9d) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 __invoke_impl<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>&, solar_net::EventLoop&, solar_net::TcpServer&> /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x21132) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 __invoke_r<void, TcpServerTest_StopClosesConnections_Test::TestBody()::<lambda(solar_net::EventLoop&, solar_net::TcpServer&)>&, solar_net::EventLoop&, solar_net::TcpServer&> /usr/include/c++/15/bits/invoke.h:113 (test_tcp_server+0x1fbe8) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 _M_invoke /usr/include/c++/15/bits/std_function.h:292 (test_tcp_server+0x1d947) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 std::function<void (solar_net::EventLoop&, solar_net::TcpServer&)>::operator()(solar_net::EventLoop&, solar_net::TcpServer&) const /usr/include/c++/15/bits/std_function.h:593 (test_tcp_server+0x2a9fe) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 operator() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:38 (test_tcp_server+0x17303) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #8 __invoke_impl<void, (anonymous namespace)::run_tcp_server(const std::function<void(solar_net::EventLoop&, solar_net::TcpServer&)>&)::<lambda()> > /usr/include/c++/15/bits/invoke.h:63 (test_tcp_server+0x2421d) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #9 __invoke<(anonymous namespace)::run_tcp_server(const std::function<void(solar_net::EventLoop&, solar_net::TcpServer&)>&)::<lambda()> > /usr/include/c++/15/bits/invoke.h:98 (test_tcp_server+0x23e5e) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #10 _M_invoke<0> /usr/include/c++/15/bits/std_thread.h:303 (test_tcp_server+0x23a7c) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #11 operator() /usr/include/c++/15/bits/std_thread.h:310 (test_tcp_server+0x23806) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #12 _M_run /usr/include/c++/15/bits/std_thread.h:255 (test_tcp_server+0x23600) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #13 <null> <null> (libstdc++.so.6+0xf5ef8) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+
+  Thread T13 (tid=127936, running) created by main thread at:
+    #0 pthread_create ../../../../src/libsanitizer/tsan/tsan_interceptors_posix.cpp:1078 (libtsan.so.2+0x5cb02) (BuildId: 66d37dc704b813df6c813b77217284deb43a0042)
+    #1 std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) <null> (libstdc++.so.6+0xf5ff0) (BuildId: 3a7a8c6bd922e6314edb7a710fdc0293265c2c42)
+    #2 run_tcp_server /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:40 (test_tcp_server+0x1747d) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #3 TcpServerTest_StopClosesConnections_Test::TestBody() /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:220 (test_tcp_server+0x1a6cf) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #4 void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_tcp_server+0x18e31f) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #5 void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_tcp_server+0x182182) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #6 testing::Test::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2687 (test_tcp_server+0x14ce11) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #7 testing::TestInfo::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2836 (test_tcp_server+0x14dd0e) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #8 testing::TestSuite::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:3015 (test_tcp_server+0x14eba0) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #9 testing::internal::UnitTestImpl::RunAllTests() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5920 (test_tcp_server+0x162098) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #10 bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2612 (test_tcp_server+0x19006c) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #11 bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:2648 (test_tcp_server+0x184144) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #12 testing::UnitTest::Run() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest.cc:5484 (test_tcp_server+0x15fcaa) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #13 RUN_ALL_TESTS() /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include/gtest/gtest.h:2317 (test_tcp_server+0x74eb0) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+    #14 main /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc:64 (test_tcp_server+0x74e52) (BuildId: b0717a38e646dd8387a3b7387f5af0125d66daa6)
+
+SUMMARY: ThreadSanitizer: data race /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp:241 in operator()
+==================
+[       OK ] TcpServerTest.StopClosesConnections (1072 ms)
 [ RUN      ] TcpServerTest.ThreadInitCallbackInvoked
-[       OK ] TcpServerTest.ThreadInitCallbackInvoked (1 ms)
-[----------] 8 tests from TcpServerTest (1528 ms total)
+[       OK ] TcpServerTest.ThreadInitCallbackInvoked (5 ms)
+[----------] 8 tests from TcpServerTest (2125 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (1529 ms total)
+[==========] 8 tests from 1 test suite ran. (2126 ms total)
 [  PASSED  ] 8 tests.
+ThreadSanitizer: reported 1 warnings
 <end of output>
-Test time =   1.54 sec
+Test time =   2.21 sec
 ----------------------------------------------------------
-Test Passed.
-"test_tcp_server" end time: Jun 18 03:59 CST
-"test_tcp_server" time elapsed: 00:00:01
+Test Failed.
+"test_tcp_server" end time: Jun 18 16:57 CST
+"test_tcp_server" time elapsed: 00:00:02
 ----------------------------------------------------------
 
 11/11 Testing: test_log
 11/11 Test: test_log
 Command: "/home/xhy/workplace/SolarNet/build/bin/test_log"
 Directory: /home/xhy/workplace/SolarNet/build/logging
-"test_log" start time: Jun 18 03:59 CST
+"test_log" start time: Jun 18 16:57 CST
 Output:
 ----------------------------------------------------------
 Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -413,26 +718,26 @@ Running main() from /home/xhy/workplace/SolarNet/build/_deps/googletest-src/goog
 [----------] Global test environment set-up.
 [----------] 5 tests from LogTest
 [ RUN      ] LogTest.InitAndShutdown
-[       OK ] LogTest.InitAndShutdown (0 ms)
+[       OK ] LogTest.InitAndShutdown (13 ms)
 [ RUN      ] LogTest.LevelFilter
-[       OK ] LogTest.LevelFilter (0 ms)
+[       OK ] LogTest.LevelFilter (7 ms)
 [ RUN      ] LogTest.SetLevelAtRuntime
-[       OK ] LogTest.SetLevelAtRuntime (0 ms)
+[       OK ] LogTest.SetLevelAtRuntime (1 ms)
 [ RUN      ] LogTest.MacrosNoOpWhenNotInitialized
 [       OK ] LogTest.MacrosNoOpWhenNotInitialized (0 ms)
 [ RUN      ] LogTest.InitFailsWithoutSinks
 [       OK ] LogTest.InitFailsWithoutSinks (0 ms)
-[----------] 5 tests from LogTest (1 ms total)
+[----------] 5 tests from LogTest (22 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (1 ms total)
+[==========] 5 tests from 1 test suite ran. (23 ms total)
 [  PASSED  ] 5 tests.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.19 sec
 ----------------------------------------------------------
 Test Passed.
-"test_log" end time: Jun 18 03:59 CST
+"test_log" end time: Jun 18 16:57 CST
 "test_log" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jun 18 03:59 CST
+End testing: Jun 18 16:57 CST

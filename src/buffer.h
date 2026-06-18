@@ -165,7 +165,7 @@ public:
     }
 
     // 从文件描述符读取数据（用于 TCP recv）
-    // 返回读取的字节数，或 0 表示 EOF，或 -1 表示错误
+    // 返回读取的字节数，或 0 表示 EOF，或 -1 表示错误（含 EAGAIN/EWOULDBLOCK，errno 保留）
     ssize_t read_from_fd(int fd) {
         // 使用一个栈缓冲区进行分散读取（readv 优化）
         char extrabuf[65536]; // 64KB stack buffer
@@ -182,10 +182,7 @@ public:
 
         ssize_t n = ::readv(fd, vec, iovcnt);
         if (n < 0) {
-            if (errno != EAGAIN && errno != EWOULDBLOCK) {
-                return -1;
-            }
-            return 0;
+            return -1;
         } else if (n == 0) {
             return 0; // EOF
         } else if (static_cast<std::size_t>(n) <= writable) {
