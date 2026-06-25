@@ -89,7 +89,7 @@ private:
     const std::thread::id thread_id_; // 线程 ID
 
     std::unique_ptr<EpollPoller> poller_; // poller
-    std::unique_ptr<TimerQueue> timer_queue_;
+    std::unique_ptr<TimerQueue> timer_queue_; // 定时器队列
 
     // 唤醒事件循环的文件描述符
     int wakeup_fd_; // eventfd 文件描述符

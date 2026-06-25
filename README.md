@@ -213,3 +213,9 @@ CMakeLists.txt
 ## License
 
 未指定。如需开源请自行补充 license 文件。
+
+立刻：修 EAGAIN → 不误关连接；同步改 test_buffer 预期
+短期：set_tcp_no_delay(on)、started_ 原子化 + start() 线程检查、listen 失败向上报告
+文档：更新 README 矛盾项；在 API.md 补充日志初始化说明
+测试：修 PendingTasksRunAfterPoll；去掉关键路径上的 detach()；补 shutdown / 高水位 / 多连接用例
+工程：加 GitHub Actions；补 LICENSE

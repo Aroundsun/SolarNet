@@ -2,8 +2,6 @@ bin/echo_server: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
-  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o \
-  /usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so \
   CMakeFiles/echo_server.dir/example/echo_server.cpp.o \
   lib/libsolar_net.a \
   lib/libsolar_net_log.a \
@@ -34,6 +32,7 @@ bin/echo_server: \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o \
+  /usr/lib/x86_64-linux-gnu/libm.so.6 \
   /lib64/ld-linux-x86-64.so.2
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o:
@@ -41,10 +40,6 @@ bin/echo_server: \
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/libtsan_preinit.o:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/libtsan.so:
 
 CMakeFiles/echo_server.dir/example/echo_server.cpp.o:
 
@@ -105,5 +100,7 @@ lib/libspdlogd.a:
 /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o:
+
+/usr/lib/x86_64-linux-gnu/libm.so.6:
 
 /lib64/ld-linux-x86-64.so.2:
