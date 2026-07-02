@@ -23,3 +23,5 @@ solar_net_add_benchmark(bench_event_loop_thread_pool bench_event_loop_thread_poo
 solar_net_add_benchmark(bench_inet_address bench_inet_address.cpp)
 solar_net_add_benchmark(bench_socket bench_socket.cpp)
 solar_net_add_benchmark(bench_acceptor bench_acceptor.cpp)
+solar_net_add_benchmark(bench_tcp_connection bench_tcp_connection.cpp)
+solar_net_add_benchmark(bench_tcp_server bench_tcp_server.cpp)

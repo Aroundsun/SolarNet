@@ -22,6 +22,8 @@
 | `InetAddress` | IPv4/IPv6 地址 |
 | `Socket` | socket fd RAII |
 | `Acceptor` | TCP 监听与 accept |
+| `TcpConnection` | 已建立 TCP 连接 |
+| `TcpServer` | 多线程 TCP 服务器（Acceptor + 连接池） |
 
 详细设计见 [docs/architecture.md](docs/architecture.md)，模块文档见 [docs/README.md](docs/README.md)，评审见 [docs/review.md](docs/review.md)，开发日志见 [docs/changelog.md](docs/changelog.md)。
 
@@ -50,7 +52,7 @@ cmake --build build --parallel
 
 ```bash
 ctest --test-dir build --output-on-failure
-# 112 项测试
+# 123 项测试
 ```
 
 ## 运行基准测试
@@ -77,6 +79,8 @@ ctest --test-dir build --output-on-failure
 ./build/examples/example_inet_address
 ./build/examples/example_socket
 ./build/examples/example_acceptor
+./build/examples/example_tcp_connection
+./build/examples/example_tcp_server
 ```
 
 示例说明见 [docs/examples.md](docs/examples.md)。

@@ -31,6 +31,8 @@
 | InetAddress | [inet_address.md](inet_address.md) | IPv4/IPv6 地址 |
 | Socket | [socket.md](socket.md) | socket fd RAII |
 | Acceptor | [acceptor.md](acceptor.md) | TCP 连接接受 |
+| TcpConnection | [tcp_connection.md](tcp_connection.md) | 已建立 TCP 连接 |
+| TcpServer | [tcp_server.md](tcp_server.md) | 多线程 TCP 服务器 |
 
 ## 其他文档
 

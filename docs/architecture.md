@@ -57,6 +57,8 @@ SolarNet 是受 [muduo](https://github.com/chenshuo/muduo) 启发的现代 C++20
 | `InetAddress` | `solar_net/net/transport/inet_address.h` | IPv4/IPv6 地址 |
 | `Socket` | `solar_net/net/transport/socket.h` | socket fd RAII |
 | `Acceptor` | `solar_net/net/transport/acceptor.h` | TCP 监听与 accept |
+| `TcpConnection` | `solar_net/net/transport/tcp_connection.h` | 已建立 TCP 连接 |
+| `TcpServer` | `solar_net/net/transport/tcp_server.h` | 多线程 TCP 服务器 |
 
 模块设计文档（完整索引见 [docs/README.md](README.md)）：
 
@@ -64,7 +66,7 @@ SolarNet 是受 [muduo](https://github.com/chenshuo/muduo) 启发的现代 C++20
 
 **网络层**：[Channel](channel.md) · [Poller](poller.md) · [EventLoop](event_loop.md) · [TimerQueue](timer_queue.md) · [EventLoopThread](event_loop_thread.md) · [EventLoopThreadPool](event_loop_thread_pool.md)
 
-**传输层**：[InetAddress](inet_address.md) · [Socket](socket.md) · [Acceptor](acceptor.md)
+**传输层**：[InetAddress](inet_address.md) · [Socket](socket.md) · [Acceptor](acceptor.md) · [TcpConnection](tcp_connection.md) · [TcpServer](tcp_server.md)
 
 ## 类图（Phase 0–2）
 

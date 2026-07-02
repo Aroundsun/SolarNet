@@ -23,3 +23,5 @@ solar_net_add_example(example_event_loop_thread_pool example_event_loop_thread_p
 solar_net_add_example(example_inet_address example_inet_address.cpp)
 solar_net_add_example(example_socket example_socket.cpp)
 solar_net_add_example(example_acceptor example_acceptor.cpp)
+solar_net_add_example(example_tcp_connection example_tcp_connection.cpp)
+solar_net_add_example(example_tcp_server example_tcp_server.cpp)

@@ -112,6 +112,25 @@
 ./build/examples/example_socket
 ```
 
+## example_tcp_connection
+
+Acceptor + TcpConnection 回声服务器，监听 12345。见 [tcp_connection.md](tcp_connection.md)。
+
+```bash
+./build/examples/example_tcp_connection
+# 另开终端: nc 127.0.0.1 12345
+```
+
+## example_tcp_server
+
+多线程 TCP 回声服务器，支持指定端口与 IO 线程数。见 [tcp_server.md](tcp_server.md)。
+
+```bash
+./build/examples/example_tcp_server
+./build/examples/example_tcp_server 8080 4
+# 另开终端: nc 127.0.0.1 12345
+```
+
 ## 典型用法片段
 
 ### Logger
