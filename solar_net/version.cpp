@@ -2,7 +2,7 @@
 
 namespace solar_net {
 
-// Intentionally empty for now: Version is header-only.
-// This translation unit exists to verify the library target builds.
+// 当前刻意留空：Version 为 header-only。
+// 此编译单元用于验证库目标可以正常构建。
 
 } // namespace solar_net

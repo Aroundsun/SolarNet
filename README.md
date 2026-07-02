@@ -1,69 +1,71 @@
 # SolarNet
 
-A modern C++20 Linux network framework inspired by muduo, rebuilt from the ground up for long-term maintenance and high performance.
+受 muduo 启发的现代 C++20 Linux 网络框架，从零重构，面向长期维护与高性能。
 
-## Status
+## 当前状态
 
-Phase 0: Engineering infrastructure is ready. The project can be configured, built, tested, and benchmarked.
+Phase 0：工程基础设施已就绪，项目可完成配置、构建、测试与基准测试。
 
-## Build Requirements
+## 构建要求
 
 - CMake >= 3.20
-- C++20 compiler (GCC >= 11 or Clang >= 14)
-- Linux environment (WSL / Ubuntu VM / native)
-- Optional: `clang-tidy`, `ninja-build`
-- For tests/benchmarks (system packages, recommended):
+- C++20 编译器（GCC >= 11 或 Clang >= 14）
+- Linux 环境（WSL / Ubuntu 虚拟机 / 原生 Linux）
+- 可选：`clang-tidy`、`ninja-build`
+- 测试与基准测试依赖（系统包，推荐）：
 
 ```bash
 sudo apt install libgtest-dev libbenchmark-dev
 ```
 
-## Build
+未安装上述包时，CMake 配置阶段会直接报错。
+
+## 构建
 
 ```bash
 cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
 ```
 
-## Run Tests
+## 运行测试
 
 ```bash
 ctest --test-dir build --output-on-failure
 ```
 
-## Run Benchmarks
+## 运行基准测试
 
 ```bash
 ./build/benchmarks/bench_version
 ```
 
-## Run Example
+## 运行示例
 
 ```bash
 ./build/examples/example_version
 ```
 
-## Development Options
+## 开发选项
 
-| CMake Option | Default | Description |
+| CMake 选项 | 默认值 | 说明 |
 | --- | --- | --- |
-| `SOLAR_NET_BUILD_TESTS` | ON | Build unit tests |
-| `SOLAR_NET_BUILD_BENCHMARKS` | ON | Build microbenchmarks |
-| `SOLAR_NET_BUILD_EXAMPLES` | ON | Build example programs |
-| `SOLAR_NET_BUILD_SHARED` | OFF | Build shared library instead of static |
-| `SOLAR_NET_USE_CLANG_TIDY` | ON | Run clang-tidy during build |
+| `SOLAR_NET_BUILD_TESTS` | ON | 构建单元测试 |
+| `SOLAR_NET_BUILD_BENCHMARKS` | ON | 构建微基准测试 |
+| `SOLAR_NET_BUILD_EXAMPLES` | ON | 构建示例程序 |
+| `SOLAR_NET_BUILD_SHARED` | OFF | 构建动态库（默认静态库） |
+| `SOLAR_NET_USE_CLANG_TIDY` | ON | 构建时运行 clang-tidy |
 
-## Project Layout
+## 目录结构
 
-- `solar_net/` — public headers and implementation files co-located (one module per file pair).
-- `tests/` — GoogleTest unit tests.
-- `benchmarks/` — Google Benchmark microbenchmarks.
-- `examples/` — example programs.
+- `solar_net/` — 公共头文件与实现同目录（每个模块一对 `.h` / `.cpp`）。
+- `tests/` — GoogleTest 单元测试。
+- `benchmarks/` — Google Benchmark 微基准测试。
+- `examples/` — 示例程序。
 
-- `.clang-format` for formatting
-- `.clang-tidy` for static analysis
-- All code must compile cleanly with the enabled warnings.
+- `.clang-format` — 代码格式化
+- `.clang-tidy` — 静态分析
+- 所有代码须在开启的警告选项下干净编译通过。
 
-## License
+## 许可证
 
-TBD
+待定

@@ -16,15 +16,15 @@ jobs:
         compiler: [gcc, clang]
 
     steps:
-      - name: Checkout repository
+      - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake ninja-build g++ clang clang-tidy libgtest-dev libbenchmark-dev
 
-      - name: Configure CMake
+      - name: 配置 CMake
         run: |
           if [ "${{ matrix.compiler }}" = "clang" ]; then
             export CC=clang
@@ -40,11 +40,11 @@ jobs:
             -DSOLAR_NET_BUILD_EXAMPLES=ON \
             -DSOLAR_NET_USE_CLANG_TIDY=ON
 
-      - name: Build
+      - name: 构建
         run: cmake --build build --parallel
 
-      - name: Run tests
+      - name: 运行测试
         run: ctest --test-dir build --output-on-failure --parallel
 
-      - name: Run benchmarks
+      - name: 运行基准测试
         run: ./build/benchmarks/bench_version --benchmark_min_time=0.1s
