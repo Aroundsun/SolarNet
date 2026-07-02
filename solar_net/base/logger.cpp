@@ -79,11 +79,12 @@ void Logger::Log(LogLevel level, std::source_location location, std::string mess
 }
 
 void Logger::SetLevel(LogLevel level) noexcept {
-    m_level = level;
+    m_level.store(level, std::memory_order_release);
 }
 
 bool Logger::IsLevelEnabled(LogLevel level) const noexcept {
-    return level >= m_level && level != LogLevel::kOff;
+    const auto current = m_level.load(std::memory_order_acquire);
+    return level >= current && level != LogLevel::kOff;
 }
 
 void Logger::SetFormatter(std::unique_ptr<Formatter> formatter) {

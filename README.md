@@ -4,7 +4,20 @@
 
 ## 当前状态
 
-Phase 0：工程基础设施已就绪，项目可完成配置、构建、测试与基准测试。
+**Phase 2 完成**：基础模块（Time、Logger、Buffer）与并发原语（Thread、ThreadPool）已实现，含完整单测与 Benchmark。
+
+| 模块 | 说明 |
+| --- | --- |
+| `Time` | 时间戳与格式化 |
+| `Logger` | 分级日志 + 多 Appender |
+| `Buffer` | 网络 I/O 缓冲区（readv/writev） |
+| `Thread` | std::thread RAII 封装 |
+| `ThreadPool` | 固定大小任务线程池 |
+| `Channel` | I/O 事件通道 |
+| `Poller` / `EpollPoller` | IO 多路复用（epoll） |
+| `EventLoop` | Reactor 事件循环 |
+
+详细设计见 [docs/architecture.md](docs/architecture.md)，评审报告见 [docs/review.md](docs/review.md)。
 
 ## 构建要求
 
@@ -31,11 +44,14 @@ cmake --build build --parallel
 
 ```bash
 ctest --test-dir build --output-on-failure
+# 38 项测试
 ```
 
 ## 运行基准测试
 
 ```bash
+./build/benchmarks/bench_buffer --benchmark_min_time=0.1s
+./build/benchmarks/bench_thread_pool --benchmark_min_time=0.1s
 ./build/benchmarks/bench_version
 ```
 
@@ -43,7 +59,15 @@ ctest --test-dir build --output-on-failure
 
 ```bash
 ./build/examples/example_version
+./build/examples/example_logger
+./build/examples/example_buffer
+./build/examples/example_thread_pool
+./build/examples/example_channel
+./build/examples/example_poller
+./build/examples/example_event_loop
 ```
+
+示例说明见 [docs/examples.md](docs/examples.md)。
 
 ## 开发选项
 
@@ -57,14 +81,20 @@ ctest --test-dir build --output-on-failure
 
 ## 目录结构
 
-- `solar_net/` — 公共头文件与实现同目录（每个模块一对 `.h` / `.cpp`）。
-- `tests/` — GoogleTest 单元测试。
-- `benchmarks/` — Google Benchmark 微基准测试。
-- `examples/` — 示例程序。
+```
+SolarNet/
+├── solar_net/           # 库源码（头文件与 .cpp 同目录）
+│   ├── base/            # 基础模块
+│   └── version.h
+├── tests/               # GoogleTest 单元测试
+├── benchmarks/          # Google Benchmark
+├── examples/            # 示例程序
+└── docs/                # 设计文档、评审报告
+```
 
 - `.clang-format` — 代码格式化
 - `.clang-tidy` — 静态分析
-- 所有代码须在开启的警告选项下干净编译通过。
+- 所有代码须在开启的警告选项下干净编译通过
 
 ## 许可证
 

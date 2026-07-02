@@ -9,6 +9,7 @@
 #include <iostream>
 #include <memory>
 #include <mutex>
+#include <atomic>
 #include <source_location>
 #include <string>
 #include <vector>
@@ -126,7 +127,7 @@ private:
  * @brief 全局单例日志器，支持级别过滤、格式化与多路输出。
  *
  * 线程安全：Log / SetFormatter / AddAppender / ClearAppenders / Flush 在内部互斥锁保护下安全；
- * SetLevel / IsLevelEnabled 无锁，与上述接口并发时级别过滤可能出现短暂不一致。
+ * SetLevel / IsLevelEnabled 使用 atomic，与 Log 并发安全。
  */
 class Logger : public NonCopyable {
 public:
@@ -145,10 +146,10 @@ public:
         Log(level, location, std::format(fmt, std::forward<Args>(args)...));
     }
 
-    /** @brief 设置最低输出级别。线程安全：否（无锁写，与 Log 并发可能短暂不一致）。 */
+    /** @brief 设置最低输出级别。线程安全。 */
     void SetLevel(LogLevel level) noexcept;
 
-    /** @brief 判断给定级别是否会被输出。线程安全：否（无锁读，与 SetLevel 并发可能短暂不一致）。 */
+    /** @brief 判断给定级别是否会被输出。线程安全。 */
     [[nodiscard]] bool IsLevelEnabled(LogLevel level) const noexcept;
 
     /** @brief 替换格式化器。线程安全。 */
@@ -166,7 +167,7 @@ public:
 private:
     Logger();
 
-    LogLevel m_level{LogLevel::kInfo};
+    std::atomic<LogLevel> m_level{LogLevel::kInfo};
     std::unique_ptr<Formatter> m_formatter;
     std::vector<std::unique_ptr<Appender>> m_appenders;
     mutable std::mutex m_mutex;
