@@ -2,6 +2,7 @@
 
 #include "solar_net/net/channel.h"
 #include "solar_net/net/poller.h"
+#include "solar_net/net/timer_queue.h"
 #include "solar_net/base/logger.h"
 
 #include <cassert>
@@ -31,6 +32,8 @@ EventLoop::EventLoop()
     m_wakeup_channel = std::make_unique<Channel>(this, m_wakeup_fd);
     m_wakeup_channel->SetReadCallback([this](Time) { HandleRead(); });
     m_wakeup_channel->EnableReading();
+
+    m_timer_queue = std::make_unique<TimerQueue>(this);
 }
 
 EventLoop::~EventLoop() {
@@ -51,7 +54,8 @@ void EventLoop::Loop() {
     while (true) {
         if (!m_quit.load(std::memory_order_acquire)) {
             Poller::ChannelList active_channels;
-            const Time poll_return_time = m_poller->Poll(kPollTimeoutMs, &active_channels);
+            const int poll_timeout_ms = NextTimeout();
+            const Time poll_return_time = m_poller->Poll(poll_timeout_ms, &active_channels);
             m_event_handling.store(true, std::memory_order_release);
 
             for (Channel* channel : active_channels) {
@@ -146,6 +150,30 @@ void EventLoop::DoPendingFunctors() {
     }
 
     m_calling_pending_functors.store(false, std::memory_order_release);
+}
+
+TimerQueue::TimerId EventLoop::RunAt(Time time, TimerQueue::TimerCallback cb) {
+    AssertInLoopThread();
+    return m_timer_queue->RunAt(time, std::move(cb));
+}
+
+TimerQueue::TimerId EventLoop::RunAfter(std::chrono::milliseconds delay, TimerQueue::TimerCallback cb) {
+    AssertInLoopThread();
+    return m_timer_queue->RunAfter(delay, std::move(cb));
+}
+
+TimerQueue::TimerId EventLoop::RunEvery(std::chrono::milliseconds interval, TimerQueue::TimerCallback cb) {
+    AssertInLoopThread();
+    return m_timer_queue->RunEvery(interval, std::move(cb));
+}
+
+bool EventLoop::Cancel(TimerQueue::TimerId id) {
+    AssertInLoopThread();
+    return m_timer_queue->Cancel(id);
+}
+
+int EventLoop::NextTimeout() const {
+    return m_timer_queue ? m_timer_queue->NextTimeout() : -1;
 }
 
 } // namespace solar_net

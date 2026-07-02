@@ -96,4 +96,20 @@ TEST(EventLoopTest, ChannelIntegration) {
     EXPECT_GE(read_count.load(std::memory_order_relaxed), 1);
 }
 
+TEST(EventLoopTest, NextTimeoutReflectsTimers) {
+    EventLoop loop;
+
+    EXPECT_EQ(loop.NextTimeout(), -1);
+
+    loop.RunAfter(std::chrono::milliseconds(200), [] {});
+    const int timeout = loop.NextTimeout();
+    EXPECT_GE(timeout, 0);
+    EXPECT_LE(timeout, 200);
+
+    loop.Cancel(loop.RunAfter(std::chrono::milliseconds(500), [] {}));
+    const int after_cancel = loop.NextTimeout();
+    EXPECT_GE(after_cancel, 0);
+    EXPECT_LE(after_cancel, 200);
+}
+
 } // namespace solar_net

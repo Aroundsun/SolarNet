@@ -2,12 +2,15 @@
 
 #include "solar_net/base/non_copyable.h"
 #include "solar_net/base/time.h"
+#include "solar_net/net/timer_queue.h"
 
 #include <functional>
 #include <memory>
 #include <mutex>
 #include <thread>
 #include <vector>
+
+#include <chrono>
 
 namespace solar_net {
 
@@ -50,6 +53,18 @@ public:
     /** @brief 返回底层 Poller（测试/调试用途）。 */
     [[nodiscard]] Poller& GetPoller() noexcept { return *m_poller; }
 
+    /** @brief 在绝对时间点执行一次。须在 loop 线程调用。 */
+    TimerQueue::TimerId RunAt(Time time, TimerQueue::TimerCallback cb);
+    /** @brief 延迟后执行一次。须在 loop 线程调用。 */
+    TimerQueue::TimerId RunAfter(std::chrono::milliseconds delay, TimerQueue::TimerCallback cb);
+    /** @brief 周期性执行。须在 loop 线程调用。 */
+    TimerQueue::TimerId RunEvery(std::chrono::milliseconds interval, TimerQueue::TimerCallback cb);
+    /** @brief 取消定时器。须在 loop 线程调用。 */
+    bool Cancel(TimerQueue::TimerId id);
+
+    /** @brief 返回最近定时器的毫秒数，-1 表示无定时器。须在 loop 线程调用。 */
+    [[nodiscard]] int NextTimeout() const;
+
 private:
     void Wakeup();
     void HandleRead();
@@ -65,6 +80,8 @@ private:
 
     int m_wakeup_fd{-1};
     std::unique_ptr<Channel> m_wakeup_channel;
+
+    std::unique_ptr<TimerQueue> m_timer_queue;
 
     std::vector<Functor> m_pending_functors;
     std::mutex m_mutex;
