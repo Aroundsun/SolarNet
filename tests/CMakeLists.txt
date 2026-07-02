@@ -14,3 +14,5 @@ function(solar_net_add_test TEST_NAME)
 endfunction()
 
 solar_net_add_test(test_version test_version.cpp)
+solar_net_add_test(test_time test_time.cpp)
+solar_net_add_test(test_logger test_logger.cpp)

@@ -11,3 +11,4 @@ function(solar_net_add_example EXAMPLE_NAME)
 endfunction()
 
 solar_net_add_example(example_version example_version.cpp)
+solar_net_add_example(example_logger example_logger.cpp)
