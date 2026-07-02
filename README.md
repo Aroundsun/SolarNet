@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-**Phase 2 完成**：基础模块（Time、Logger、Buffer）与并发原语（Thread、ThreadPool）已实现，含完整单测与 Benchmark。
+**Phase 3 完成**：基础层 + 网络核心（EventLoop、Channel、TimerQueue、EventLoopThreadPool）已实现，83 项单测与 Benchmark 全部通过。
 
 | 模块 | 说明 |
 | --- | --- |
@@ -16,8 +16,14 @@
 | `Channel` | I/O 事件通道 |
 | `Poller` / `EpollPoller` | IO 多路复用（epoll） |
 | `EventLoop` | Reactor 事件循环 |
+| `TimerQueue` | 定时器队列 |
+| `EventLoopThread` | 单线程 EventLoop 封装 |
+| `EventLoopThreadPool` | 多 Reactor 线程池 |
+| `InetAddress` | IPv4/IPv6 地址 |
+| `Socket` | socket fd RAII |
+| `Acceptor` | TCP 监听与 accept |
 
-详细设计见 [docs/architecture.md](docs/architecture.md)，评审报告见 [docs/review.md](docs/review.md)。
+详细设计见 [docs/architecture.md](docs/architecture.md)，模块文档见 [docs/README.md](docs/README.md)，评审见 [docs/review.md](docs/review.md)，开发日志见 [docs/changelog.md](docs/changelog.md)。
 
 ## 构建要求
 
@@ -44,7 +50,7 @@ cmake --build build --parallel
 
 ```bash
 ctest --test-dir build --output-on-failure
-# 38 项测试
+# 112 项测试
 ```
 
 ## 运行基准测试
@@ -65,6 +71,12 @@ ctest --test-dir build --output-on-failure
 ./build/examples/example_channel
 ./build/examples/example_poller
 ./build/examples/example_event_loop
+./build/examples/example_timer_queue
+./build/examples/example_event_loop_thread
+./build/examples/example_event_loop_thread_pool
+./build/examples/example_inet_address
+./build/examples/example_socket
+./build/examples/example_acceptor
 ```
 
 示例说明见 [docs/examples.md](docs/examples.md)。
@@ -85,6 +97,7 @@ ctest --test-dir build --output-on-failure
 SolarNet/
 ├── solar_net/           # 库源码（头文件与 .cpp 同目录）
 │   ├── base/            # 基础模块
+│   ├── net/             # 网络模块
 │   └── version.h
 ├── tests/               # GoogleTest 单元测试
 ├── benchmarks/          # Google Benchmark

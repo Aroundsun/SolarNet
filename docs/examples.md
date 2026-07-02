@@ -1,10 +1,10 @@
 # 示例程序
 
-构建后可在 `build/examples/` 目录运行。
+构建后可在 `build/examples/` 目录运行。各模块设计见 [README.md](README.md)。
 
 ## example_version
 
-打印项目名与语义化版本号。
+打印项目名与语义化版本号。见 [version.md](version.md)。
 
 ```bash
 ./build/examples/example_version
@@ -13,7 +13,7 @@
 
 ## example_logger
 
-演示分级日志宏与 std::format 格式化输出。
+演示分级日志宏与 std::format 格式化输出。见 [logger.md](logger.md)。
 
 ```bash
 ./build/examples/example_logger
@@ -23,7 +23,7 @@
 
 ## example_buffer
 
-演示 HTTP 请求缓冲、CRLF 行查找、Prepend 长度头与十六进制转储。
+演示 HTTP 请求缓冲、CRLF 行查找、Prepend 长度头与十六进制转储。见 [buffer.md](buffer.md)。
 
 ```bash
 ./build/examples/example_buffer
@@ -31,7 +31,7 @@
 
 ## example_thread_pool
 
-演示 4 线程池并发执行 20 个计数任务。
+演示 4 线程池并发执行 20 个计数任务。见 [thread_pool.md](thread_pool.md)。
 
 ```bash
 ./build/examples/example_thread_pool
@@ -40,11 +40,76 @@
 
 ## example_channel
 
-演示 Channel 读/写/关闭/错误回调分发。
+演示 Channel 读/写/关闭/错误回调分发。见 [channel.md](channel.md)。
 
 ```bash
 ./build/examples/example_channel
 # read=1 write=1 close=1 error=1
+```
+
+## example_poller
+
+演示 EpollPoller 与 pipe 可读事件。见 [poller.md](poller.md)。
+
+```bash
+./build/examples/example_poller
+```
+
+## example_event_loop
+
+演示单线程 Reactor：`RunInLoop`、`QueueInLoop` 与跨线程 `Quit`。见 [event_loop.md](event_loop.md)。
+
+```bash
+./build/examples/example_event_loop
+```
+
+## example_timer_queue
+
+演示 `RunAfter`、`RunEvery` 与 `Cancel`。见 [timer_queue.md](timer_queue.md)。
+
+```bash
+./build/examples/example_timer_queue
+```
+
+## example_event_loop_thread
+
+演示在后台线程运行 `EventLoop`，通过 `RunInLoop` 注册定时器。见 [event_loop_thread.md](event_loop_thread.md)。
+
+```bash
+./build/examples/example_event_loop_thread
+```
+
+## example_event_loop_thread_pool
+
+演示 3 线程 IO 池，各 loop 独立注册定时器。见 [event_loop_thread_pool.md](event_loop_thread_pool.md)。
+
+```bash
+./build/examples/example_event_loop_thread_pool
+```
+
+## example_acceptor
+
+在 EventLoopThread 上监听 8080 并接受连接。见 [acceptor.md](acceptor.md)。
+
+```bash
+./build/examples/example_acceptor
+# 另开终端: nc 127.0.0.1 8080
+```
+
+## example_inet_address
+
+演示 IPv4/IPv6 地址格式化。见 [inet_address.md](inet_address.md)。
+
+```bash
+./build/examples/example_inet_address
+```
+
+## example_socket
+
+演示 Socket 创建、bind/listen。见 [socket.md](socket.md)。
+
+```bash
+./build/examples/example_socket
 ```
 
 ## 典型用法片段

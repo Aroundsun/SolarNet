@@ -24,7 +24,6 @@
 | - m_loops: vector<EventLoop*>     |
 | - m_nextIndex: atomic<size_t>    |
 | - m_started: atomic<bool>        |
-| - m_stopped: atomic<bool>        |
 +----------------------------------+
 | + Start()                        |
 | + Stop()                         |
@@ -32,6 +31,7 @@
 | + GetLoop(index) -> EventLoop*   |
 | + ThreadCount() -> size_t        |
 | + IsRunning() -> bool            |
+| + GetName() -> const string&     |
 +----------------------------------+
               | owns N
               v
@@ -46,9 +46,9 @@
 生命周期：
 
 1. **构造**：保存线程数、池名、初始化回调；不创建线程。
-2. **`Start()`**：创建 N 个 `EventLoopThread`（名为 `name-N`），依次启动并收集 `EventLoop*`。
+2. **`Start()`**：创建 N 个 `EventLoopThread`（名为 `name-i` 或 `io-i`），依次启动并收集 `EventLoop*`。
 3. **`GetNextLoop()`**：原子自增索引，按模取下一个 `EventLoop*`。
-4. **`Stop()`**：遍历所有线程，逐个 `Stop()`（内部 Join）。
+4. **`Stop()`**：`m_started` 置 false，遍历所有线程逐个 `Stop()`（内部 Join）。
 5. **析构**：若未 `Stop()`，自动调用。
 
 ## 3. API
@@ -56,14 +56,14 @@
 ```cpp
 namespace solar_net {
 
-class EventLoopThreadPool : public NonCopyable {
+class EventLoopThreadPool : NonCopyable {
  public:
   using ThreadInitCallback = EventLoopThread::InitCallback;
 
   explicit EventLoopThreadPool(size_t thread_count = std::thread::hardware_concurrency(),
                                std::string name = {},
                                ThreadInitCallback callback = {});
-  ~EventLoopThreadPool() override;
+  ~EventLoopThreadPool();
 
   void Start();
   void Stop();
@@ -78,6 +78,8 @@ class EventLoopThreadPool : public NonCopyable {
 
 }  // namespace solar_net
 ```
+
+头文件：`#include "solar_net/net/event_loop_thread_pool.h"`
 
 ## 4. 关键流程
 
@@ -109,9 +111,10 @@ Caller
 ```
 Main Thread
    | Stop()
-   |   m_stopped = true
+   |   m_started = false
    |   for each thread in m_threads:
    |     thread->Stop()
+   |   clear m_threads / m_loops
    |<-- all threads joined
 ```
 
@@ -122,6 +125,7 @@ Main Thread
 - **线程数容错**：显式传入 0 会被当作 1（与 `ThreadPool` 行为一致），因为当前没有 base loop 可回退。
 - **非移动**：池内部持有 `unique_ptr<EventLoopThread>`，对象本身不可移动（类似 `ThreadPool`）。
 - **InitCallback 透传**：每个 `EventLoopThread` 都会执行相同的 `InitCallback`，便于统一设置线程名、日志级别等。
+- **跨线程任务**：向各 loop 注册定时器或 Channel 时，须通过 `RunInLoop()` 在对应 loop 线程内操作。
 
 ## 6. 边界情况
 
@@ -133,11 +137,11 @@ Main Thread
 | 多次 Start | 第二次直接返回，不创建新线程。 |
 | 多次 Stop | 第二次直接返回，避免重复 Join。 |
 | GetNextLoop 并发调用 | 原子自增保证线程安全。 |
-| 部分线程启动失败 | 当前实现记录错误日志并跳过，实际可用线程数可能少于预期。 |
+| 部分线程启动失败 | 记录错误日志并跳过，实际可用线程数可能少于预期。 |
 
 ## 7. 测试覆盖
 
-- `StartReturnsAllLoops`：启动后所有 loop 非空且位于各自线程。
+- `StartReturnsAllLoops`：启动后所有 loop 非空。
 - `GetNextLoopRoundRobin`：多次调用按 0,1,2,...,0,1,2 轮询。
 - `GetLoopByIndex`：按索引访问与越界处理。
 - `IsRunningState`：启动前后运行状态变化。
@@ -151,7 +155,8 @@ Main Thread
 ## 8. 示例
 
 ```cpp
-#include "solar_net/event_loop_thread_pool.h"
+#include "solar_net/net/event_loop_thread_pool.h"
+#include "solar_net/net/event_loop.h"
 
 #include <atomic>
 #include <chrono>
@@ -171,10 +176,12 @@ int main() {
             continue;
         }
 
-        loop->RunAfter(std::chrono::milliseconds(static_cast<int>(i) * 100), [loop, &counter] {
-            loop->RunEvery(std::chrono::milliseconds(500), [&] {
-                std::cout << std::format("tick {}\n",
-                                         counter.fetch_add(1, std::memory_order_relaxed));
+        loop->RunInLoop([loop, i, &counter] {
+            loop->RunAfter(std::chrono::milliseconds(static_cast<int>(i) * 100), [loop, &counter] {
+                loop->RunEvery(std::chrono::milliseconds(500), [&] {
+                    std::cout << std::format("tick {}\n",
+                                             counter.fetch_add(1, std::memory_order_relaxed));
+                });
             });
         });
     }
@@ -185,6 +192,12 @@ int main() {
 }
 ```
 
+运行：
+
+```bash
+./build/examples/example_event_loop_thread_pool
+```
+
 ## 9. 性能
 
 - 启动：O(N) 线程创建 + N 次同步唤醒，一次性。
@@ -192,8 +205,16 @@ int main() {
 - 停止：O(N) `eventfd` 唤醒 + Join。
 - 后续可扩展：一致性哈希、最小连接数、按 CPU 亲和性分配等。
 
+Benchmark：
+
+- `bench_event_loop_thread_pool` — `Start/Stop` 周期
+- `GetNextLoop` 热路径分配
+
 ## 10. 下一步
 
 将 `EventLoopThreadPool` 与 `Acceptor` / `TcpConnection` 结合，实现多线程 Reactor：
+
 - 主线程 `EventLoop` 负责 `Acceptor`。
 - 新连接到来时调用 `pool.GetNextLoop()`，将连接分配到某个工作线程。
+
+基础单元见 [EventLoopThread](event_loop_thread.md)。
