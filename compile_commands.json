@@ -1,1 +1,206 @@
-build/compile_commands.json
+[
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/acceptor.cpp.o -c /home/xhy/workplace/SolarNet/src/acceptor.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/acceptor.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/acceptor.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/channel.cpp.o -c /home/xhy/workplace/SolarNet/src/channel.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/channel.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/channel.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/event_loop.cpp.o -c /home/xhy/workplace/SolarNet/src/event_loop.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/event_loop.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/event_loop.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/event_loop_thread.cpp.o -c /home/xhy/workplace/SolarNet/src/event_loop_thread.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/event_loop_thread.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/event_loop_thread.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o -c /home/xhy/workplace/SolarNet/src/event_loop_thread_pool.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/event_loop_thread_pool.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/event_loop_thread_pool.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/epoll_poller.cpp.o -c /home/xhy/workplace/SolarNet/src/epoll_poller.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/epoll_poller.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/epoll_poller.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/timer.cpp.o -c /home/xhy/workplace/SolarNet/src/timer.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/timer.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/timer.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/timer_queue.cpp.o -c /home/xhy/workplace/SolarNet/src/timer_queue.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/timer_queue.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/timer_queue.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o -c /home/xhy/workplace/SolarNet/src/tcp_connection.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/tcp_connection.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/tcp_connection.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net.dir/src/tcp_server.cpp.o -c /home/xhy/workplace/SolarNet/src/tcp_server.cpp",
+  "file": "/home/xhy/workplace/SolarNet/src/tcp_server.cpp",
+  "output": "CMakeFiles/solar_net.dir/src/tcp_server.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_buffer.dir/tests/test_buffer.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_buffer.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_buffer.cpp",
+  "output": "CMakeFiles/test_buffer.dir/tests/test_buffer.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_socket.dir/tests/test_socket.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_socket.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_socket.cpp",
+  "output": "CMakeFiles/test_socket.dir/tests/test_socket.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_channel.dir/tests/test_channel.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_channel.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_channel.cpp",
+  "output": "CMakeFiles/test_channel.dir/tests/test_channel.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_event_loop.dir/tests/test_event_loop.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_event_loop.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_event_loop.cpp",
+  "output": "CMakeFiles/test_event_loop.dir/tests/test_event_loop.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_timer.dir/tests/test_timer.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_timer.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_timer.cpp",
+  "output": "CMakeFiles/test_timer.dir/tests/test_timer.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_tcp_connection.dir/tests/test_tcp_connection.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_tcp_connection.cpp",
+  "output": "CMakeFiles/test_tcp_connection.dir/tests/test_tcp_connection.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_acceptor.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_acceptor.cpp",
+  "output": "CMakeFiles/test_acceptor.dir/tests/test_acceptor.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_event_loop_thread.dir/tests/test_event_loop_thread.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_event_loop_thread.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_event_loop_thread.cpp",
+  "output": "CMakeFiles/test_event_loop_thread.dir/tests/test_event_loop_thread.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_event_loop_thread_pool.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_event_loop_thread_pool.cpp",
+  "output": "CMakeFiles/test_event_loop_thread_pool.dir/tests/test_event_loop_thread_pool.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/tests -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o -c /home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp",
+  "file": "/home/xhy/workplace/SolarNet/tests/test_tcp_server.cpp",
+  "output": "CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/src -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/echo_server.dir/example/echo_server.cpp.o -c /home/xhy/workplace/SolarNet/example/echo_server.cpp",
+  "file": "/home/xhy/workplace/SolarNet/example/echo_server.cpp",
+  "output": "CMakeFiles/echo_server.dir/example/echo_server.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/include -I/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -I/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/logging",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/solar_net_log.dir/log.cpp.o -c /home/xhy/workplace/SolarNet/logging/log.cpp",
+  "file": "/home/xhy/workplace/SolarNet/logging/log.cpp",
+  "output": "logging/CMakeFiles/solar_net_log.dir/log.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/logging",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/logging -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest/include -isystem /home/xhy/workplace/SolarNet/build/_deps/googletest-src/googletest -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/test_log.dir/test_log.cpp.o -c /home/xhy/workplace/SolarNet/logging/test_log.cpp",
+  "file": "/home/xhy/workplace/SolarNet/logging/test_log.cpp",
+  "output": "logging/CMakeFiles/test_log.dir/test_log.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/spdlog.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/spdlog.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/stdout_sinks.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/stdout_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/color_sinks.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/color_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/file_sinks.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/file_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/async.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/async.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/cfg.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/cfg.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o"
+},
+{
+  "directory": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DSPDLOG_COMPILED_LIB -I/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/include -O3 -DNDEBUG -std=c++17 -o CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
+  "file": "/home/xhy/workplace/SolarNet/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
+}
+]

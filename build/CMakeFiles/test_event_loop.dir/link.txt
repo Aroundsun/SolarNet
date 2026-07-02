@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/test_event_loop.dir/link.d CMakeFiles/test_event_loop.dir/tests/test_event_loop.cpp.o -o bin/test_event_loop  lib/libsolar_net.a lib/libgtest_main.a lib/libsolar_net_log.a lib/libspdlogd.a lib/libgtest.a

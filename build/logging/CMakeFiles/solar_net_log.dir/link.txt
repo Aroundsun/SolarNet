@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../lib/libsolar_net_log.a CMakeFiles/solar_net_log.dir/log.cpp.o
-/usr/bin/ranlib ../lib/libsolar_net_log.a

@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/xhy/workplace/SolarNet/build/_deps/googletest-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

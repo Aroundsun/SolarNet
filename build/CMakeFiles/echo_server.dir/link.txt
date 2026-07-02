@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/echo_server.dir/link.d CMakeFiles/echo_server.dir/example/echo_server.cpp.o -o bin/echo_server  lib/libsolar_net.a lib/libsolar_net_log.a lib/libspdlogd.a
