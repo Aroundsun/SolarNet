@@ -13,3 +13,4 @@ endfunction()
 
 solar_net_add_benchmark(bench_version bench_version.cpp)
 solar_net_add_benchmark(bench_buffer bench_buffer.cpp)
+solar_net_add_benchmark(bench_thread_pool bench_thread_pool.cpp)

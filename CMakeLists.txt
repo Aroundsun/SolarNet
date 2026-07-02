@@ -108,6 +108,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   target_compile_definitions(solar_net PUBLIC _GNU_SOURCE)
 endif()
 
+find_package(Threads REQUIRED)
+target_link_libraries(solar_net PUBLIC Threads::Threads)
+
 # -----------------------------------------------------------------------------
 # 测试与基准测试依赖（需系统已安装对应开发包）
 # -----------------------------------------------------------------------------
