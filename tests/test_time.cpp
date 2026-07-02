@@ -27,7 +27,7 @@ TEST(TimeTest, LogStringContainsDateAndTime) {
     const auto now = Time::Now();
     const auto log_str = now.ToLogString();
 
-    EXPECT_THAT(log_str, testing::MatchesRegex(R"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})"));
+    EXPECT_THAT(log_str, testing::MatchesRegex(R"([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3})"));
 }
 
 TEST(TimeTest, FormattedStringUsesFormat) {
@@ -35,7 +35,7 @@ TEST(TimeTest, FormattedStringUsesFormat) {
     const auto now = Time::Now();
     const auto formatted = now.ToFormattedString("%Y-%m-%d");
 
-    EXPECT_THAT(formatted, testing::MatchesRegex(R"(\d{4}-\d{2}-\d{2})"));
+    EXPECT_THAT(formatted, testing::MatchesRegex(R"([0-9]{4}-[0-9]{2}-[0-9]{2})"));
 }
 
 TEST(TimeTest, ComparisonWorks) {
